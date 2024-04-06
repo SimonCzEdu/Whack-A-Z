@@ -70,3 +70,41 @@ body {
 #clock {
 
 }
+
+/* Media queries for landscape views */
+@media (orientation: landscape) {
+    body {
+        background: black url(../image/zombie-1.png) no-repeat  left center;
+        background-size: 50vw 100vh;
+    }
+
+    #zHealthBar {
+        top: 20px;
+        left: 58vw;
+        position: fixed;
+        height: 20px;
+        width: 40vw;
+    }
+    
+    #pHealthBar {
+        bottom: 65px;
+        left: 58vw;
+        position: fixed;
+        height: 20px;
+        width: 40vw;
+    }
+
+    #invBtn {
+        right: 2vw;
+    }
+
+    #traits {
+        left: 58vw;
+    }
+    
+    #noiseLevel {
+        left: 2vw;
+        top: 10vh;
+        height: 80vh;
+    }
+}
