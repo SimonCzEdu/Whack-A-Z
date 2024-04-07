@@ -1,3 +1,9 @@
+/* Global styling */
+* {
+    margin: 0;
+    padding: 0;
+}
+
 /* General Styling */
 body {
     background: black url(../image/zombie-1.png) no-repeat  center center;
@@ -9,8 +15,6 @@ body {
     padding: 0;
     z-index: -100;
 }
-
-
 
 /* Bars positioning and styling */
 #zHealthBar {
@@ -44,7 +48,7 @@ body {
 }
 
 
-/* Inventory */
+/* Inventory button */
 #invBtn {
     position: fixed;
     right: 10px;
@@ -53,6 +57,44 @@ body {
     height: 50px;
     background: white;
     border-radius: 5px;
+}
+
+/* Inventory screen */
+#inv {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    align-items: center;
+    position: fixed;
+    top: 27vh;
+    left: 30vw;
+    height: 60vh;
+    width: 70vw;
+    border-radius: 5px;
+}
+
+#itemList {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8vh;
+    align-self: baseline;
+    padding-left: 3vh;
+}
+
+#itemList li {
+    border-style: solid;
+    width: 58vw;
+    list-style: none;
+    margin: 1vw;
+}
+
+#inv h3 {
+    background: red;
+    padding: 2vh 0;
+    text-align: center;
+    position: fixed;
+    width: 70vw;
 }
 
 /* Traits */
@@ -73,35 +115,69 @@ body {
 
 /* Media queries for landscape views */
 @media (orientation: landscape) {
+    /* General Styling MQ*/
     body {
         background: black url(../image/zombie-1.png) no-repeat  left center;
         background-size: 50vw 100vh;
     }
 
+    /* Zombie Health Bar MQ */
     #zHealthBar {
-        top: 20px;
+        top: 3vh;
         left: 58vw;
-        position: fixed;
-        height: 20px;
+        height: 7vh;
         width: 40vw;
     }
     
+    /* Player Health Bar MQ */
     #pHealthBar {
-        bottom: 65px;
+        top: 81vh;
         left: 58vw;
-        position: fixed;
-        height: 20px;
+        height: 7vh;
         width: 40vw;
     }
 
-    #invBtn {
-        right: 2vw;
-    }
-
-    #traits {
+    /* Inventory MQ */
+    #inv {
+        top: 11vh;
         left: 58vw;
+        height: 69vh;
+        width: 40vw;
     }
     
+    #inv h3 {
+        padding: 2vw 0;
+        width: 40vw;
+    }
+
+    #itemList {
+        margin-top: 8vw;
+        padding-left: 3vw;
+    }
+
+    #itemList li {
+        width: 58vh;
+        margin: 1vh;
+    }
+
+
+    /* Inventory Button MQ */
+    #invBtn {
+        top: 89vh;
+        right: 2vw;
+        height: 10vh;
+        width: 10vh;
+    }
+
+    /* Traits MQ */
+    #traits {
+        top: 89vh;
+        left: 58vw;
+        height: 10vh;
+        width: 10vh;
+    }
+    
+    /* Noise Level Indicator MQ */
     #noiseLevel {
         left: 2vw;
         top: 10vh;
