@@ -4,6 +4,7 @@
     padding: 0;
 }
 
+
 /* General Styling */
 body {
     background: black url(../image/zombie-1.png) no-repeat center center;
@@ -16,7 +17,9 @@ body {
     z-index: -100;
 }
 
-/* Bars positioning and styling */
+
+/* Fillable bars positioning and styling */
+/* Zombie Health Bar */
 #zHealthBar {
     top: 4vw;
     left: 15vw;
@@ -27,7 +30,15 @@ body {
     background: white;
     border-radius: 5px;
 }
+#zHealthIndicator {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    background: green;
+    border-radius: 5px;
+}
 
+/* Player Health Bar */
 #pHealthBar {
     top: 88vh;
     left: 15vw;
@@ -37,15 +48,32 @@ body {
     background: white;
     border-radius: 5px;
 }
+#pHealthIndicator {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    background: red;
+    border-radius: 5px;
+}
 
+/* Noise Level Bar */
 #noiseLevel {
+    display: flex;
     position: fixed;
-    left: 6vw;
+    left: 2vw;
     top: 15vh;
     height: 60vh;
     width: 3vh;
     background: white;
     border-radius: 5px;
+}
+#noiseIndicator {
+    position: relative;
+    height: 50%;
+    width: 100%;
+    background: blue;
+    border-radius: 5px;
+    align-self: end;
 }
 
 
@@ -59,6 +87,7 @@ body {
     background: white;
     border-radius: 5px;
 }
+
 
 /* Inventory screen */
 #inv {
@@ -74,7 +103,6 @@ body {
     width: 70vw;
     border-radius: 5px;
 }
-
 #itemList {
     display: flex;
     flex-direction: column;
@@ -82,14 +110,12 @@ body {
     align-self: baseline;
     padding-left: 3vh;
 }
-
 #itemList li {
     border-style: solid;
     width: 58vw;
     list-style: none;
     margin: 1vw;
 }
-
 #inv h3 {
     background: red;
     padding: 2vh 0;
@@ -97,6 +123,7 @@ body {
     position: fixed;
     width: 70vw;
 }
+
 
 /* Traits */
 #traits {
@@ -109,19 +136,43 @@ body {
     border-radius: 5px;
 }
 
+
 /* Clock */
+#clockContainer {
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    top: 92vh;
+    justify-content: center;
+    align-items: center;
+}
 #clock {
     background: white;
-    width: 20vw;
     height: 5vh;
-    position: fixed;
-    top: 92vh;
-    right: 40vw;
-    z-index: -100;
     font-size: 4vh;
     text-align: center;
     border-radius: 5px;
 }
+
+
+/* Actions  */
+#actions {
+    position: fixed;
+    display: flex;
+    gap: 4vw;
+    bottom: 13vh;
+    height: 4vh;
+    font-size: 3vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+#actions div {
+    background: white;
+    border-radius: 5px;
+    padding: 1vw;
+}
+
 
 /* Media queries for landscape views */
 @media (orientation: landscape) {
@@ -132,6 +183,7 @@ body {
         background-size: 50vw 100vh;
     }
 
+
     /* Zombie Health Bar MQ */
     #zHealthBar {
         top: 3vh;
@@ -139,6 +191,7 @@ body {
         height: 7vh;
         width: 25vw;
     }
+
 
     /* Player Health Bar MQ */
     #pHealthBar {
@@ -148,6 +201,16 @@ body {
         width: 40vw;
     }
 
+
+    /* Noise Level Indicator MQ */
+    #noiseLevel {
+        left: 1vw;
+        top: 11vh;
+        height: 77vh;
+        width: 7vh;
+    }
+
+
     /* Inventory MQ */
     #inv {
         top: 11vh;
@@ -155,17 +218,14 @@ body {
         height: 69vh;
         width: 40vw;
     }
-
     #inv h3 {
         padding: 2vw 0;
         width: 40vw;
     }
-
     #itemList {
         margin-top: 8vw;
         padding-left: 3vw;
     }
-
     #itemList li {
         width: 58vh;
         margin: 1vh;
@@ -180,6 +240,7 @@ body {
         width: 10vh;
     }
 
+
     /* Traits MQ */
     #traits {
         top: 89vh;
@@ -188,19 +249,30 @@ body {
         width: 10vh;
     }
 
-    /* Noise Level Indicator MQ */
-    #noiseLevel {
-        left: 1vw;
-        top: 11vh;
-        height: 77vh;
-        width: 7vh;
-    }
 
+    /* Clock */
+    #clockContainer {
+        position: fixed;
+        left: 58vw;
+        width: 40vw;
+        top: 2vh;
+    }
     #clock {
         font-size: 6vh;
         top: 3vh;
         left: 73vw;
         height: 7vh;
-        width: 10vw;
+    }
+
+
+    /* Actions */
+    #actions {
+        left: -18vw;
+        font-size: 4vh;
+        bottom: 13.4vh;
+    }
+    #actions div {
+        padding: 1vh;
+        height: 5.1vh;
     }
 }
