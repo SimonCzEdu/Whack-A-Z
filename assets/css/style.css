@@ -6,7 +6,7 @@
 
 /* General Styling */
 body {
-    background: black url(../image/zombie-1.png) no-repeat  center center;
+    background: black url(../image/zombie-1.png) no-repeat center center;
     background-size: 150vw 100vh;
     height: 100vh;
     width: 100vw;
@@ -21,17 +21,18 @@ body {
     top: 4vw;
     left: 15vw;
     position: relative;
-    height: 20px;
+    height: 3vh;
+    ;
     width: 70vw;
     background: white;
     border-radius: 5px;
 }
 
 #pHealthBar {
-    bottom: 65px;
+    top: 88vh;
     left: 15vw;
     position: fixed;
-    height: 20px;
+    height: 3vh;
     width: 70vw;
     background: white;
     border-radius: 5px;
@@ -42,7 +43,7 @@ body {
     left: 6vw;
     top: 15vh;
     height: 60vh;
-    width: 20px;
+    width: 3vh;
     background: white;
     border-radius: 5px;
 }
@@ -51,10 +52,10 @@ body {
 /* Inventory button */
 #invBtn {
     position: fixed;
-    right: 10px;
-    bottom: 10px;
-    width: 50px;
-    height: 50px;
+    right: 1vh;
+    top: 92vh;
+    width: 7vh;
+    height: 7vh;
     background: white;
     border-radius: 5px;
 }
@@ -100,35 +101,45 @@ body {
 /* Traits */
 #traits {
     position: fixed;
-    left: 10px;
-    bottom: 10px;
-    width: 50px;
-    height: 50px;
+    left: 2vw;
+    top: 92vh;
+    width: 7vh;
+    height: 7vh;
     background: white;
     border-radius: 5px;
 }
 
 /* Clock */
 #clock {
-
+    background: white;
+    width: 20vw;
+    height: 5vh;
+    position: fixed;
+    top: 92vh;
+    right: 40vw;
+    z-index: -100;
+    font-size: 4vh;
+    text-align: center;
+    border-radius: 5px;
 }
 
 /* Media queries for landscape views */
 @media (orientation: landscape) {
+
     /* General Styling MQ*/
     body {
-        background: black url(../image/zombie-1.png) no-repeat  left center;
+        background: black url(../image/zombie-1.png) no-repeat left center;
         background-size: 50vw 100vh;
     }
 
     /* Zombie Health Bar MQ */
     #zHealthBar {
         top: 3vh;
-        left: 58vw;
+        left: 15vw;
         height: 7vh;
-        width: 40vw;
+        width: 25vw;
     }
-    
+
     /* Player Health Bar MQ */
     #pHealthBar {
         top: 81vh;
@@ -144,7 +155,7 @@ body {
         height: 69vh;
         width: 40vw;
     }
-    
+
     #inv h3 {
         padding: 2vw 0;
         width: 40vw;
@@ -176,11 +187,20 @@ body {
         height: 10vh;
         width: 10vh;
     }
-    
+
     /* Noise Level Indicator MQ */
     #noiseLevel {
-        left: 2vw;
-        top: 10vh;
-        height: 80vh;
+        left: 1vw;
+        top: 11vh;
+        height: 77vh;
+        width: 7vh;
+    }
+
+    #clock {
+        font-size: 6vh;
+        top: 3vh;
+        left: 73vw;
+        height: 7vh;
+        width: 10vw;
     }
 }
