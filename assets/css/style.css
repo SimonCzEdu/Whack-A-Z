@@ -259,6 +259,10 @@ body {
         height: 10vh;
         width: 10vh;
     }
+    #invBtnLabel {
+    position: static;
+    font-size: 10vh;
+}
 
 
     /* Traits MQ */
@@ -267,6 +271,7 @@ body {
         left: 58vw;
         height: 10vh;
         width: 10vh;
+        font-size: 10vh;        
     }
 
 
