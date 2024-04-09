@@ -15,3 +15,15 @@ function openInv() {
         document.getElementById(`inv`).style.display = `none`;
     }
 }
+
+
+// Actions functions
+/**
+ * 
+ */
+document.getElementById(`attack`).addEventListener(`click`, attack);
+
+function attack() {
+    const attackRoll = Math.floor(Math.random() * 20 + 1)
+    console.log(attackRoll);
+}
