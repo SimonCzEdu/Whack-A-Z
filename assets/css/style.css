@@ -84,8 +84,21 @@ body {
     top: 92vh;
     width: 7vh;
     height: 7vh;
-    background: white;
+    z-index: 100;
+}
+#invCheck {
+    display: none;
+}
+#invBtnLabel {
+    position: fixed;
+    right: 1vh;
+    top: 92vh;
+    width: 7vh;
+    height: 7vh;
     border-radius: 5px;
+    z-index: 100;
+    color: rgb(237, 234, 13);
+    font-size: 7vh;
 }
 
 
@@ -117,23 +130,29 @@ body {
     margin: 1vw;
 }
 #inv h3 {
-    background: red;
+    background: rgb(0, 0, 0);
+    color: white;
     padding: 2vh 0;
     text-align: center;
     position: fixed;
     width: 70vw;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgb(142, 137, 137);
 }
 
 
 /* Traits */
-#traits {
+#traits {   
     position: fixed;
     left: 2vw;
     top: 92vh;
     width: 7vh;
     height: 7vh;
-    background: white;
     border-radius: 5px;
+    z-index: 100;
+    font-size: 7vh;
+    color: rgb(237, 234, 13);
 }
 
 
@@ -145,6 +164,7 @@ body {
     top: 92vh;
     justify-content: center;
     align-items: center;
+    z-index: 70;
 }
 #clock {
     background: white;
