@@ -17,15 +17,50 @@ body {
     z-index: -100;
 }
 
+/* Settings Button */
+#settingsBtn {
+    color: white;
+    font-size: 10vw;
+    position: fixed;
+    top: 0vh;
+    z-index: 100;
+}
+#settingsCheck {
+    display: none;
+}
+/* Settings Screen */
+#settings {
+    display: none;
+    background: white;
+    position: fixed;
+    height: 39vh;
+    width: 74vw;
+    top: 7vh;
+    left: 11vw;
+    border-radius: 5px;
+    z-index: 100;
+}
+#settings h3 {
+    text-align: center;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgb(142, 137, 137);
+    padding: 1vw;
+}
+
+#settingsScreen {
+
+}
 
 /* Fillable bars positioning and styling */
 /* Zombie Health Bar */
 #zHealthBar {
-    top: 4vw;
+    top: 1vh;
     left: 15vw;
     position: relative;
     height: 3vh;
-    ;
     width: 70vw;
     background: white;
     border-radius: 5px;
@@ -115,6 +150,7 @@ body {
     height: 60vh;
     width: 70vw;
     border-radius: 5px;
+    z-index: 90;
 }
 #itemList {
     display: flex;
@@ -193,6 +229,14 @@ body {
     padding: 1vw;
 }
 
+/* Combat Log */
+#combatLog {
+
+}
+/* Combat Log Button */
+#combatLogBtn {
+
+}
 
 /* Media queries for landscape views */
 @media (orientation: landscape) {
