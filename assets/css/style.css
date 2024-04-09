@@ -105,7 +105,7 @@ body {
 /* Inventory screen */
 #inv {
     background: white;
-    display: flex;
+    display: none;
     flex-direction: column;
     overflow: auto;
     align-items: center;
