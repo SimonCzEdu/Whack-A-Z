@@ -33,7 +33,7 @@ body {
     display: none;
     background: white;
     position: fixed;
-    height: 39vh;
+    height: auto;
     width: 74vw;
     top: 7vh;
     left: 11vw;
@@ -68,7 +68,7 @@ body {
 #zHealthIndicator {
     position: relative;
     height: 100%;
-    width: 50%;
+    width:100%;
     background: green;
     border-radius: 5px;
 }
@@ -231,7 +231,10 @@ body {
 
 /* Combat Log */
 #combatLog {
-
+    position: fixed;
+    background: white;
+    top: 20vh;
+    left: 11vw;
 }
 /* Combat Log Button */
 #combatLogBtn {
