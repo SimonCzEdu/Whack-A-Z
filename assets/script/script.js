@@ -41,18 +41,38 @@ function openInv() {
  * 
  */
 document.getElementById(`attack`).addEventListener(`click`, attack);
+// Current Zombie health - must me declared with let as we will later on assign new values to it
+let currentZHealth = document.getElementById('zHealthIndicator').style.width = `100%`;
+currentZHealth = parseInt(currentZHealth);
+console.log(currentZHealth);
 
 function attack() {
-    
+
     //Dice roll for the attack chance value without modifiers
     const attackRoll = Math.floor(Math.random() * 20 + 1)
     console.log(attackRoll);
 
     // Check if player succeeded in landing the hit
     if (attackRoll >= 12) {
-        console.log(`Your hit lands!`)    
+        // Dice roll for the attack strength (aka damage)    
+        const attackDmg = Math.floor(Math.random() * 11)
+        //Message to on hit
+        document.getElementById(`combatLog`).innerHTML = `Your hit lands! You did ${attackDmg} points of damage!`;
+        // Damage applied to the Zombie Health Indicator
+        let zHealthAfterHit = currentZHealth - attackDmg;
+        // Zero out Zombie health if it drops below zero;
+        if (currentZHealth - attackDmg < 0) {
+            zHealthAfterHit = 0;
+        }
+
+        document.getElementById(`zHealthIndicator`).style.width = `${zHealthAfterHit}%`;
+        currentZHealth = zHealthAfterHit;
+
     }
     else {
-        console.log(`Oh no! You missed!`)
+        document.getElementById(`combatLog`).innerHTML = `Oh no! You missed`;
     }
+
+    // Dice roll for the attack strength (aka damage)
+
 }
