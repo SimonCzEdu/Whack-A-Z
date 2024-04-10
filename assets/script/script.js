@@ -42,12 +42,13 @@ document.getElementById(`invBtn`).addEventListener('click', openInv);
 // Actions functions
 // Event listeners
 document.getElementById(`attack`).addEventListener(`click`, attack);
-document.getElementById(`parry`).addEventListener(`click`, parry); 
+document.getElementById(`parry`).addEventListener(`click`, parry);
 document.getElementById(`wait`).addEventListener(`click`, wait);
 // Moves and noise level count
 let move = 0;
+let remainder = '';
 let noise = 0;
-console.log (`Noise level is at: ${noise} Nr. of moves: ${move}`);
+console.log(`Noise level is at: ${noise} Nr. of moves: ${move}`);
 
 // Prep
 /* Current Zombie health - must me declared with 'let' as we will later assign new values to it.
@@ -65,8 +66,10 @@ function attack() {
 
     // On attack first we will increase the noise and nr. of moves counter
     move += 1;
+    remainder = move % 2;
     noise += 1;
-    console.log (`Noise level is at: ${noise} Nr. of moves: ${move}`);
+    console.log(`Noise level is at: ${noise} Nr. of moves: ${move}`);
+
 
     /**
      * Dice roll for the attack chance value without modifiers is random number 1-20
@@ -97,8 +100,48 @@ function attack() {
         document.getElementById(`combatLog`).innerHTML = `Oh no! You missed`;
         console.log(`This was not enough to hit`);
     }
+    console.log(`Move remainder ${remainder}`);
+    
+    // End Turn on every second move
+    if (remainder === 0) {
+        document.getElementById(`actions`).style.display = 'none';
+    }
+    
 }
 
+function parry() {
+
+    // On attack first we will increase the noise and nr. of moves counter
+    move += 1;
+    remainder = move % 2;
+    noise += 1;
+    console.log(`Noise level is at: ${noise} Nr. of moves: ${move}`);
+    console.log(`Move remainder ${remainder}`);
+
+    // End Turn on every second move
+    if (remainder === 0) {
+        document.getElementById(`actions`).style.display = 'none';
+    }
+ 
+}
+
+function wait() {
+
+    // On attack first we will increase the noise and nr. of moves counter
+    move += 1;
+    remainder = move % 2;
+    if (noise > 0) {
+        noise -= 1;
+    }
+    console.log(`Noise level is at: ${noise} Nr. of moves: ${move}`);
+    console.log(`Move remainder ${remainder}`);
+    
+    // End Turn on every second move
+    if (remainder === 0) {
+        document.getElementById(`actions`).style.display = 'none';
+    }
+    
+}
 
 
 // Parry Action Function
