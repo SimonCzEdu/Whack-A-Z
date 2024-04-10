@@ -7,8 +7,9 @@
 
 /* General Styling */
 body {
-    background: black url(../image/zombie-1.png) no-repeat center center;
-    background-size: 150vw 100vh;
+    position: relative;
+    background: #3b3b3b url(../image/zombie-1.png) no-repeat top center;
+    background-size: 150vw 75vh;
     height: 100vh;
     width: 100vw;
     border: 0;
@@ -208,6 +209,7 @@ body {
     font-size: 4vh;
     text-align: center;
     border-radius: 5px;
+    padding: 1vw;
 }
 
 
@@ -216,7 +218,7 @@ body {
     position: fixed;
     display: flex;
     gap: 4vw;
-    bottom: 13vh;
+    bottom: 14vh;
     height: 4vh;
     font-size: 3vh;
     width: 100vw;
@@ -231,10 +233,23 @@ body {
 
 /* Combat Log */
 #combatLog {
+    display: flex;
     position: fixed;
-    background: white;
-    top: 20vh;
-    left: 11vw;
+    background: rgb(59 59 59);
+    top: 68vh;
+    left: 10vw;
+    width: 80vw;
+    height: 10vh;
+    font-size: 5vw;
+    color: #fefefe;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #fefefe;
+    padding: 1vw;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 /* Combat Log Button */
 #combatLogBtn {
@@ -248,6 +263,12 @@ body {
     body {
         background: black url(../image/zombie-1.png) no-repeat left center;
         background-size: 50vw 100vh;
+    }
+
+    #settingsBtn {
+        font-size: 10vh;
+        top: 89vh;
+        left: 76vw;
     }
 
 
@@ -334,6 +355,7 @@ body {
         top: 3vh;
         left: 73vw;
         height: 7vh;
+        padding: 1vh;
     }
 
 
@@ -346,5 +368,16 @@ body {
     #actions div {
         padding: 1vh;
         height: 5.1vh;
+    }
+
+    /* Combat Log */
+    #combatLog {
+        top: 13vh;
+        left: 58vw;
+        width: 36vw;
+        height: 56vh;
+        font-size: 10vh;
+        border-width: 1vw;
+        padding: 1vw;
     }
 }
