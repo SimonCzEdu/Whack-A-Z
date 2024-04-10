@@ -63,10 +63,10 @@ console.log(`Zombie currently have ${currentZHealth}% health`);
  */
 function attack() {
 
-    // On attack first we will increase the noise and round counter
+    // On attack first we will increase the noise and nr. of moves counter
     move += 1;
     noise += 1;
-    console.log (`Noise level is at: ${noise} Round: ${round}`);
+    console.log (`Noise level is at: ${noise} Nr. of moves: ${move}`);
 
     /**
      * Dice roll for the attack chance value without modifiers is random number 1-20
