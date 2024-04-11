@@ -229,6 +229,7 @@ body {
     background: white;
     border-radius: 5px;
     padding: 1vw;
+    text-align: center;
 }
 
 /* Combat Log */
@@ -240,7 +241,7 @@ body {
     left: 10vw;
     width: 80vw;
     height: 10vh;
-    font-size: 5vw;
+    font-size: 7vw;
     color: #fefefe;
     border-radius: 5px;
     border-style: solid;
@@ -269,6 +270,15 @@ body {
         font-size: 10vh;
         top: 89vh;
         left: 76vw;
+    }
+    #settings {
+        width: 40vw;
+        top: 13vh;
+        left: 58vw;
+        font-size: 4vh;
+    }
+    #settings h3 {
+        font-size: 5vh;
     }
 
 
@@ -376,7 +386,7 @@ body {
         left: 58vw;
         width: 36vw;
         height: 56vh;
-        font-size: 10vh;
+        font-size: 7vh;
         border-width: 1vw;
         padding: 1vw;
     }
