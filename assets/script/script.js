@@ -97,14 +97,18 @@ function attack() {
     }
     else {
         // Message on miss
-        document.getElementById(`combatLog`).innerHTML = `Oh no! You missed`;
+        document.getElementById(`combatLog`).innerHTML = `Oh no! You've missed!`;
         console.log(`This was not enough to hit`);
     }
     console.log(`Move remainder ${remainder}`);
     
     // End Turn on every second move
     if (remainder === 0) {
-        document.getElementById(`actions`).style.display = 'none';
+        document.getElementById(`actions`).innerHTML = `
+        <div id="endTurn">End Turn
+        <br>
+        (Zombie will get an attack)</div>
+        `;
     }
     
 }
@@ -120,7 +124,11 @@ function parry() {
 
     // End Turn on every second move
     if (remainder === 0) {
-        document.getElementById(`actions`).style.display = 'none';
+        document.getElementById(`actions`).innerHTML = `
+        <div id="endTurn">End Turn
+        <br>
+        (Zombie will get an attack)</div>
+        `;
     }
  
 }
@@ -138,9 +146,12 @@ function wait() {
     
     // End Turn on every second move
     if (remainder === 0) {
-        document.getElementById(`actions`).style.display = 'none';
+        document.getElementById(`actions`).innerHTML = `
+        <div id="endTurn">End Turn
+        <br>
+        (Zombie will get an attack)</div>
+        `;
     }
-    
 }
 
 
