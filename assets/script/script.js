@@ -57,6 +57,12 @@ let currentZHealth = document.getElementById('zHealthIndicator').style.width = `
 // Now we need to make it an actual number
 currentZHealth = parseInt(currentZHealth);
 console.log(`Zombie currently have ${currentZHealth}% health`);
+// Current Players health - must me declared with 'let' as we will later assign new values to it.
+let currentPHealth = document.getElementById(`pHealthIndicator`).style.width = `100%`
+// Now we need to make it an actual number
+currentPHealth = parseInt(currentPHealth);
+console.log(`You have have ${currentPHealth}% health left`);
+
 
 // Attack Action Function 
 /**
@@ -75,7 +81,7 @@ function attack() {
      * Dice roll for the attack chance value without modifiers is random number 1-20
      */
     const attackRoll = Math.floor(Math.random() * 20 + 1)
-    console.log(`You rolled ${attackRoll} for an attack`);
+    console.log(`You rolled ${attackRoll} for attack`);
 
     // Check if player succeeded in landing a hit
     if (attackRoll >= 10) {
@@ -101,18 +107,54 @@ function attack() {
         console.log(`This was not enough to hit`);
     }
     console.log(`Move remainder ${remainder}`);
-    
+
     // End Turn on every second move
     if (remainder === 0) {
-        document.getElementById(`actions`).innerHTML = `
-        <div id="endTurn">End Turn
-        <br>
-        (Zombie will get an attack)</div>
-        `;
-    }
-    
-}
 
+        document.getElementsByClassName(`hideActions`)[0].style.display = `none`;
+        document.getElementsByClassName(`hideActions`)[1].style.display = `none`;
+        document.getElementsByClassName(`hideActions`)[2].style.display = `none`;
+        document.getElementById(`endTurn`).style.display = `block`;
+        document.getElementById(`endTurn`).addEventListener(`click`, endTurn);
+
+        function endTurn() {
+            /**
+            * Dice roll for zombies attack chance value without modifiers. It is random number 1-50
+            */
+            const zAttackRoll = Math.floor(Math.random() * 50 + 1)
+            console.log(`Zombie rolled ${zAttackRoll} for attack`);
+
+            // Check if zombie succeeded in landing a hit
+            if (zAttackRoll >= 40) {
+                // Dice roll for the zombies attack strength (aka damage)    
+                const zAttackDmg = Math.floor(Math.random() * 6)
+                //Message on hit
+                document.getElementById(`combatLog`).innerHTML = `Zombie swings and hits! You take ${zAttackDmg} points of damage!`;
+                console.log(`Zombie rolled ${zAttackDmg} for damage`)
+                // Damage applied to the Zombie Health Indicator
+                let pHealthAfterHit = currentPHealth - zAttackDmg;
+                // Zero out Zombie health if it drops below zero;
+                if (currentPHealth - zAttackDmg < 0) {
+                    pHealthAfterHit = 0;
+                }
+                // Apply damage to the Zombie Health Indicator by reducing it's width by the dmg done
+                document.getElementById(`pHealthIndicator`).style.width = `${pHealthAfterHit}%`;
+                currentPHealth = pHealthAfterHit;
+                console.log(`Zombie currently have ${currentPHealth}% health`);
+            }
+            document.getElementsByClassName(`hideActions`)[0].style.display = `block`;
+            document.getElementsByClassName(`hideActions`)[1].style.display = `block`;
+            document.getElementsByClassName(`hideActions`)[2].style.display = `block`;
+            document.getElementById(`endTurn`).style.display = `none`;    
+        }
+
+    }
+
+}
+// Parry Action Function 
+/**
+ * parry() function decides what happens when player clicks on Parry button
+ */
 function parry() {
 
     // On attack first we will increase the noise and nr. of moves counter
@@ -129,10 +171,14 @@ function parry() {
         <br>
         (Zombie will get an attack)</div>
         `;
-    }
- 
-}
 
+    }
+
+}
+// Wait Action Function 
+/**
+ * wait() function decides what happens when player clicks on Wait button
+ */
 function wait() {
 
     // On attack first we will increase the noise and nr. of moves counter
@@ -143,7 +189,7 @@ function wait() {
     }
     console.log(`Noise level is at: ${noise} Nr. of moves: ${move}`);
     console.log(`Move remainder ${remainder}`);
-    
+
     // End Turn on every second move
     if (remainder === 0) {
         document.getElementById(`actions`).innerHTML = `
@@ -153,6 +199,20 @@ function wait() {
         `;
     }
 }
+// Zombie Turn
+/**
+ * zTurn() functions is fired when End Turn condition is true and decides if zombie hits player and for how much damage
+ */
+/*function zTurn() {
+
+}*/
+// End Turn Action Function
+/**
+ * endTurn() function decides what happens when player clicks on End Turn button
+ */
+/*function endTurn {
+
+}*/
 
 
 // Parry Action Function
