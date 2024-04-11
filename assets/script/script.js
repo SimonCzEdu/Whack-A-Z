@@ -111,10 +111,12 @@ function attack() {
     // End Turn on every second move
     if (remainder === 0) {
 
+        // Hide default Actions buttons
         document.getElementsByClassName(`hideActions`)[0].style.display = `none`;
         document.getElementsByClassName(`hideActions`)[1].style.display = `none`;
         document.getElementsByClassName(`hideActions`)[2].style.display = `none`;
         document.getElementsByClassName(`hideActions`)[3].style.display = `none`;
+        // Display End Turn button
         document.getElementById(`endTurn`).style.display = `block`;
         document.getElementById(`endTurn`).addEventListener(`click`, endTurn);
 
