@@ -114,6 +114,7 @@ function attack() {
         document.getElementsByClassName(`hideActions`)[0].style.display = `none`;
         document.getElementsByClassName(`hideActions`)[1].style.display = `none`;
         document.getElementsByClassName(`hideActions`)[2].style.display = `none`;
+        document.getElementsByClassName(`hideActions`)[3].style.display = `none`;
         document.getElementById(`endTurn`).style.display = `block`;
         document.getElementById(`endTurn`).addEventListener(`click`, endTurn);
 
@@ -125,7 +126,7 @@ function attack() {
             console.log(`Zombie rolled ${zAttackRoll} for attack`);
 
             // Check if zombie succeeded in landing a hit
-            if (zAttackRoll >= 40) {
+            if (zAttackRoll >= 30) {
                 // Dice roll for the zombies attack strength (aka damage)    
                 const zAttackDmg = Math.floor(Math.random() * 6)
                 //Message on hit
@@ -145,6 +146,7 @@ function attack() {
             document.getElementsByClassName(`hideActions`)[0].style.display = `block`;
             document.getElementsByClassName(`hideActions`)[1].style.display = `block`;
             document.getElementsByClassName(`hideActions`)[2].style.display = `block`;
+            document.getElementsByClassName(`hideActions`)[3].style.display = `block`;
             document.getElementById(`endTurn`).style.display = `none`;    
         }
 
