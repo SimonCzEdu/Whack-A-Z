@@ -231,6 +231,12 @@ body {
     padding: 1vw;
     text-align: center;
 }
+#endTurn {
+    display: none;
+}
+.hideActions {
+    display: block;
+}
 
 /* Combat Log */
 #combatLog {
