@@ -198,21 +198,22 @@ function wait() {
 // End/Zombie Turn - when player presses on End Turn, this function will calculate zombies turn.
 // We need event listener for that:
 document.getElementById('endTurn').addEventListener('click', endTurn);
-
 /**
- * endTurn() function plays out zombie turn, unchecks parry and reso
+ * endTurn() function plays out zombie turn, unchecks parry and allow to players to use default actions again
  */
 function endTurn() {
-    /**
-    * Dice roll for zombies attack chance value without modifiers. It is random number 1-50
-    */
+
     const parry = document.getElementById('parry');
     const parryCheck = document.getElementById('parryCheck');
     const justIcon = document.getElementById('justIcon');
+    /**
+    * Dice roll for zombies attack chance value without modifiers. It is random number 1-50
+    */
     const zAttackRoll = Math.floor(Math.random() * 50 + 1);
     console.log(`Zombie rolled ${zAttackRoll} for attack`);
 
-    // If parry active we will apply debuff to the Zombies chance to hit and it's damage
+
+    //  If parry is active we will apply debuff to the Zombies chance to hit and it's damage
     if (parry.checked) {
         // Check if zombie succeeded in landing a hit
         if (zAttackRoll >= 40) {
@@ -287,21 +288,25 @@ function endTurn() {
     // Hide End Turn button
     document.getElementById(`endTurn`).style.display = `none`;
 
-    // If parry was checked and hidden we need to uncheck it for the next player round
+    // Now we check if parry was checked and hidden
     function uncheckParry() {
         if (parry.checked) {
+            // Uncheck parry checkbox
             parry.checked = false;
+            // Rehide checkbox 
             parry.style.display = `none`;
+            // Show parry icon
             parryCheck.style.display = `flex`;
+            // Hide icon for active parry
             justIcon.style.display = `none`;
             console.log('Parry Checked - unchecking!')
         } else {
-            parry.checked = false;
-            parry.style.display = `none`;
-            parryCheck.style.display = `flex`;
-            justIcon.style.display = `none`;
             console.log(`Parry UnChecked - no change`)
         }
     }
+    // We will call the uncheckParry() function once to make sure it does it's thing
     uncheckParry();
 }
+
+
+
