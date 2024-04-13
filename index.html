@@ -69,10 +69,16 @@
 
     <!-- Actions -->
     <div id="actions">
-        <div id="attack" class = "hideActions"><iconify-icon icon="game-icons:dripping-sword"></iconify-icon></div>
-        <label id="parryCheck" class="hideActions hideParry" for="parry"><iconify-icon icon="solar:shield-line-duotone"></iconify-icon></label>
-        <input type="checkbox" id="parry" class = "hideActions hideParry">
-        <div id="wait" class = "hideActions"><iconify-icon icon="mdi:hourglass"></iconify-icon></div>
+        <div id="attack" class="hideActions"><iconify-icon icon="game-icons:dripping-sword"></iconify-icon></div>
+        <div id="parryDiv" class="hideActions">
+            <div id="justIcon">
+                <iconify-icon icon="material-symbols:shield"></iconify-icon>
+            </div>
+            <label id="parryCheck" class="hideActions hideParry" for="parry"><iconify-icon
+                    icon="solar:shield-line-duotone"></iconify-icon></label>
+            <input type="checkbox" id="parry" class="hideActions hideParry">
+        </div>
+        <div id="wait" class="hideActions"><iconify-icon icon="mdi:hourglass"></iconify-icon></div>
         <div id="endTurn">End Turn
             <br>
             (Zombie will get an attack)
