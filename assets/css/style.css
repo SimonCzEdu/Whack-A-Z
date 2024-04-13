@@ -225,7 +225,7 @@ body {
     align-items: center;
     justify-content: center;
 }
-#actions div, #parryCheck {
+#attack, #parryCheck, #wait {
     background: white;
     border-radius: 5px;
     padding: 1vw;
@@ -233,6 +233,12 @@ body {
 }
 #endTurn {
     display: none;
+    background: white;
+    border-radius: 5px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    padding: 1vw;
 }
 .hideActions {
     display: block;
@@ -391,7 +397,11 @@ body {
         font-size: 4vh;
         bottom: 13.4vh;
     }
-    #actions div, #parryCheck {
+    #endTurn {
+        display: none;
+        padding: 1vh;
+    }
+    #attack, #parryCheck, #wait {
         padding: 1vh;
         height: 5.1vh;
     }
