@@ -14,97 +14,97 @@
 </head>
 
 <body>
-
-    <!-- Game Settings -->
-    <!-- Settings Button -->
-    <div id="settingsBtn">
-        <label id="settingsBtnLabel" for="settingsCheck">
-            <iconify-icon icon="mdi:cog-outline"></iconify-icon>
-        </label>
-        <input id="settingsCheck" type="checkbox">
-    </div>
-    <!-- Settings Screen -->
-    <section id="settings">
-        <h3>Settings</h3>
-        <div id="settingsScreen">
-            <!-- Combat log button -->
-            <div id="combatLogBtn">Hide Combat Log</div>
-            <!-- Tooltip -->
-            <div id="toolTip">Hide Tool Tips</div>
+    <section id="main">
+        <!-- Game Settings -->
+        <!-- Settings Button -->
+        <div id="settingsBtn">
+            <label id="settingsBtnLabel" for="settingsCheck">
+                <iconify-icon icon="mdi:cog-outline"></iconify-icon>
+            </label>
+            <input id="settingsCheck" type="checkbox">
         </div>
-    </section>
-
-    <!-- Zombie Health Bar -->
-    <div id="zHealthBar">
-        <!-- Zombie Health Indicator -->
-        <div id="zHealthIndicator"></div>
-    </div>
-
-    <!-- Player Health Bar -->
-    <div id="pHealthBar">
-        <!-- Player Health Indicator -->
-        <div id="pHealthIndicator"></div>
-    </div>
-
-    <!-- Noise Level -->
-    <div id="noiseLevel">
-        <!-- Noise Level Indicator -->
-        <div id="noiseIndicator"></div>
-    </div>
-
-    <!-- Inventory Button -->
-    <div id="invBtn">
-        <label id="invBtnLabel" for="invCheck">
-            <iconify-icon icon="game-icons:knapsack"></iconify-icon>
-        </label>
-        <input id="invCheck" type="checkbox">
-    </div>
-    <!-- Inventory screen -->
-    <div id="inv">
-        <h3>Your Items</h3>
-        <!-- List of items in players inventory -->
-        <ul id="itemList">
-        </ul>
-    </div>
-
-    <!-- Actions -->
-    <div id="actions">
-        <div id="attack" class="hideActions"><iconify-icon icon="game-icons:dripping-sword"></iconify-icon></div>
-        <div id="parryDiv" class="hideActions">
-            <div id="justIcon">
-                <iconify-icon icon="material-symbols:shield"></iconify-icon>
+        <!-- Settings Screen -->
+        <section id="settings">
+            <h3>Settings</h3>
+            <div id="settingsScreen">
+                <!-- Combat log button -->
+                <div id="combatLogBtn">Hide Combat Log</div>
+                <!-- Tooltip -->
+                <div id="toolTip">Hide Tool Tips</div>
             </div>
-            <label id="parryCheck" class="hideActions hideParry" for="parry"><iconify-icon
-                    icon="solar:shield-line-duotone"></iconify-icon></label>
-            <input type="checkbox" id="parry" class="hideActions hideParry">
+        </section>
+
+        <!-- Zombie Health Bar -->
+        <div id="zHealthBar">
+            <!-- Zombie Health Indicator -->
+            <div id="zHealthIndicator"></div>
         </div>
-        <div id="wait" class="hideActions"><iconify-icon icon="mdi:hourglass"></iconify-icon></div>
-        <div id="endTurn">End Turn
-            <br>
-            (Zombie will get an attack)
+
+        <!-- Player Health Bar -->
+        <div id="pHealthBar">
+            <!-- Player Health Indicator -->
+            <div id="pHealthIndicator"></div>
         </div>
-    </div>
 
-    <!-- Traits display -->
-    <div id="traits">
-        <iconify-icon icon="game-icons:muscle-up"></iconify-icon>
-    </div>
+        <!-- Noise Level -->
+        <div id="noiseLevel">
+            <!-- Noise Level Indicator -->
+            <div id="noiseIndicator"></div>
+        </div>
 
-    <!-- Clock/Timer display -->
-    <div id="clockContainer">
-        <div id="clock">00/60min</div>
-    </div>
+        <!-- Inventory Button -->
+        <div id="invBtn">
+            <label id="invBtnLabel" for="invCheck">
+                <iconify-icon icon="game-icons:knapsack"></iconify-icon>
+            </label>
+            <input id="invCheck" type="checkbox">
+        </div>
+        <!-- Inventory screen -->
+        <div id="inv">
+            <h3>Your Items</h3>
+            <!-- List of items in players inventory -->
+            <ul id="itemList">
+            </ul>
+        </div>
 
-    <!-- Combat log display -->
-    <div id="combatLog"></div>
+        <!-- Actions -->
+        <div id="actions">
+            <div id="attack" class="hideActions"><iconify-icon icon="game-icons:dripping-sword"></iconify-icon></div>
+            <div id="parryDiv" class="hideActions">
+                <div id="justIcon">
+                    <iconify-icon icon="material-symbols:shield"></iconify-icon>
+                </div>
+                <label id="parryCheck" class="hideActions hideParry" for="parry"><iconify-icon
+                        icon="solar:shield-line-duotone"></iconify-icon></label>
+                <input type="checkbox" id="parry" class="hideActions hideParry">
+            </div>
+            <div id="wait" class="hideActions"><iconify-icon icon="mdi:hourglass"></iconify-icon></div>
+            <div id="endTurn">End Turn
+                <br>
+                (Zombie will get an attack)
+            </div>
+        </div>
+
+        <!-- Traits display -->
+        <div id="traits">
+            <iconify-icon icon="game-icons:muscle-up"></iconify-icon>
+        </div>
+
+        <!-- Clock/Timer display -->
+        <div id="clockContainer">
+            <div id="clock">00/60min</div>
+        </div>
+
+        <!-- Combat log display -->
+        <div id="combatLog"></div>
 
 
-    <!-- Scripts -->
-    <!-- Iconify Import -->
-    <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
-    <!-- My Scripts -->
-    <script src="assets/script/script.js"></script>
-
+        <!-- Scripts -->
+        <!-- Iconify Import -->
+        <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
+        <!-- My Scripts -->
+        <script src="assets/script/script.js"></script>
+    </section>
 </body>
 
 </html>
