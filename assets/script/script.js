@@ -51,7 +51,6 @@ let remainder = '';
 let noise = 0;
 console.log(`Noise level is at: ${noise} Nr. of moves: ${move}`);
 
-// Prep
 /* Current Zombie health - must me declared with 'let' as we will later assign new values to it.
 Must also be declared before we call the function.*/
 let currentZHealth = document.getElementById('zHealthIndicator').style.width = `100%`;
@@ -59,10 +58,14 @@ let currentZHealth = document.getElementById('zHealthIndicator').style.width = `
 currentZHealth = parseInt(currentZHealth);
 console.log(`Zombie currently have ${currentZHealth}% health`);
 // Current Players health - must me declared with 'let' as we will later assign new values to it.
-let currentPHealth = document.getElementById(`pHealthIndicator`).style.width = `100%`
+let currentPHealth = document.getElementById(`pHealthIndicator`).style.width = `100%`;
 // Now we need to make it an actual number
 currentPHealth = parseInt(currentPHealth);
 console.log(`You have have ${currentPHealth}% health left`);
+// Current Noise Level - must me declared with 'let' as we will later assign new values to it.
+let currentNoiseLvl = document.getElementById(`noiseIndicator`).style.height = `0%`;
+// Again we make it into an actual number
+currentNoiseLvl = parseInt(currentNoiseLvl);
 // After player already selected parry and we don't want them to deselect it (it is a check box), so we hide it instead
 function hideParryOnSelect() {
     const parry = document.getElementById(`parry`);
@@ -85,8 +88,18 @@ function attack() {
     move += 1;
     remainder = move % 2;
     noise += 1;
-    console.log(`Noise level is at: ${noise} Nr. of moves: ${move}`);
 
+    // Noise Level increase
+    let noiseLvlAfterAction = currentNoiseLvl + 4;
+    // Max out noise level at 100%
+    if (currentNoiseLvl >= 96) {
+        noiseLvlAfterAction = 100;
+    }
+
+    // Apply noise increase to the Noise Level Indicator by adding to its width value of move
+    document.getElementById('noiseIndicator').style.height = `${noiseLvlAfterAction}%`;
+    currentNoiseLvl = noiseLvlAfterAction;
+    console.log(`Noise level is at: ${currentNoiseLvl} Nr. of moves: ${move}`);
 
     /**
      * Dice roll for the attack chance value without modifiers is random number 1-20
@@ -112,7 +125,7 @@ function attack() {
         if (currentZHealth - attackDmg < 0) {
             zHealthAfterHit = 0;
         }
-        // Apply damage to the Zombie Health Indicator by reducing it's width by the dmg done
+        // Apply damage to the Zombie Health Indicator by reducing its width by the dmg done
         document.getElementById(`zHealthIndicator`).style.width = `${zHealthAfterHit}%`;
         currentZHealth = zHealthAfterHit;
         console.log(`Zombie currently have ${currentZHealth}% health`);
@@ -151,8 +164,24 @@ function parry() {
     move += 1;
     remainder = move % 2;
     noise += 1;
-    console.log(`Noise level is at: ${noise} Nr. of moves: ${move}`);
-    console.log(`Move remainder ${remainder}`);
+
+    // Noise Level increase
+    let noiseLvlAfterAction = currentNoiseLvl + 1;
+    // Max out noise level at 100%
+    if (currentNoiseLvl >= 99) {
+        noiseLvlAfterAction = 100;
+    }
+
+    // Apply noise increase to the Noise Level Indicator by adding to its width value of move
+    document.getElementById('noiseIndicator').style.height = `${noiseLvlAfterAction}%`;
+    currentNoiseLvl = noiseLvlAfterAction;
+    console.log(`Noise level is at: ${currentNoiseLvl} Nr. of moves: ${move}`);
+
+    /**
+     * Dice roll for the attack chance value without modifiers is random number 1-20
+     */
+    const attackRoll = Math.floor(Math.random() * 20 + 1)
+    console.log(`You rolled ${attackRoll} for attack`);
 
     // End Turn on every second move and run Zombie Turn
     if (remainder === 0) {
@@ -175,10 +204,18 @@ function wait() {
     // On attack first we will increase the noise and nr. of moves counter
     move += 1;
     remainder = move % 2;
-    if (noise > 0) {
-        noise -= 1;
+
+    // Noise level decrease
+    let noiseLvlAfterAction = currentNoiseLvl - 2;
+    // Stop decreasing noise level if it reaches zero
+    if (currentNoiseLvl <= 0) {
+        noiseLvlAfterAction = 0;
     }
-    console.log(`Noise level is at: ${noise} Nr. of moves: ${move}`);
+
+    // Apply noise decrease to the Noise Level Indicator by decreasing its width value
+    document.getElementById('noiseIndicator').style.height = `${noiseLvlAfterAction}%`;
+    currentNoiseLvl = noiseLvlAfterAction;
+    console.log(`Noise level is at: ${currentNoiseLvl} Nr. of moves: ${move}`);
     console.log(`Move remainder ${remainder}`);
 
     // End Turn on every second move and run Zombie Turn
@@ -282,7 +319,6 @@ function endTurn() {
     }
     // Restore default Actions buttons
     document.getElementById(`attack`).style.display = `flex`;
-    document.getElementById(`parry`).style.display = `flex`;
     document.getElementById(`wait`).style.display = `flex`;
     document.getElementById(`parryDiv`).style.display = `flex`;
     // Hide End Turn button
@@ -307,6 +343,3 @@ function endTurn() {
     // We will call the uncheckParry() function once to make sure it does it's thing
     uncheckParry();
 }
-
-
-
