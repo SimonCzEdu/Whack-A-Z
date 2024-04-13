@@ -69,6 +69,7 @@ function hideParryOnSelect() {
     if (parry.checked) {
         parry.style.display = `none`;
         document.getElementById('parryCheck').style.display = `none`;
+        document.getElementById('justIcon').style.display = `flex`;
         console.log(`Checked`);
     }
 }
@@ -132,11 +133,12 @@ function attack() {
     if (remainder === 0) {
 
         // Hide default Actions buttons
-        document.getElementsByClassName(`hideActions`)[0].style.display = `none`;
-        document.getElementsByClassName(`hideActions`)[1].style.display = `none`;
-        document.getElementsByClassName(`hideActions`)[3].style.display = `none`;
+        document.getElementById(`attack`).style.display = `none`;
+        document.getElementById(`parry`).style.display = `none`;
+        document.getElementById(`wait`).style.display = `none`;
+        document.getElementById(`parryDiv`).style.display = `none`;
         // Display End Turn button
-        document.getElementById(`endTurn`).style.display = `block`;
+        document.getElementById(`endTurn`).style.display = `flex`;
     }
 }
 // Parry Action Function 
@@ -156,11 +158,12 @@ function parry() {
     if (remainder === 0) {
 
         // Hide default Actions buttons
-        document.getElementsByClassName(`hideActions`)[0].style.display = `none`;
-        document.getElementsByClassName(`hideActions`)[1].style.display = `none`;
-        document.getElementsByClassName(`hideActions`)[3].style.display = `none`;
+        document.getElementById(`attack`).style.display = `none`;
+        document.getElementById(`parry`).style.display = `none`;
+        document.getElementById(`wait`).style.display = `none`;
+        document.getElementById(`parryDiv`).style.display = `none`;
         // Display End Turn button
-        document.getElementById(`endTurn`).style.display = `block`;
+        document.getElementById(`endTurn`).style.display = `flex`;
     }
 }
 // Wait Action Function 
@@ -182,11 +185,12 @@ function wait() {
     if (remainder === 0) {
 
         // Hide default Actions buttons
-        document.getElementsByClassName(`hideActions`)[0].style.display = `none`;
-        document.getElementsByClassName(`hideActions`)[1].style.display = `none`;
-        document.getElementsByClassName(`hideActions`)[3].style.display = `none`;
+        document.getElementById(`attack`).style.display = `none`;
+        document.getElementById(`wait`).style.display = `none`;
+        document.getElementById(`parry`).style.display = `none`;
+        document.getElementById(`parryDiv`).style.display = `none`;
         // Display End Turn button
-        document.getElementById(`endTurn`).style.display = `block`;
+        document.getElementById(`endTurn`).style.display = `flex`;
     }
 
 }
@@ -203,7 +207,9 @@ function endTurn() {
     * Dice roll for zombies attack chance value without modifiers. It is random number 1-50
     */
     const parry = document.getElementById('parry');
-    const zAttackRoll = Math.floor(Math.random() * 50 + 1)
+    const parryCheck = document.getElementById('parryCheck');
+    const justIcon = document.getElementById('justIcon');
+    const zAttackRoll = Math.floor(Math.random() * 50 + 1);
     console.log(`Zombie rolled ${zAttackRoll} for attack`);
 
     // If parry active we will apply debuff to the Zombies chance to hit and it's damage
@@ -274,9 +280,10 @@ function endTurn() {
         }
     }
     // Restore default Actions buttons
-    document.getElementsByClassName(`hideActions`)[0].style.display = `block`;
-    document.getElementsByClassName(`hideActions`)[1].style.display = `block`;
-    document.getElementsByClassName(`hideActions`)[3].style.display = `block`;
+    document.getElementById(`attack`).style.display = `flex`;
+    document.getElementById(`parry`).style.display = `flex`;
+    document.getElementById(`wait`).style.display = `flex`;
+    document.getElementById(`parryDiv`).style.display = `flex`;
     // Hide End Turn button
     document.getElementById(`endTurn`).style.display = `none`;
 
@@ -284,9 +291,15 @@ function endTurn() {
     function uncheckParry() {
         if (parry.checked) {
             parry.checked = false;
+            parry.style.display = `none`;
+            parryCheck.style.display = `flex`;
+            justIcon.style.display = `none`;
             console.log('Parry Checked - unchecking!')
         } else {
             parry.checked = false;
+            parry.style.display = `none`;
+            parryCheck.style.display = `flex`;
+            justIcon.style.display = `none`;
             console.log(`Parry UnChecked - no change`)
         }
     }
