@@ -43,6 +43,7 @@ document.getElementById(`invBtn`).addEventListener('click', openInv);
 // Event listeners
 document.getElementById(`attack`).addEventListener(`click`, attack);
 document.getElementById(`parry`).addEventListener(`click`, parry);
+document.getElementById(`parry`).addEventListener(`click`, hideParryOnSelect);
 document.getElementById(`wait`).addEventListener(`click`, wait);
 // Moves and noise level count
 let move = 0;
@@ -62,6 +63,15 @@ let currentPHealth = document.getElementById(`pHealthIndicator`).style.width = `
 // Now we need to make it an actual number
 currentPHealth = parseInt(currentPHealth);
 console.log(`You have have ${currentPHealth}% health left`);
+// After player already selected parry and we don't want them to deselect it (it is a check box), so we hide it instead
+function hideParryOnSelect() {
+    const parry = document.getElementById(`parry`);
+    if (parry.checked) {
+        parry.style.display = `none`;
+        document.getElementById('parryCheck').style.display = `none`;
+        console.log(`Checked`);
+    }
+}
 
 
 // Attack Action Function 
@@ -124,58 +134,10 @@ function attack() {
         // Hide default Actions buttons
         document.getElementsByClassName(`hideActions`)[0].style.display = `none`;
         document.getElementsByClassName(`hideActions`)[1].style.display = `none`;
-        document.getElementsByClassName(`hideActions`)[2].style.display = `none`;
         document.getElementsByClassName(`hideActions`)[3].style.display = `none`;
         // Display End Turn button
         document.getElementById(`endTurn`).style.display = `block`;
-        // Event listener for clicks on End Turn button
-        document.getElementById(`endTurn`).addEventListener(`click`, endTurnBtn);
-
-        function endTurnBtn() {
-
-            // Restore default Actions buttons
-            document.getElementsByClassName(`hideActions`)[0].style.display = `block`;
-            document.getElementsByClassName(`hideActions`)[1].style.display = `block`;
-            document.getElementsByClassName(`hideActions`)[2].style.display = `block`;
-            document.getElementsByClassName(`hideActions`)[3].style.display = `block`;
-            // Hide End Turn button
-            document.getElementById(`endTurn`).style.display = `none`;
-        }
-
-        function zTurn() {
-            /**
-            * Dice roll for zombies attack chance value without modifiers. It is random number 1-50
-            */
-            const zAttackRoll = Math.floor(Math.random() * 50 + 1)
-            console.log(`Zombie rolled ${zAttackRoll} for attack`);
-
-            // Check if zombie succeeded in landing a hit
-            if (zAttackRoll >= 20) {
-                // Dice roll for the zombies attack strength (aka damage)    
-                const zAttackDmg = Math.floor(Math.random() * 16)
-
-                // Combat Log message on hit
-                const combatLogEntry = document.createElement(`div`);
-                combatLogEntry.innerHTML = `Zombie swings and hits! You take ${zAttackDmg} points of damage!`;
-                combatLogEntry.setAttribute(`class`, `combatZNewEntry`);
-                document.getElementById('combatLog').prepend(combatLogEntry);
-                console.log(`Zombie rolled ${zAttackDmg} for damage`);
-
-                // Damage applied to the Zombie Health Indicator
-                let pHealthAfterHit = currentPHealth - zAttackDmg;
-                // Zero out Zombie health if it drops below zero;
-                if (currentPHealth - zAttackDmg < 0) {
-                    pHealthAfterHit = 0;
-                }
-                // Apply damage to the Player Health Indicator by reducing it's width by the dmg done
-                document.getElementById(`pHealthIndicator`).style.width = `${pHealthAfterHit}%`;
-                currentPHealth = pHealthAfterHit;
-                console.log(`Zombie currently have ${currentPHealth}% health`);
-            }
-        }
-        zTurn();
     }
-
 }
 // Parry Action Function 
 /**
@@ -196,55 +158,10 @@ function parry() {
         // Hide default Actions buttons
         document.getElementsByClassName(`hideActions`)[0].style.display = `none`;
         document.getElementsByClassName(`hideActions`)[1].style.display = `none`;
-        document.getElementsByClassName(`hideActions`)[2].style.display = `none`;
         document.getElementsByClassName(`hideActions`)[3].style.display = `none`;
         // Display End Turn button
         document.getElementById(`endTurn`).style.display = `block`;
-        // Event listener for clicks on End Turn button
-        document.getElementById(`endTurn`).addEventListener(`click`, endTurnBtn);
-
-        function endTurnBtn() {
-            document.getElementsByClassName(`hideActions`)[0].style.display = `block`;
-            document.getElementsByClassName(`hideActions`)[1].style.display = `block`;
-            document.getElementsByClassName(`hideActions`)[2].style.display = `block`;
-            document.getElementsByClassName(`hideActions`)[3].style.display = `block`;
-            document.getElementById(`endTurn`).style.display = `none`;
-        }
-
-        function zTurn() {
-            /**
-            * Dice roll for zombies attack chance value without modifiers. It is random number 1-50
-            */
-            const zAttackRoll = Math.floor(Math.random() * 50 + 1)
-            console.log(`Zombie rolled ${zAttackRoll} for attack`);
-
-            // Check if zombie succeeded in landing a hit
-            if (zAttackRoll >= 20) {
-                // Dice roll for the zombies attack strength (aka damage)    
-                const zAttackDmg = Math.floor(Math.random() * 16)
-
-                // Combat Log message on hit
-                const combatLogEntry = document.createElement(`div`);
-                combatLogEntry.innerHTML = `Zombie swings and hits! You take ${zAttackDmg} points of damage!`;
-                combatLogEntry.setAttribute(`class`, `combatZNewEntry`);
-                document.getElementById('combatLog').prepend(combatLogEntry);
-                console.log(`Zombie rolled ${zAttackDmg} for damage`);
-
-                // Damage applied to the Zombie Health Indicator
-                let pHealthAfterHit = currentPHealth - zAttackDmg;
-                // Zero out Zombie health if it drops below zero;
-                if (currentPHealth - zAttackDmg < 0) {
-                    pHealthAfterHit = 0;
-                }
-                // Apply damage to the Player Health Indicator by reducing it's width by the dmg done
-                document.getElementById(`pHealthIndicator`).style.width = `${pHealthAfterHit}%`;
-                currentPHealth = pHealthAfterHit;
-                console.log(`Zombie currently have ${currentPHealth}% health`);
-            }
-        }
-        zTurn();
     }
-
 }
 // Wait Action Function 
 /**
@@ -267,55 +184,111 @@ function wait() {
         // Hide default Actions buttons
         document.getElementsByClassName(`hideActions`)[0].style.display = `none`;
         document.getElementsByClassName(`hideActions`)[1].style.display = `none`;
-        document.getElementsByClassName(`hideActions`)[2].style.display = `none`;
         document.getElementsByClassName(`hideActions`)[3].style.display = `none`;
         // Display End Turn button
         document.getElementById(`endTurn`).style.display = `block`;
-        // Event listener for clicks on End Turn button
-        document.getElementById(`endTurn`).addEventListener(`click`, endTurnBtn);
-
-        function endTurnBtn() {
-            document.getElementsByClassName(`hideActions`)[0].style.display = `block`;
-            document.getElementsByClassName(`hideActions`)[1].style.display = `block`;
-            document.getElementsByClassName(`hideActions`)[2].style.display = `block`;
-            document.getElementsByClassName(`hideActions`)[3].style.display = `block`;
-            document.getElementById(`endTurn`).style.display = `none`;
-        }
-
-        function zTurn() {
-            /**
-            * Dice roll for zombies attack chance value without modifiers. It is random number 1-50
-            */
-            const zAttackRoll = Math.floor(Math.random() * 50 + 1)
-            console.log(`Zombie rolled ${zAttackRoll} for attack`);
-
-            // Check if zombie succeeded in landing a hit
-            if (zAttackRoll >= 20) {
-                // Dice roll for the zombies attack strength (aka damage)
-                const zAttackDmg = Math.floor(Math.random() * 16)
-
-                // Combat Log message on hit
-                const combatLogEntry = document.createElement(`div`);
-                combatLogEntry.innerHTML = `Zombie swings and hits! You take ${zAttackDmg} points of damage!`;
-                combatLogEntry.setAttribute(`class`, `combatZNewEntry`);
-                document.getElementById('combatLog').prepend(combatLogEntry);
-                console.log(`Zombie rolled ${zAttackDmg} for damage`);
-
-                // Damage applied to the Zombie Health Indicator
-                let pHealthAfterHit = currentPHealth - zAttackDmg;
-                // Zero out Zombie health if it drops below zero;
-                if (currentPHealth - zAttackDmg < 0) {
-                    pHealthAfterHit = 0;
-                }
-                // Apply damage to the Player Health Indicator by reducing it's width by the dmg done
-                document.getElementById(`pHealthIndicator`).style.width = `${pHealthAfterHit}%`;
-                currentPHealth = pHealthAfterHit;
-                console.log(`Zombie currently have ${currentPHealth}% health`);
-            }
-
-        }
-        zTurn();
     }
 
 }
 
+// End/Zombie Turn - when player presses on End Turn, this function will calculate zombies turn.
+// We need event listener for that:
+document.getElementById('endTurn').addEventListener('click', endTurn);
+
+/**
+ * endTurn() function plays out zombie turn, unchecks parry and reso
+ */
+function endTurn() {
+    /**
+    * Dice roll for zombies attack chance value without modifiers. It is random number 1-50
+    */
+    const parry = document.getElementById('parry');
+    const zAttackRoll = Math.floor(Math.random() * 50 + 1)
+    console.log(`Zombie rolled ${zAttackRoll} for attack`);
+
+    // If parry active we will apply debuff to the Zombies chance to hit and it's damage
+    if (parry.checked) {
+        // Check if zombie succeeded in landing a hit
+        if (zAttackRoll >= 40) {
+            // Dice roll for the zombies attack strength (aka damage)    
+            const zAttackDmg = Math.floor(Math.random() * 10)
+
+            // Combat Log message on hit
+            const combatLogEntry = document.createElement(`div`);
+            combatLogEntry.innerHTML = `Zombie swings and hits! You take ${zAttackDmg} points of damage!`;
+            combatLogEntry.setAttribute(`class`, `combatZNewEntry`);
+            document.getElementById('combatLog').prepend(combatLogEntry);
+            console.log(`Zombie rolled ${zAttackDmg} for damage`);
+
+            // Damage applied to the Zombie Health Indicator
+            let pHealthAfterHit = currentPHealth - zAttackDmg;
+            // Zero out Zombie health if it drops below zero;
+            if (currentPHealth - zAttackDmg < 0) {
+                pHealthAfterHit = 0;
+            }
+            // Apply damage to the Player Health Indicator by reducing it's width by the dmg done
+            document.getElementById(`pHealthIndicator`).style.width = `${pHealthAfterHit}%`;
+            currentPHealth = pHealthAfterHit;
+            console.log(`Zombie currently have ${currentPHealth}% health`);
+        } else {
+
+            // Combat Log message on Zombie Miss
+            const combatLogEntry = document.createElement(`div`);
+            combatLogEntry.innerHTML = `Zombie swings and misses. You are safe this time.`;
+            combatLogEntry.setAttribute(`class`, `combatZNewEntry`);
+            document.getElementById('combatLog').prepend(combatLogEntry);
+            console.log(`Zombie rolled ${zAttackRoll} for attack and missed.`);
+
+        }
+    } else {
+        if (zAttackRoll >= 5) {
+            // Dice roll for the zombies attack strength (aka damage)    
+            const zAttackDmg = Math.floor(Math.random() * 10 + 5)
+
+            // Combat Log message on hit
+            const combatLogEntry = document.createElement(`div`);
+            combatLogEntry.innerHTML = `Zombie swings and hits! You take ${zAttackDmg} points of damage!`;
+            combatLogEntry.setAttribute(`class`, `combatZNewEntry`);
+            document.getElementById('combatLog').prepend(combatLogEntry);
+            console.log(`Zombie rolled ${zAttackDmg} for damage`);
+
+            // Damage applied to the Zombie Health Indicator
+            let pHealthAfterHit = currentPHealth - zAttackDmg;
+            // Zero out Zombie health if it drops below zero;
+            if (currentPHealth - zAttackDmg < 0) {
+                pHealthAfterHit = 0;
+            }
+            // Apply damage to the Player Health Indicator by reducing it's width by the dmg done
+            document.getElementById(`pHealthIndicator`).style.width = `${pHealthAfterHit}%`;
+            currentPHealth = pHealthAfterHit;
+            console.log(`Zombie currently have ${currentPHealth}% health`);
+        } else {
+
+            // Combat Log message on Zombie Miss
+            const combatLogEntry = document.createElement(`div`);
+            combatLogEntry.innerHTML = `Zombie swings and misses. You are safe this time.`;
+            combatLogEntry.setAttribute(`class`, `combatZNewEntry`);
+            document.getElementById('combatLog').prepend(combatLogEntry);
+            console.log(`Zombie rolled ${zAttackRoll} for attack and missed.`);
+
+        }
+    }
+    // Restore default Actions buttons
+    document.getElementsByClassName(`hideActions`)[0].style.display = `block`;
+    document.getElementsByClassName(`hideActions`)[1].style.display = `block`;
+    document.getElementsByClassName(`hideActions`)[3].style.display = `block`;
+    // Hide End Turn button
+    document.getElementById(`endTurn`).style.display = `none`;
+
+    // If parry was checked and hidden we need to uncheck it for the next player round
+    function uncheckParry() {
+        if (parry.checked) {
+            parry.checked = false;
+            console.log('Parry Checked - unchecking!')
+        } else {
+            parry.checked = false;
+            console.log(`Parry UnChecked - no change`)
+        }
+    }
+    uncheckParry();
+}
