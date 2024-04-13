@@ -218,7 +218,7 @@ body {
     position: fixed;
     display: flex;
     gap: 4vw;
-    bottom: 14.5vh;
+    top: 80.9vh;
     height: 4vh;
     font-size: 3vh;
     width: 100vw;
