@@ -111,7 +111,7 @@ function attack() {
         // Combat Log message on miss
         const combatLogEntry = document.createElement(`div`);
         combatLogEntry.innerHTML = `Oh no! You've missed!`;
-        combatLogEntry.setAttribute(`class`, `combatNewEntry`);
+        combatLogEntry.setAttribute(`class`, `combatMissEntry`);
         document.getElementById('combatLog').prepend(combatLogEntry);
         console.log(`This was not enough to hit`);
 
@@ -132,10 +132,13 @@ function attack() {
         document.getElementById(`endTurn`).addEventListener(`click`, endTurnBtn);
 
         function endTurnBtn() {
+
+            // Restore default Actions buttons
             document.getElementsByClassName(`hideActions`)[0].style.display = `block`;
             document.getElementsByClassName(`hideActions`)[1].style.display = `block`;
             document.getElementsByClassName(`hideActions`)[2].style.display = `block`;
             document.getElementsByClassName(`hideActions`)[3].style.display = `block`;
+            // Hide End Turn button
             document.getElementById(`endTurn`).style.display = `none`;
         }
 
@@ -154,7 +157,7 @@ function attack() {
                 // Combat Log message on hit
                 const combatLogEntry = document.createElement(`div`);
                 combatLogEntry.innerHTML = `Zombie swings and hits! You take ${zAttackDmg} points of damage!`;
-                combatLogEntry.setAttribute(`class`, `combatNewEntry`);
+                combatLogEntry.setAttribute(`class`, `combatZNewEntry`);
                 document.getElementById('combatLog').prepend(combatLogEntry);
                 console.log(`Zombie rolled ${zAttackDmg} for damage`);
 
@@ -223,7 +226,7 @@ function parry() {
                 // Combat Log message on hit
                 const combatLogEntry = document.createElement(`div`);
                 combatLogEntry.innerHTML = `Zombie swings and hits! You take ${zAttackDmg} points of damage!`;
-                combatLogEntry.setAttribute(`class`, `combatNewEntry`);
+                combatLogEntry.setAttribute(`class`, `combatZNewEntry`);
                 document.getElementById('combatLog').prepend(combatLogEntry);
                 console.log(`Zombie rolled ${zAttackDmg} for damage`);
 
@@ -294,7 +297,7 @@ function wait() {
                 // Combat Log message on hit
                 const combatLogEntry = document.createElement(`div`);
                 combatLogEntry.innerHTML = `Zombie swings and hits! You take ${zAttackDmg} points of damage!`;
-                combatLogEntry.setAttribute(`class`, `combatNewEntry`);
+                combatLogEntry.setAttribute(`class`, `combatZNewEntry`);
                 document.getElementById('combatLog').prepend(combatLogEntry);
                 console.log(`Zombie rolled ${zAttackDmg} for damage`);
 
