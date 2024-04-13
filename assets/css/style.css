@@ -246,15 +246,15 @@ body {
 
 /* Combat Log */
 #combatLog {
-    display: flex;
+display: flex;
     flex-direction: column;
     overflow: scroll;
     position: fixed;
     background: rgb(59 59 59);
-    top: 68vh;
+    top: 64vh;
     left: 10vw;
     width: 80vw;
-    height: 10vh;
+    height: 13vh;
     font-size: 6vw;
     color: #fefefe;
     border-radius: 5px;
@@ -266,13 +266,34 @@ body {
     align-items: center;
 }
 .combatNewEntry {
-    background: grey;
+    background: rgb(34, 75, 14);
+    color: rgb(255, 255, 255);
     padding: 1vw;
-    margin: 1vw;
     border-radius: 5px;
     height: auto;
     width: 99%;
     border-style: solid;
+    margin: 1vw;
+}
+.combatZNewEntry {
+    background: rgb(145, 43, 43);
+    color: rgb(255, 255, 255);
+    padding: 1vw;
+    border-radius: 5px;
+    height: auto;
+    width: 99%;
+    border-style: solid;
+    margin: 1vw;
+}
+.combatMissEntry {
+    background: rgb(12, 44, 80);
+    color: white;
+    padding: 1vw;
+    border-radius: 5px;
+    height: auto;
+    width: 99%;
+    border-style: solid;
+    margin: 1vw;
 }
 /* Combat Log Button */
 #combatLogBtn {
