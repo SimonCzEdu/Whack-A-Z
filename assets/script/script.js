@@ -51,12 +51,12 @@ let remainder = '';
 let noise = 0;
 console.log(`Noise level is at: ${noise} Nr. of moves: ${move}`);
 
-/* Current Zombie health - must me declared with 'let' as we will later assign new values to it.
+/* Current Greg health - must me declared with 'let' as we will later assign new values to it.
 Must also be declared before we call the function.*/
 let currentZHealth = document.getElementById('zHealthIndicator').style.width = `100%`;
 // Make it an actual number
 currentZHealth = parseInt(currentZHealth);
-console.log(`Zombie currently have ${currentZHealth}% health`);
+console.log(`Greg currently have ${currentZHealth}% health`);
 // Current Players health - must me declared with 'let' as we will later assign new values to it.
 let currentPHealth = document.getElementById(`pHealthIndicator`).style.width = `100%`;
 // Make it an actual number
@@ -128,33 +128,33 @@ function attack() {
 
         // Combat Log message on hit
         const combatLogEntry = document.createElement(`div`);
-        combatLogEntry.innerHTML = `Your hit lands! You did ${attackDmg} points of damage!`;
+        combatLogEntry.innerHTML = `You Whacked Greg! You did ${attackDmg} points of damage!`;
         combatLogEntry.setAttribute(`class`, `combatNewEntry`);
         document.getElementById('combatLog').prepend(combatLogEntry);
-        console.log(`You rolled ${attackDmg} for damage`);
+        console.log(`Rolled ${attackDmg} for damage`);
 
-        // Damage applied to the Zombie Health Indicator
+        // Damage applied to the Greg Health Indicator
         currentZHealth = currentZHealth - attackDmg;
-        // Zero out Zombie health if it drops below zero;
+        // Zero out Greg health if it drops below zero;
         if (currentZHealth - attackDmg < 0) {
             currentZHealth = 0;
         }
-        // Apply damage to the Zombie Health Indicator by reducing its width by the dmg done
+        // Apply damage to the Greg Health Indicator by reducing its width by the dmg done
         document.getElementById(`zHealthIndicator`).style.width = `${currentZHealth}%`;
-        console.log(`Zombie currently have ${currentZHealth}% health`);
+        console.log(`Greg currently have ${currentZHealth}% health`);
     }
     else {
 
         // Combat Log message on miss
         const combatLogEntry = document.createElement(`div`);
-        combatLogEntry.innerHTML = `Oh no! You've missed!`;
+        combatLogEntry.innerHTML = `You've missed Greg! HA!`;
         combatLogEntry.setAttribute(`class`, `combatMissEntry`);
         document.getElementById('combatLog').prepend(combatLogEntry);
         console.log(`This was not enough to hit`);
 
     }
 
-    // End Turn on every second move and run Zombie Turn
+    // End Turn on every second move and run Greg Turn
     if (remainder === 0) {
 
         // Hide default Actions buttons
@@ -194,12 +194,19 @@ function parry() {
     if (currentNoiseLvl >= 99) {
         currentNoiseLvl = 100;
     }
+
+    // Combat Log message on hit
+    const combatLogEntry = document.createElement(`div`);
+    combatLogEntry.innerHTML = `You brace for the next attack`;
+    combatLogEntry.setAttribute(`class`, `braceEntry`);
+    document.getElementById('combatLog').prepend(combatLogEntry);
+
     // Apply noise increase to the Noise Level Indicator by adding to its width value of move
     document.getElementById('noiseIndicator').style.height = `${currentNoiseLvl}%`;
     console.log(`Noise level is at: ${currentNoiseLvl} Nr. of moves: ${move} and move remainder is at ${remainder}`);
 
 
-    // End Turn on every second move and run Zombie Turn
+    // End Turn on every second move and run Greg Turn
     if (remainder === 0) {
 
         // Hide default Actions buttons
@@ -240,11 +247,17 @@ function wait() {
         currentNoiseLvl = 0;
     }
 
+    // Combat Log message on hit
+    const combatLogEntry = document.createElement(`div`);
+    combatLogEntry.innerHTML = `You wait and try to stay quite`;
+    combatLogEntry.setAttribute(`class`, `waitEntry`);
+    document.getElementById('combatLog').prepend(combatLogEntry);
+
     // Apply noise decrease to the Noise Level Indicator by decreasing its width value
     document.getElementById('noiseIndicator').style.height = `${currentNoiseLvl}%`;
     console.log(`Noise level is at: ${currentNoiseLvl} Nr. of moves: ${move} and move remainder is at ${remainder}`);
 
-    // End Turn on every second move and run Zombie Turn
+    // End Turn on every second move and run Greg Turn
     if (remainder === 0) {
 
         // Hide default Actions buttons
@@ -258,11 +271,11 @@ function wait() {
 
 }
 
-// End/Zombie Turn - when player presses on End Turn, this function will calculate zombies turn.
+// End/Greg Turn - when player presses on End Turn, this function will calculate Gregs turn.
 // We need event listener for that:
 document.getElementById('endTurn').addEventListener('click', endTurn);
 /**
- * endTurn() function plays out zombie turn, unchecks parry and allow to players to use default actions again
+ * endTurn() function plays out Greg turn, unchecks parry and allow to players to use default actions again
  */
 function endTurn() {
 
@@ -270,76 +283,76 @@ function endTurn() {
     const parryCheck = document.getElementById('parryCheck');
     const justIcon = document.getElementById('justIcon');
     /**
-    * Dice roll for zombies attack chance value without modifiers. It is random number 1-50
+    * Dice roll for Gregs attack chance value without modifiers. It is random number 1-50
     */
     const zAttackRoll = Math.floor(Math.random() * 50 + 1);
-    console.log(`Zombie rolled ${zAttackRoll} for attack`);
+    console.log(`Greg rolled ${zAttackRoll} for attack`);
 
 
-    //  If parry is active we will apply debuff to the Zombies chance to hit and it's damage
+    //  If parry is active we will apply debuff to the Gregs chance to hit and it's damage
     if (parry.checked) {
-        // Check if zombie succeeded in landing a hit
+        // Check if Greg succeeded in landing a hit
         if (zAttackRoll >= 40) {
-            // Dice roll for the zombies attack strength (aka damage)    
+            // Dice roll for the Gregs attack strength (aka damage)    
             const zAttackDmg = Math.floor(Math.random() * 10)
 
             // Combat Log message on hit
             const combatLogEntry = document.createElement(`div`);
-            combatLogEntry.innerHTML = `Zombie swings and hits! You take ${zAttackDmg} points of damage!`;
+            combatLogEntry.innerHTML = `Greg swings and hits! You take ${zAttackDmg} points of damage!`;
             combatLogEntry.setAttribute(`class`, `combatZNewEntry`);
             document.getElementById('combatLog').prepend(combatLogEntry);
-            console.log(`Zombie rolled ${zAttackDmg} for damage`);
+            console.log(`Greg rolled ${zAttackDmg} for damage`);
 
-            // Damage applied to the Zombie Health Indicator
+            // Damage applied to the Greg Health Indicator
             let pHealthAfterHit = currentPHealth - zAttackDmg;
-            // Zero out Zombie health if it drops below zero;
+            // Zero out Greg health if it drops below zero;
             if (currentPHealth - zAttackDmg < 0) {
                 pHealthAfterHit = 0;
             }
             // Apply damage to the Player Health Indicator by reducing it's width by the dmg done
             document.getElementById(`pHealthIndicator`).style.width = `${pHealthAfterHit}%`;
             currentPHealth = pHealthAfterHit;
-            console.log(`Zombie currently have ${currentPHealth}% health`);
+            console.log(`Greg currently have ${currentPHealth}% health`);
         } else {
 
-            // Combat Log message on Zombie Miss
+            // Combat Log message on Greg Miss
             const combatLogEntry = document.createElement(`div`);
-            combatLogEntry.innerHTML = `Zombie swings and misses. You are safe this time.`;
-            combatLogEntry.setAttribute(`class`, `combatZNewEntry`);
+            combatLogEntry.innerHTML = `Greg misses you.`;
+            combatLogEntry.setAttribute(`class`, `combatZMissEntry`);
             document.getElementById('combatLog').prepend(combatLogEntry);
-            console.log(`Zombie rolled ${zAttackRoll} for attack and missed.`);
+            console.log(`Greg rolled ${zAttackRoll} for attack and missed.`);
 
         }
     } else {
         if (zAttackRoll >= 5) {
-            // Dice roll for the zombies attack strength (aka damage)    
+            // Dice roll for the Gregs attack strength (aka damage)    
             const zAttackDmg = Math.floor(Math.random() * 10 + 5)
 
             // Combat Log message on hit
             const combatLogEntry = document.createElement(`div`);
-            combatLogEntry.innerHTML = `Zombie swings and hits! You take ${zAttackDmg} points of damage!`;
+            combatLogEntry.innerHTML = `Greg Whacks you! You take ${zAttackDmg} points of damage!`;
             combatLogEntry.setAttribute(`class`, `combatZNewEntry`);
             document.getElementById('combatLog').prepend(combatLogEntry);
-            console.log(`Zombie rolled ${zAttackDmg} for damage`);
+            console.log(`Greg rolled ${zAttackDmg} for damage`);
 
-            // Damage applied to the Zombie Health Indicator
+            // Damage applied to the Greg Health Indicator
             let pHealthAfterHit = currentPHealth - zAttackDmg;
-            // Zero out Zombie health if it drops below zero;
+            // Zero out Greg health if it drops below zero;
             if (currentPHealth - zAttackDmg < 0) {
                 pHealthAfterHit = 0;
             }
             // Apply damage to the Player Health Indicator by reducing it's width by the dmg done
             document.getElementById(`pHealthIndicator`).style.width = `${pHealthAfterHit}%`;
             currentPHealth = pHealthAfterHit;
-            console.log(`Zombie currently have ${currentPHealth}% health`);
+            console.log(`Greg currently have ${currentPHealth}% health`);
         } else {
 
-            // Combat Log message on Zombie Miss
+            // Combat Log message on Greg Miss
             const combatLogEntry = document.createElement(`div`);
-            combatLogEntry.innerHTML = `Zombie swings and misses. You are safe this time.`;
-            combatLogEntry.setAttribute(`class`, `combatZNewEntry`);
+            combatLogEntry.innerHTML = `Greg Whacks you! You take ${zAttackDmg} points of damage!`;
+            combatLogEntry.setAttribute(`class`, `combatZMissEntry`);
             document.getElementById('combatLog').prepend(combatLogEntry);
-            console.log(`Zombie rolled ${zAttackRoll} for attack and missed.`);
+            console.log(`Greg rolled ${zAttackRoll} for attack and missed.`);
 
         }
     }
@@ -355,7 +368,7 @@ function endTurn() {
         if (parry.checked) {
             // Uncheck parry checkbox
             parry.checked = false;
-            // Rehide checkbox 
+            // Re-hide checkbox 
             parry.style.display = `none`;
             // Show parry icon
             parryCheck.style.display = `flex`;
