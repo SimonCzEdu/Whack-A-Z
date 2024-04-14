@@ -51,12 +51,12 @@ let remainder = '';
 let noise = 0;
 console.log(`Noise level is at: ${noise} Nr. of moves: ${move}`);
 
-/* Current Greg health - must me declared with 'let' as we will later assign new values to it.
+/* Current Gary health - must me declared with 'let' as we will later assign new values to it.
 Must also be declared before we call the function.*/
 let currentZHealth = document.getElementById('zHealthIndicator').style.width = `100%`;
 // Make it an actual number
 currentZHealth = parseInt(currentZHealth);
-console.log(`Greg currently have ${currentZHealth}% health`);
+console.log(`Gary currently have ${currentZHealth}% health`);
 // Current Players health - must me declared with 'let' as we will later assign new values to it.
 let currentPHealth = document.getElementById(`pHealthIndicator`).style.width = `100%`;
 // Make it an actual number
@@ -132,33 +132,33 @@ function attack() {
 
         // Combat Log message on hit
         const combatLogEntry = document.createElement(`div`);
-        combatLogEntry.innerHTML = `You Whacked Greg! You did ${attackDmg} points of damage!`;
+        combatLogEntry.innerHTML = `You Whacked Gary! You did ${attackDmg} points of damage!`;
         combatLogEntry.setAttribute(`class`, `combatNewEntry`);
         document.getElementById('combatLog').prepend(combatLogEntry);
         console.log(`Rolled ${attackDmg} for damage`);
 
-        // Damage applied to the Greg Health Indicator
+        // Damage applied to the Gary Health Indicator
         currentZHealth = currentZHealth - attackDmg;
-        // Zero out Greg health if it drops below zero;
+        // Zero out Gary health if it drops below zero;
         if (currentZHealth - attackDmg < 0) {
             currentZHealth = 0;
         }
-        // Apply damage to the Greg Health Indicator by reducing its width by the dmg done
+        // Apply damage to the Gary Health Indicator by reducing its width by the dmg done
         document.getElementById(`zHealthIndicator`).style.width = `${currentZHealth}%`;
-        console.log(`Greg currently have ${currentZHealth}% health`);
+        console.log(`Gary currently have ${currentZHealth}% health`);
     }
     else {
 
         // Combat Log message on miss
         const combatLogEntry = document.createElement(`div`);
-        combatLogEntry.innerHTML = `You've missed Greg! HA!`;
+        combatLogEntry.innerHTML = `You've missed Gary! HA!`;
         combatLogEntry.setAttribute(`class`, `combatMissEntry`);
         document.getElementById('combatLog').prepend(combatLogEntry);
         console.log(`This was not enough to hit`);
 
     }
 
-    // End Turn on every second move and run Greg Turn
+    // End Turn on every second move and run Gary Turn
     if (remainder === 0) {
 
         // Hide default Actions buttons
@@ -218,7 +218,7 @@ function parry() {
     console.log(`Noise level is at: ${currentNoiseLvl} Nr. of moves: ${move} and move remainder is at ${remainder}`);
 
 
-    // End Turn on every second move and run Greg Turn
+    // End Turn on every second move and run Gary Turn
     if (remainder === 0) {
 
         // Hide default Actions buttons
@@ -280,7 +280,7 @@ function wait() {
     document.getElementById('noiseIndicator').style.height = `${currentNoiseLvl}%`;
     console.log(`Noise level is at: ${currentNoiseLvl} Nr. of moves: ${move} and move remainder is at ${remainder}`);
 
-    // End Turn on every second move and run Greg Turn
+    // End Turn on every second move and run Gary Turn
     if (remainder === 0) {
 
         // Hide default Actions buttons
@@ -293,11 +293,11 @@ function wait() {
     }
 }
 
-// End/Greg Turn - when player presses on End Turn, this function will calculate Gregs turn.
+// End/Gary Turn - when player presses on End Turn, this function will calculate Garys turn.
 // We need event listener for that:
 document.getElementById('endTurn').addEventListener('click', endTurn);
 /**
- * endTurn() function plays out Greg turn, unchecks parry and allow to players to use default actions again
+ * endTurn() function plays out Gary turn, unchecks parry and allow to players to use default actions again
  */
 function endTurn() {
     
@@ -309,76 +309,76 @@ function endTurn() {
     const parryCheck = document.getElementById('parryCheck');
     const justIcon = document.getElementById('justIcon');
     /**
-    * Dice roll for Gregs attack chance value without modifiers. It is random number 1-50
+    * Dice roll for Garys attack chance value without modifiers. It is random number 1-50
     */
     const zAttackRoll = Math.floor(Math.random() * 50 + 1);
-    console.log(`Greg rolled ${zAttackRoll} for attack`);
+    console.log(`Gary rolled ${zAttackRoll} for attack`);
 
 
-    //  If parry is active we will apply debuff to the Gregs chance to hit and it's damage
+    //  If parry is active we will apply debuff to the Garys chance to hit and it's damage
     if (parry.checked) {
-        // Check if Greg succeeded in landing a hit
+        // Check if Gary succeeded in landing a hit
         if (zAttackRoll >= 40) {
-            // Dice roll for the Gregs attack strength (aka damage)    
+            // Dice roll for the Garys attack strength (aka damage)    
             const zAttackDmg = Math.floor(Math.random() * 10)
 
             // Combat Log message on hit
             const combatLogEntry = document.createElement(`div`);
-            combatLogEntry.innerHTML = `Greg swings and hits! You take ${zAttackDmg} points of damage!`;
+            combatLogEntry.innerHTML = `Gary swings and hits! You take ${zAttackDmg} points of damage!`;
             combatLogEntry.setAttribute(`class`, `combatZNewEntry`);
             document.getElementById('combatLog').prepend(combatLogEntry);
-            console.log(`Greg rolled ${zAttackDmg} for damage`);
+            console.log(`Gary rolled ${zAttackDmg} for damage`);
 
-            // Damage applied to the Greg Health Indicator
+            // Damage applied to the Gary Health Indicator
             let pHealthAfterHit = currentPHealth - zAttackDmg;
-            // Zero out Greg health if it drops below zero;
+            // Zero out Gary health if it drops below zero;
             if (currentPHealth - zAttackDmg < 0) {
                 pHealthAfterHit = 0;
             }
             // Apply damage to the Player Health Indicator by reducing it's width by the dmg done
             document.getElementById(`pHealthIndicator`).style.width = `${pHealthAfterHit}%`;
             currentPHealth = pHealthAfterHit;
-            console.log(`Greg currently have ${currentPHealth}% health`);
+            console.log(`Gary currently have ${currentPHealth}% health`);
         } else {
 
-            // Combat Log message on Greg Miss
+            // Combat Log message on Gary Miss
             const combatLogEntry = document.createElement(`div`);
-            combatLogEntry.innerHTML = `Greg misses you.`;
+            combatLogEntry.innerHTML = `Gary misses you.`;
             combatLogEntry.setAttribute(`class`, `combatZMissEntry`);
             document.getElementById('combatLog').prepend(combatLogEntry);
-            console.log(`Greg rolled ${zAttackRoll} for attack and missed.`);
+            console.log(`Gary rolled ${zAttackRoll} for attack and missed.`);
 
         }
     } else {
         if (zAttackRoll >= 5) {
-            // Dice roll for the Gregs attack strength (aka damage)    
+            // Dice roll for the Garys attack strength (aka damage)    
             const zAttackDmg = Math.floor(Math.random() * 10 + 5)
 
             // Combat Log message on hit
             const combatLogEntry = document.createElement(`div`);
-            combatLogEntry.innerHTML = `Greg Whacks you! You take ${zAttackDmg} points of damage!`;
+            combatLogEntry.innerHTML = `Gary Whacks you! You take ${zAttackDmg} points of damage!`;
             combatLogEntry.setAttribute(`class`, `combatZNewEntry`);
             document.getElementById('combatLog').prepend(combatLogEntry);
-            console.log(`Greg rolled ${zAttackDmg} for damage`);
+            console.log(`Gary rolled ${zAttackDmg} for damage`);
 
-            // Damage applied to the Greg Health Indicator
+            // Damage applied to the Gary Health Indicator
             let pHealthAfterHit = currentPHealth - zAttackDmg;
-            // Zero out Greg health if it drops below zero;
+            // Zero out Gary health if it drops below zero;
             if (currentPHealth - zAttackDmg < 0) {
                 pHealthAfterHit = 0;
             }
             // Apply damage to the Player Health Indicator by reducing it's width by the dmg done
             document.getElementById(`pHealthIndicator`).style.width = `${pHealthAfterHit}%`;
             currentPHealth = pHealthAfterHit;
-            console.log(`Greg currently have ${currentPHealth}% health`);
+            console.log(`Gary currently have ${currentPHealth}% health`);
         } else {
 
-            // Combat Log message on Greg Miss
+            // Combat Log message on Gary Miss
             const combatLogEntry = document.createElement(`div`);
-            combatLogEntry.innerHTML = `Greg misses you`;
+            combatLogEntry.innerHTML = `Gary misses you`;
             combatLogEntry.setAttribute(`class`, `combatZMissEntry`);
             document.getElementById('combatLog').prepend(combatLogEntry);
-            console.log(`Greg rolled ${zAttackRoll} for attack and missed.`);
+            console.log(`Gary rolled ${zAttackRoll} for attack and missed.`);
 
         }
     }
