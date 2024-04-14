@@ -23,7 +23,7 @@ document.getElementById(`settingsBtn`).addEventListener('click', openSettings);
 /**
  * Function for opening and closing inventory screen. By default it will be closed and when player presses the icon it will open.
  */
-function openInv() {
+function openInv() { 
 
     const invSwitch = document.getElementById(`invCheck`);
 
@@ -87,6 +87,10 @@ function hideParryOnSelect() {
  * attack() function decides what happens when player clicks on Attack button
  */
 function attack() {
+   
+    // Win and loose conditions functions
+    looseConditions()
+    winCondition()
 
     // On attack first we will increase the noise and nr. of moves counter
     move += 1;
@@ -165,12 +169,20 @@ function attack() {
         // Display End Turn button
         document.getElementById(`endTurn`).style.display = `flex`;
     }
+
+    // Win and loose conditions and events
+    looseConditions()
+
 }
 // Parry Action Function 
 /**
  * parry() function decides what happens when player clicks on Parry button
  */
 function parry() {
+    
+    // Win and loose conditions functions
+    looseConditions()
+    winCondition()
 
     // On attack first we will increase the noise and nr. of moves counter
     move += 1;
@@ -217,12 +229,23 @@ function parry() {
         // Display End Turn button
         document.getElementById(`endTurn`).style.display = `flex`;
     }
+
+    // Win and loose conditions and events
+    if (currentPHealth === '0%') {
+        console.log('You loose because you are dead');
+    } else if (currentNoiseLvl === "100%") {
+        console.log(`You loose because you are to noisy!`);
+    }
 }
 // Wait Action Function 
 /** 
  * wait() function decides what happens when player clicks on Wait button
  */
 function wait() {
+    
+    // Win and loose conditions functions
+    looseConditions()
+    winCondition()
 
     // On attack first we will increase the noise and nr. of moves counter
     move += 1;
@@ -268,7 +291,6 @@ function wait() {
         // Display End Turn button
         document.getElementById(`endTurn`).style.display = `flex`;
     }
-
 }
 
 // End/Greg Turn - when player presses on End Turn, this function will calculate Gregs turn.
@@ -278,6 +300,10 @@ document.getElementById('endTurn').addEventListener('click', endTurn);
  * endTurn() function plays out Greg turn, unchecks parry and allow to players to use default actions again
  */
 function endTurn() {
+    
+    // Win and loose conditions functions
+    looseConditions()
+    winCondition()
 
     const parry = document.getElementById('parry');
     const parryCheck = document.getElementById('parryCheck');
@@ -349,7 +375,7 @@ function endTurn() {
 
             // Combat Log message on Greg Miss
             const combatLogEntry = document.createElement(`div`);
-            combatLogEntry.innerHTML = `Greg Whacks you! You take ${zAttackDmg} points of damage!`;
+            combatLogEntry.innerHTML = `Greg misses you`;
             combatLogEntry.setAttribute(`class`, `combatZMissEntry`);
             document.getElementById('combatLog').prepend(combatLogEntry);
             console.log(`Greg rolled ${zAttackRoll} for attack and missed.`);
@@ -381,4 +407,54 @@ function endTurn() {
     }
     // We will call the uncheckParry() function once to make sure it does it's thing
     uncheckParry();
+}
+
+
+// Win and loose conditions and events
+/**
+ * looseConditions() function is called on every action and checks if you lost and if so, why and displays appropriate message
+ */
+function looseConditions(){
+if (currentPHealth == 0) {
+    endGameL()
+    document.getElementById('endMsg').innerHTML = `You loose because you are dead`;
+    document.getElementById('endMsg').innerHTML = `You (re)killed Gary!<br>You are a monster!<br>Well... you can loot him now... <br> like a grave robber...`;
+    console.log('You loose because you are dead');
+}
+if (currentTime == 120) {
+    endGameL()
+    document.getElementById('endMsg').innerHTML = `You loose because you ran out of time`;
+    document.getElementById('endMsg').innerHTML = `You (re)killed Gary!<br>You are a monster!<br>Well... you can loot him now... <br> like a grave robber...`;
+    console.log(`You loose because you ran out of time`);
+}    
+if (currentNoiseLvl == 100) {
+    endGameL()
+    document.getElementById('endMsg').innerHTML = `You loose because you are to noisy!`;
+    document.getElementById('endMsg').innerHTML = `You (re)killed Gary!<br>You are a monster!<br>Well... you can loot him now... <br> like a grave robber...`;
+    console.log(`You loose because you are to noisy!`)
+}
+}
+/**
+ * winCondition() function is called on every action and checks if you won and displays appropriate message
+ */
+function winCondition() {
+    if (currentZHealth == 0) {
+        endGameW()
+        document.getElementById('endMsg').innerHTML = `You (re)killed Gary!<br>You are a monster!<br>Well... you can loot him now... <br> like a grave robber...`;
+        console.log(`You won!`)
+    }
+}
+// endGameL() function is called within winConditions() function and stops players from continuing until they select one of two options: search or play again 
+function endGameL() {
+    document.getElementById('endGame').style.display = `flex`;
+    document.getElementById('endMsg').style.display = `flex`;
+    document.getElementById('endBtn').style.display = `flex`;
+    // Remove it later just for testing!!!!
+    document.getElementById('searchBtn').style.display = `flex`;
+}
+function endGameW() {
+    document.getElementById('endGame').style.display = `flex`;
+    document.getElementById('endMsg').style.display = `flex`;
+    document.getElementById('endBtn').style.display = `flex`;
+    document.getElementById('searchBtn').style.display = `flex`;
 }
