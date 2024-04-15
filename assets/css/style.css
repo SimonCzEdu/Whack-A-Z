@@ -2,6 +2,12 @@
 * {
     margin: 0;
     padding: 0;
+
+    /* Hide scrollbar for IE, Edge and Firefox following instructions from: https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
+    /* IE and Edge */
+    -ms-overflow-style: none;
+    /* Firefox */
+    scrollbar-width: none;
 }
 
 
@@ -41,7 +47,7 @@ body {
 /* Settings Screen */
 #settings {
     display: none;
-    background: #ffffff99;
+    background: #bab8b8eb;
     position: fixed;
     height: auto;
     width: 74vw;
@@ -118,8 +124,11 @@ body {
     position: relative;
     height: 3vh;
     width: 70vw;
-    background: white;
+    background: #ffffff42;
     border-radius: 1vh;
+    z-index: 100;
+    border-style: solid;
+    border-color: white;
 }
 #zHealthIndicator {
     position: relative;
@@ -136,8 +145,11 @@ body {
     position: fixed;
     height: 3vh;
     width: 70vw;
-    background: white;
+    background: #ffffff42;
     border-radius: 1vh;
+    z-index: 100;
+    border-style: solid;
+    border-color: white;
 }
 #pHealthIndicator {
     position: relative;
@@ -155,9 +167,11 @@ body {
     top: 15vh;
     height: 60vh;
     width: 3vh;
-    background: white;
+    background: #ffffff42;
     border-radius: 1vh;
     z-index: 100;
+    border-style: solid;
+    border-color: white;
 }
 #noiseIndicator {
     position: relative;
@@ -197,10 +211,10 @@ body {
 
 /* Inventory screen */
 #inv {
-    background: white;
+    background: #bab8b8eb;
     display: none;
     flex-direction: column;
-    overflow: hidden;
+    overflow: scroll;
     align-items: center;
     position: fixed;
     top: 27vh;
@@ -209,11 +223,13 @@ body {
     width: 70vw;
     border-radius: 1vh;
     z-index: 90;
+    border-style: solid;
+    border-color: #ffffff;
 }
 #itemList {
     display: flex;
     flex-direction: column;
-    margin-top: 8vh;
+    margin-top: 9vh;
     align-self: baseline;
     padding-left: 3vh;
 }
@@ -309,12 +325,15 @@ body {
 #clock {
     display: flex;
     flex-direction: row;
-    background: white;
+    background: #373737bd;
     height: 5vh;
     font-size: 4vh;
     text-align: center;
     border-radius: 1vh;
     padding: 1vw;
+    border-style: solid;
+    border-color: white;
+    color: white;
 }
 
 
@@ -358,7 +377,7 @@ body {
 #endTurn {
     display: none;
     flex-direction: column;
-    background: #ffffff52;
+    background: #181717c4;
     color: white;
     border-radius: 1vh;
     width: 97vw;
@@ -375,7 +394,7 @@ body {
 #combatLog {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: scroll;
     position: fixed;
     background: #1c1c1ce3;
     color: #fefefe;
@@ -612,6 +631,7 @@ body {
     #endTurn {
         display: none;
         padding: 1vh;
+        width: 81vh;
     }
     #justIcon {
         display: none;
