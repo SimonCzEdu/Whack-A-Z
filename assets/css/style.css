@@ -454,12 +454,17 @@ body {
 /* Tool Tips */
 #toolTipCon {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
     background: white;
-    width: 50vw;
+    max-width: 80vw;
     height: auto;
     font-size: 4vw;
     z-index: 200;
+    left: 10vw;
+    top: 36vh;
 }
 
 /* Media queries for landscape views */
@@ -622,6 +627,7 @@ body {
 
     /* Tool Tips */
     #toolTipCon {
+        display: none;
         width: 25vw;
         font-size: 4vh;
     }
