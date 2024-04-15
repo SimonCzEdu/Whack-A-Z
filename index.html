@@ -18,7 +18,7 @@
     <section id="main">
         <!-- Game Settings -->
         <!-- Settings Button -->
-        <div id="settingsBtn" ontouchstart="toolTip(event)" ontouchend="toolTipC(event)" onmousemove="toolTip(event)" onmouseout="toolTipC(event)">
+        <div id="settingsBtn" onmousemove="toolTip(event)" onmouseout="toolTipC(event)">
             <label id="settingsBtnLabel" for="settingsCheck" onmousemove="toolTip(event)" onmouseout="toolTipC(event)">
                 <iconify-icon icon="mdi:cog-outline"></iconify-icon>
             </label>
@@ -38,9 +38,9 @@
         </section>
 
         <!-- Zombie Health Bar -->
-        <div id="zHealthBar" onmousemove="toolTip(event), zHealthTip()" onmouseout="toolTipC(event)">
+        <div id="zHealthBar" class="cursorChange" onmousemove="toolTip(event), zHealthTip()" onmouseout="toolTipC(event)">
             <!-- Zombie Health Indicator -->
-            <div id="zHealthIndicator"></div>
+            <div id="zHealthIndicator" class="cursorChange" onmousemove="toolTip(event), zHealthTip()" onmouseout="toolTipC(event)"></div>
         </div>
 
         <!-- Player Health Bar -->
@@ -52,7 +52,7 @@
         <!-- Noise Level -->
         <div id="noiseLevel" onmousemove="toolTip(event)" onmouseout="toolTipC(event)">
             <!-- Noise Level Indicator -->
-            <div id="noiseIndicator"></div>
+            <div id="noiseIndicator" onmousemove="toolTip(event)" onmouseout="toolTipC(event)"></div>
         </div>
 
         <!-- Inventory Button -->
@@ -71,9 +71,11 @@
         </section>
 
         <!-- Actions -->
-        <div id="actions" onmousemove="toolTip(event)" onmouseout="toolTipC(event)">
-            <div id="attack" class="hideActions"><iconify-icon icon="game-icons:dripping-sword"></iconify-icon></div>
-            <div id="parryDiv" class="hideActions">
+        <div id="actions">
+            <div id="attack" class="hideActions" onmousemove="toolTip(event)" onmouseout="toolTipC(event)" ontapstart="toolTip(event)" ontapend="toolTipC(event)">
+                <iconify-icon icon="game-icons:dripping-sword"></iconify-icon>
+            </div>
+            <div id="parryDiv" class="hideActions" onmousemove="toolTip(event)" onmouseout="toolTipC(event)" ontapstart="toolTip(event)" ontapend="toolTipC(event)">
                 <div id="justIcon">
                     <iconify-icon icon="material-symbols:shield"></iconify-icon>
                 </div>
@@ -81,8 +83,11 @@
                         icon="solar:shield-line-duotone"></iconify-icon></label>
                 <input type="checkbox" id="parry" class="hideActions hideParry">
             </div>
-            <div id="wait" class="hideActions"><iconify-icon icon="mdi:hourglass"></iconify-icon></div>
-            <div id="endTurn">End Turn
+            <div id="wait" class="hideActions" onmousemove="toolTip(event)" onmouseout="toolTipC(event)" ontapstart="toolTip(event)" ontapend="toolTipC(event)">
+                <iconify-icon icon="mdi:hourglass"></iconify-icon>
+            </div>
+            <div id="endTurn" onmousemove="toolTip(event)" onmouseout="toolTipC(event)">
+                End Turn
                 <br>
                 (Gary will get a chance for payback!)
             </div>
