@@ -521,7 +521,6 @@ document.onmousemove = function (event) { toolTipO(event) };
  */
 function toolTipO() {
     if (toolOffStyle.getPropertyValue("display") === 'flex') {
-        console.log(`true`);
 
         const toolTip = document.getElementById(`toolTip`);
 
@@ -571,7 +570,7 @@ function toolTipO() {
          *  invBtnTip(event) displays tool tip about noise level bar in toolTipCon div
          */
         function invBtnTip(event) {
-            toolTip.innerHTML = `This is your noise level. If it fills up - you will lose. Certain actions raise and some lower it.`;
+            toolTip.innerHTML = `This is your inventory. Here you can use or equip items (it does not use an action! Huzza!).`;
             document.getElementById(`toolTipCon`).style.display = `flex`;
         }
 
@@ -631,18 +630,20 @@ function toolTipO() {
          *  combatLogTip(event) displays tool tip on combat log in toolTipCon div
          */
         function combatLogTip(event) {
-            toolTip.innerHTML = `Do you want to know what is going on? Then pay attention to this combat log. It displays all actions. Your's and Gary's. You can scroll through it. Newest are at the top.`;
+            toolTip.innerHTML = `Do you want to know what is going on? Then pay attention to this combat log. It displays all actions. Yours and Gary's. You can scroll through it. Newest are at the top.`;
             document.getElementById(`toolTipCon`).style.display = `flex`;
         }
 
     } else {
-                // Players health Bar Tip
+
+        const toolTip = document.getElementById(`toolTip`);
+
+        // Players health Bar Tip
         document.getElementById("pHealthBar").onmousemove = function (event) { pHealthTip(event) };
         /**
          *  pHealthTip(event) displays tool tip about health bar in toolTipCon div
          */
         function pHealthTip() {
-            toolTip.innerHTML = `This is your health bar. If it gets empty... you die.`
             document.getElementById(`toolTipCon`).style.display = `none`;
         }
 
@@ -652,7 +653,6 @@ function toolTipO() {
          *  pHealthTip(event) displays tool tip about health bar in toolTipCon div
          */
         function zHealthTip(event) {
-            toolTip.innerHTML = `This is Gary's health bar. Your goal is to empty it.`
             document.getElementById(`toolTipCon`).style.display = `none`;
         }
 
@@ -662,7 +662,6 @@ function toolTipO() {
          *  settingsBtnTip(event) displays tool tip about settings button in toolTipCon div
          */
         function settingsBtnTip(event) {
-            toolTip.innerHTML = `Here you can choose settings options. You can for example hide tool tips.`
             document.getElementById(`toolTipCon`).style.display = `none`;
         }
 
@@ -672,7 +671,6 @@ function toolTipO() {
          *  noiseLvlTip(event) displays tool tip about noise level bar in toolTipCon div
          */
         function noiseLvlTip(event) {
-            toolTip.innerHTML = `This is your noise level. If it fills up - you will lose. Certain actions raise and some lower it.`;
             document.getElementById(`toolTipCon`).style.display = `none`;
         }
 
@@ -682,7 +680,6 @@ function toolTipO() {
          *  invBtnTip(event) displays tool tip about noise level bar in toolTipCon div
          */
         function invBtnTip(event) {
-            toolTip.innerHTML = `This is your noise level. If it fills up - you will lose. Certain actions raise and some lower it.`;
             document.getElementById(`toolTipCon`).style.display = `none`;
         }
 
@@ -692,7 +689,6 @@ function toolTipO() {
          *  attackTip(event) displays tool tip about attack button in toolTipCon div
          */
         function attackTip(event) {
-            toolTip.innerHTML = `Whack! This is Whacking button. Press to Whack Gary and let's make some noise!`;
             document.getElementById(`toolTipCon`).style.display = `none`;
         }
 
@@ -702,7 +698,6 @@ function toolTipO() {
          *  parryTip(event) displays tool tip about parry button in toolTipCon div
          */
         function parryTip(event) {
-            toolTip.innerHTML = `Whit this option selected, Gary has harder time to hit you and does less damage. It stays active till Gary's next turn.`;
             document.getElementById(`toolTipCon`).style.display = `none`;
         }
 
@@ -712,7 +707,6 @@ function toolTipO() {
          *  waitTip(event) displays tool tip about wait button in toolTipCon div
          */
         function waitTip(event) {
-            toolTip.innerHTML = `Whit this option, you can lower your noise level. You do stay still though.`;
             document.getElementById(`toolTipCon`).style.display = `none`;
         }
 
@@ -722,7 +716,6 @@ function toolTipO() {
          *  endTurnTip(event) displays tool tip about end turn button in toolTipCon div
          */
         function endTurnTip(event) {
-            toolTip.innerHTML = `It ends your turn and allows Gary to take his revenge!`;
             document.getElementById(`toolTipCon`).style.display = `none`;
         }
 
@@ -732,7 +725,6 @@ function toolTipO() {
          *  clockTip(event)displays tool tip on clock in toolTipCon div
          */
         function clockTip(event) {
-            toolTip.innerHTML = `This is your moves counter. If it reaches 120, the horde awakens and that is game over (for now). Make sure you do not run out of time, slowpoke.`;
             document.getElementById(`toolTipCon`).style.display = `none`;
         }
 
@@ -742,7 +734,6 @@ function toolTipO() {
          *  combatLogTip(event) displays tool tip on combat log in toolTipCon div
          */
         function combatLogTip(event) {
-            toolTip.innerHTML = `Do you want to know what is going on? Then pay attention to this combat log. It displays all actions. Your's and Gary's. You can scroll through it. Newest are at the top.`;
             document.getElementById(`toolTipCon`).style.display = `none`;
         }
     }
@@ -763,6 +754,6 @@ function toolTipC() {
 // Welcome message alert
 alert(`Hello! Welcome to Whack-a-Z!
 Hope you will enjoy your time with Gary.
-To see tutorials just hover over or tap on any element you would like to get more information about.
+To see tutorials just hover over or tap any element you would like to inspect.
 Good luck and have fun.
 `)
