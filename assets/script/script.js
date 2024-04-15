@@ -623,3 +623,10 @@ function toolTipC() {
     const toolTipCon = document.getElementById(`toolTipCon`);
     toolTipCon.style.display = `none`;
 }
+
+// Welcome message alert
+alert(`Hello! Welcome to Whack-a-Z!
+Hope you will enjoy your time with Gary.
+To see tutorials just hover over or tap on any element you would like to get more information about.
+Good luck and have fun.
+`)
