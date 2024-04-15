@@ -495,65 +495,76 @@ document.getElementById(`combatLogBtnOn`).addEventListener(`click`, combatLogSho
 
 
 // Tool Tip on mouseover
+document.onmousemove = function(event) {runToolTip(event)};
 /**
- * toolTip(event) displays toolTipCon div when player is hovering over elements and sets position of toolTipCon in relation to the cursor
+ * runToolTip() main purpose is to contain all of the function calls needed for tool tips
  */
-function toolTip(event) {
-    const toolTipW = document.getElementById(`toolTipCon`);
-    const rect = toolTipW.getBoundingClientRect();
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
-    const x = event.clientX;
-    const y = event.clientY;
-    toolTipW.style.display = `flex`;    
-    toolTipW.style.left = `${x - rect.width * 0.5}px`;
-    toolTipW.style.top = `${y}px`;
+function runToolTip() {
+document.getElementsByClassName("toolTipCon")[0].onmousemove = function(event) {toolTipO(event)};
+document.getElementsByClassName("toolTipCon")[1].onmousemove = function(event) {toolTipO(event)};
+document.getElementsByClassName("toolTipCon")[2].onmousemove = function(event) {toolTipO(event)};
+document.getElementsByClassName("toolTipCon")[3].onmousemove = function(event) {toolTipO(event)};
+document.getElementsByClassName("toolTipCon")[4].onmousemove = function(event) {toolTipO(event)};
+document.getElementsByClassName("toolTipCon")[5].onmousemove = function(event) {toolTipO(event)};
+document.getElementsByClassName("toolTipCon")[6].onmousemove = function(event) {toolTipO(event)};
+document.getElementsByClassName("toolTipCon")[7].onmousemove = function(event) {toolTipO(event)};
+document.getElementsByClassName("toolTipCon")[8].onmousemove = function(event) {toolTipO(event)};
+document.getElementsByClassName("toolTipCon")[9].onmousemove = function(event) {toolTipO(event)};
+document.getElementsByClassName("toolTipCon")[10].onmousemove = function(event) {toolTipO(event)};
+document.getElementsByClassName("toolTipCon")[11].onmousemove = function(event) {toolTipO(event)};
+document.getElementsByClassName("toolTipCon")[12].onmousemove = function(event) {toolTipO(event)};
+document.getElementsByClassName("toolTipCon")[13].onmousemove = function(event) {toolTipO(event)};
+document.getElementsByClassName("toolTipCon")[14].onmousemove = function(event) {toolTipO(event)};
+document.getElementsByClassName("toolTipCon")[15].onmousemove = function(event) {toolTipO(event)};
+document.getElementsByClassName("toolTipCon")[16].onmousemove = function(event) {toolTipO(event)};
 
-    if (screenWidth - x <= rect.width / 2) {
-        toolTipW.style.left = `${x - rect.width * 0.65}px`;
-        if (screenWidth - x <= rect.width / 3) {
-            toolTipW.style.left = `${x - rect.width * 0.75 }px`;     
-        }
-        if (screenWidth - x <= rect.width / 4) {
-            toolTipW.style.left = `${x - rect.width * 0.85 }px`;     
-        }
-        if (screenWidth - x <= rect.width / 5) {
-            toolTipW.style.left = `${x - rect.width * 0.95 }px`;     
-        }
-        if (screenWidth - x <= rect.width / 6) {
-            toolTipW.style.left = `${x - rect.width * 1.05 }px`;     
-        }
+document.getElementsByClassName("toolTipCon")[0].onmouseout = function(event) {toolTipC(event)};
+document.getElementsByClassName("toolTipCon")[1].onmouseout = function(event) {toolTipC(event)};
+document.getElementsByClassName("toolTipCon")[2].onmouseout = function(event) {toolTipC(event)};
+document.getElementsByClassName("toolTipCon")[3].onmouseout = function(event) {toolTipC(event)};
+document.getElementsByClassName("toolTipCon")[4].onmouseout = function(event) {toolTipC(event)};
+document.getElementsByClassName("toolTipCon")[5].onmouseout = function(event) {toolTipC(event)};
+document.getElementsByClassName("toolTipCon")[6].onmouseout = function(event) {toolTipC(event)};
+document.getElementsByClassName("toolTipCon")[7].onmouseout = function(event) {toolTipC(event)};
+document.getElementsByClassName("toolTipCon")[8].onmouseout = function(event) {toolTipC(event)};
+document.getElementsByClassName("toolTipCon")[9].onmouseout = function(event) {toolTipC(event)};
+document.getElementsByClassName("toolTipCon")[10].onmouseout = function(event) {toolTipC(event)};
+document.getElementsByClassName("toolTipCon")[11].onmouseout = function(event) {toolTipC(event)};
+document.getElementsByClassName("toolTipCon")[12].onmouseout = function(event) {toolTipC(event)};
+document.getElementsByClassName("toolTipCon")[13].onmouseout = function(event) {toolTipC(event)};
+document.getElementsByClassName("toolTipCon")[14].onmouseout = function(event) {toolTipC(event)};
+document.getElementsByClassName("toolTipCon")[15].onmouseout = function(event) {toolTipC(event)};
+document.getElementsByClassName("toolTipCon")[16].onmouseout = function(event) {toolTipC(event)};
+}
+/**
+ * toolTipO(event) displays toolTipCon div when player is hovering over elements
+ */
+function toolTipO() {
+    const toolTip = document.getElementById(`toolTip`);
+    document.getElementById(`toolTipCon`).style.display = `flex`;
+    // Health Bar Tip
+    document.getElementById("pHealthBar").onmousemove = function (event) { pHealthTip(event) };
+    /**
+     *  pHealthTip(event) displays tool tip about health bar in toolTipCon div
+     */
+    function pHealthTip() {
+        toolTip.innerHTML = `This is your health bar. If it gets empty... you die.`
     }
-
-    if ( x <= rect.width / 2) {
-        toolTipW.style.left = `${x + rect.width * 0.1}px`;  
-    }
-        
-    if (screenHeight - (y + rect.height) <= rect.height) {
-        toolTipW.style.top = `${y - rect.height * 2}px`;
+    // Health Bar Tip    
+    document.getElementById("zHealthBar").onmousemove = function (event) { zHealthTip(event) };
+    /**
+     *  pHealthTip(event) displays tool tip about health bar in toolTipCon div
+     */
+    function zHealthTip(event) {
+        toolTip.innerHTML = `This is Gary's health bar. Your goal is to empty it.`
     }
 }
 /**
  * toolTipC(event) hides toolTipCon div when not cursor is moved out of the element player is inspecting 
  */
-function toolTipC(event) {
-    const toolTipW = document.getElementById(`toolTipCon`);
-    toolTipW.style.display = `none`;
-    toolTipW.innerHTML = `This is place holder description of the theoretical text that can be found here`;
-}
-// Health Bar Tip
-/**
- *  pHealthTip(event) displays tool tip about health bar in toolTipCon div
- */
-function pHealthTip(event) {
-    const toolTipW = document.getElementById(`toolTipCon`);
-    toolTipW.innerHTML = `This is your health bar. If it gets empty... you die.`
-}
-// Health Bar Tip
-/**
- *  pHealthTip(event) displays tool tip about health bar in toolTipCon div
- */
-function zHealthTip(event) {
-    const toolTipW = document.getElementById(`toolTipCon`);
-    toolTipW.innerHTML = `This is Gary's health bar. Your goal is to empty.`
+function toolTipC() {
+    const toolTip = document.getElementById(`toolTip`);
+    const toolTipCon = document.getElementById(`toolTipCon`);
+    toolTipCon.style.display = `none`;
+    toolTip.innerHTML = ``;
 }
