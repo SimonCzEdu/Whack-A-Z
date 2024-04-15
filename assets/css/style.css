@@ -12,7 +12,7 @@ body {
     width: 100vw;
     border: 0;
     z-index: -100;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 /* Main Styling */
@@ -200,7 +200,7 @@ body {
     background: white;
     display: none;
     flex-direction: column;
-    overflow: scroll;
+    overflow: hidden;
     align-items: center;
     position: fixed;
     top: 27vh;
@@ -375,7 +375,7 @@ body {
 #combatLog {
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    overflow: hidden;
     position: fixed;
     background: #1c1c1ce3;
     color: #fefefe;
