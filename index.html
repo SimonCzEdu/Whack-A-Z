@@ -18,50 +18,52 @@
     <section id="main">
         <!-- Game Settings -->
         <!-- Settings Button -->
-        <div id="settingsBtn">
-            <label id="settingsBtnLabel" for="settingsCheck">
+        <div id="settingsBtn" ontouchstart="toolTip(event)" ontouchend="toolTipC(event)" onmousemove="toolTip(event)" onmouseout="toolTipC(event)">
+            <label id="settingsBtnLabel" for="settingsCheck" onmousemove="toolTip(event)" onmouseout="toolTipC(event)">
                 <iconify-icon icon="mdi:cog-outline"></iconify-icon>
             </label>
             <input id="settingsCheck" type="checkbox">
         </div>
         <!-- Settings Screen -->
-        <section id="settings">
+        <section id="settings" onmousemove="toolTip(event)" onmouseout="toolTipC(event)">
             <h3>Settings</h3>
             <div id="settingsScreen">
                 <!-- Combat log button -->
-                <div id="combatLogBtn">Hide Combat Log</div>
+                <div id="combatLogBtnOff">Hide Combat Log</div>
+                <div id="combatLogBtnOn">Show Combat Log</div>
                 <!-- Tooltip -->
-                <div id="toolTip">Hide Tool Tips</div>
+                <div id="toolTipOff">Hide Tool Tips</div>
+                <div id="toolTipOn">Show Tool Tips</div>
             </div>
         </section>
 
         <!-- Zombie Health Bar -->
-        <div id="zHealthBar">
+        <div id="zHealthBar" onmousemove="toolTip(event), zHealthTip()" onmouseout="toolTipC(event)">
             <!-- Zombie Health Indicator -->
             <div id="zHealthIndicator"></div>
         </div>
 
         <!-- Player Health Bar -->
-        <div id="pHealthBar">
+        <div id="pHealthBar" onmousemove="toolTip(event), pHealthTip(event)" onmouseout="toolTipC(event)">
             <!-- Player Health Indicator -->
-            <div id="pHealthIndicator"></div>
+            <div id="pHealthIndicator" onmousemove="toolTip(event), pHealthTip(event)" onmouseout="toolTipC(event)"></div>
         </div>
 
         <!-- Noise Level -->
-        <div id="noiseLevel">
+        <div id="noiseLevel" onmousemove="toolTip(event)" onmouseout="toolTipC(event)">
             <!-- Noise Level Indicator -->
             <div id="noiseIndicator"></div>
         </div>
 
         <!-- Inventory Button -->
-        <div id="invBtn">
-            <label id="invBtnLabel" for="invCheck">
+        <div id="invBtn" onmousemove="toolTip(event)" onmouseout="toolTipC(event)">
+            <label id="invBtnLabel" for="invCheck" onmousemove="toolTip(event)" onmouseout="toolTipC(event)">
                 <iconify-icon icon="game-icons:knapsack"></iconify-icon>
             </label>
             <input id="invCheck" type="checkbox">
         </div>
         <!-- Inventory screen -->
-        <section id="inv">
+        <section id="inv" onmousemove="toolTip(event)" onmouseout="toolTipC(event)">
             <h3>Your Items</h3>
             <!-- List of items in players inventory -->
             <ul id="itemList">
@@ -69,7 +71,7 @@
         </section>
 
         <!-- Actions -->
-        <div id="actions">
+        <div id="actions" onmousemove="toolTip(event)" onmouseout="toolTipC(event)">
             <div id="attack" class="hideActions"><iconify-icon icon="game-icons:dripping-sword"></iconify-icon></div>
             <div id="parryDiv" class="hideActions">
                 <div id="justIcon">
@@ -82,12 +84,12 @@
             <div id="wait" class="hideActions"><iconify-icon icon="mdi:hourglass"></iconify-icon></div>
             <div id="endTurn">End Turn
                 <br>
-                (Zombie will get an attack)
+                (Gary will get a chance for payback!)
             </div>
         </div>
 
         <!-- End Game Message -->
-        <section id="endGame">
+        <section id="endGame" onmousemove="toolTip(event)" onmouseout="toolTipC(event)">
             <h3 id="endMsg"></h3>
             <div id="endBtn">Play again?</div>
             <div id="searchBtn">Search Gary's body?</div>
@@ -95,17 +97,19 @@
 
         <!-- Clock/Timer display -->
         <div id="clockContainer">
-            <div id="clock">
+            <div id="clock" onmousemove="toolTip(event)" onmouseout="toolTipC(event)">
                 <div id="nrOne" class="clockParts">60</div>
                 <div id="slash" class="clockParts">/</div>
                 <div id="nrTwo" class="clockParts">120</div>
-                <div id="unit" class="clockParts">sec</div>
+                <div id="unit" class="clockParts">-Moves</div>
             </div>
         </div>
 
         <!-- Combat log display -->
-        <div id="combatLog"></div>
+        <div id="combatLog" onmousemove="toolTip(event)" onmouseout="toolTipC(event)"></div>
 
+        <!-- Tool tip container -->
+        <div id="toolTipCon"></div>
 
         <!-- Scripts -->
         <!-- Iconify Import -->
