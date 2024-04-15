@@ -156,6 +156,7 @@ body {
     width: 3vh;
     background: white;
     border-radius: 1vh;
+    z-index: 100;
 }
 #noiseIndicator {
     position: relative;
@@ -164,6 +165,7 @@ body {
     background: blue;
     border-radius: 1vh;
     align-self: end;
+    z-index: 50;
 }
 
 
@@ -374,17 +376,17 @@ body {
     flex-direction: column;
     overflow: scroll;
     position: fixed;
-    background: rgb(59 59 59);
+    background: #1c1c1ce3;
+    color: #fefefe;
+    border-color: #fefefe;
     top: 63vh;
     left: 9vw;
     width: 80vw;
     height: 13vh;
     font-size: 6vw;
-    color: #fefefe;
     border-radius: 1vh;
     border-style: solid;
     border-width: 3px;
-    border-color: #fefefe;
     padding: 1vw;
     text-align: center;
     align-items: center;
@@ -458,13 +460,21 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    background: white;
+    background: #1c1c1ce3;
+    color: white;
     max-width: 80vw;
     height: auto;
-    font-size: 4vw;
+    font-size: 6vw;
     z-index: 200;
     left: 10vw;
-    top: 36vh;
+    top: 23vh;
+    padding: 3vw;
+    border-style: solid;
+    border-radius: 2vw;
+}
+#toolTipH {
+    padding: 2vw;
+    text-decoration-line: underline;
 }
 
 /* Media queries for landscape views */
@@ -627,8 +637,10 @@ body {
 
     /* Tool Tips */
     #toolTipCon {
-        display: none;
         width: 25vw;
         font-size: 4vh;
+        top: 20vh;
+        left: 17vw;
+        border-radius: 2vh;
     }
 }
