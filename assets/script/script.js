@@ -505,18 +505,33 @@ function toolTip(event) {
     const screenHeight = window.innerHeight;
     const x = event.clientX;
     const y = event.clientY;
-    toolTipW.style.display = `flex`;
-    if (x >= screenWidth / 2) {
-        toolTipW.style.left = `${x - rect.width - 50}px`;
-    } else {
-        toolTipW.style.left = `${x + 75}px`;
+    toolTipW.style.display = `flex`;    
+    toolTipW.style.left = `${x - rect.width * 0.5}px`;
+    toolTipW.style.top = `${y}px`;
+
+    if (screenWidth - x <= rect.width / 2) {
+        toolTipW.style.left = `${x - rect.width * 0.65}px`;
+        if (screenWidth - x <= rect.width / 3) {
+            toolTipW.style.left = `${x - rect.width * 0.75 }px`;     
+        }
+        if (screenWidth - x <= rect.width / 4) {
+            toolTipW.style.left = `${x - rect.width * 0.85 }px`;     
+        }
+        if (screenWidth - x <= rect.width / 5) {
+            toolTipW.style.left = `${x - rect.width * 0.95 }px`;     
+        }
+        if (screenWidth - x <= rect.width / 6) {
+            toolTipW.style.left = `${x - rect.width * 1.05 }px`;     
+        }
     }
-    if (y >= screenHeight / 2) {
-        toolTipW.style.top = `${y - rect.height - 250}px`;
-    } else {
-        toolTipW.style.top = `${y - 150}px`;
+
+    if ( x <= rect.width / 2) {
+        toolTipW.style.left = `${x + rect.width * 0.1}px`;  
     }
-    toolTipW.innerHTML = `X = ${x} Y = ${y}`
+        
+    if (screenHeight - (y + rect.height) <= rect.height) {
+        toolTipW.style.top = `${y - rect.height * 2}px`;
+    }
 }
 /**
  * toolTipC(event) hides toolTipCon div when not cursor is moved out of the element player is inspecting 
@@ -524,6 +539,7 @@ function toolTip(event) {
 function toolTipC(event) {
     const toolTipW = document.getElementById(`toolTipCon`);
     toolTipW.style.display = `none`;
+    toolTipW.innerHTML = `This is place holder description of the theoretical text that can be found here`;
 }
 // Health Bar Tip
 /**
@@ -539,5 +555,5 @@ function pHealthTip(event) {
  */
 function zHealthTip(event) {
     const toolTipW = document.getElementById(`toolTipCon`);
-    toolTipW.innerHTML = `This is Gary's health bar. Your goal is to empty it.`
+    toolTipW.innerHTML = `This is Gary's health bar. Your goal is to empty.`
 }
