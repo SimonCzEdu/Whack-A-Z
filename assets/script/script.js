@@ -495,74 +495,131 @@ document.getElementById(`combatLogBtnOn`).addEventListener(`click`, combatLogSho
 
 
 // Tool Tip on mouseover
-document.onmousemove = function(event) {runToolTip(event)};
-/**
- * runToolTip() main purpose is to contain all of the function calls needed for tool tips
- */
-function runToolTip() {
-document.getElementsByClassName("toolTipCon")[0].onmousemove = function(event) {toolTipO(event)};
-document.getElementsByClassName("toolTipCon")[1].onmousemove = function(event) {toolTipO(event)};
-document.getElementsByClassName("toolTipCon")[2].onmousemove = function(event) {toolTipO(event)};
-document.getElementsByClassName("toolTipCon")[3].onmousemove = function(event) {toolTipO(event)};
-document.getElementsByClassName("toolTipCon")[4].onmousemove = function(event) {toolTipO(event)};
-document.getElementsByClassName("toolTipCon")[5].onmousemove = function(event) {toolTipO(event)};
-document.getElementsByClassName("toolTipCon")[6].onmousemove = function(event) {toolTipO(event)};
-document.getElementsByClassName("toolTipCon")[7].onmousemove = function(event) {toolTipO(event)};
-document.getElementsByClassName("toolTipCon")[8].onmousemove = function(event) {toolTipO(event)};
-document.getElementsByClassName("toolTipCon")[9].onmousemove = function(event) {toolTipO(event)};
-document.getElementsByClassName("toolTipCon")[10].onmousemove = function(event) {toolTipO(event)};
-document.getElementsByClassName("toolTipCon")[11].onmousemove = function(event) {toolTipO(event)};
-document.getElementsByClassName("toolTipCon")[12].onmousemove = function(event) {toolTipO(event)};
-document.getElementsByClassName("toolTipCon")[13].onmousemove = function(event) {toolTipO(event)};
-document.getElementsByClassName("toolTipCon")[14].onmousemove = function(event) {toolTipO(event)};
-document.getElementsByClassName("toolTipCon")[15].onmousemove = function(event) {toolTipO(event)};
-
-document.getElementsByClassName("toolTipCon")[0].onmouseout = function(event) {toolTipC(event)};
-document.getElementsByClassName("toolTipCon")[1].onmouseout = function(event) {toolTipC(event)};
-document.getElementsByClassName("toolTipCon")[2].onmouseout = function(event) {toolTipC(event)};
-document.getElementsByClassName("toolTipCon")[3].onmouseout = function(event) {toolTipC(event)};
-document.getElementsByClassName("toolTipCon")[4].onmouseout = function(event) {toolTipC(event)};
-document.getElementsByClassName("toolTipCon")[5].onmouseout = function(event) {toolTipC(event)};
-document.getElementsByClassName("toolTipCon")[6].onmouseout = function(event) {toolTipC(event)};
-document.getElementsByClassName("toolTipCon")[7].onmouseout = function(event) {toolTipC(event)};
-document.getElementsByClassName("toolTipCon")[8].onmouseout = function(event) {toolTipC(event)};
-document.getElementsByClassName("toolTipCon")[9].onmouseout = function(event) {toolTipC(event)};
-document.getElementsByClassName("toolTipCon")[10].onmouseout = function(event) {toolTipC(event)};
-document.getElementsByClassName("toolTipCon")[11].onmouseout = function(event) {toolTipC(event)};
-document.getElementsByClassName("toolTipCon")[12].onmouseout = function(event) {toolTipC(event)};
-document.getElementsByClassName("toolTipCon")[13].onmouseout = function(event) {toolTipC(event)};
-document.getElementsByClassName("toolTipCon")[14].onmouseout = function(event) {toolTipC(event)};
-document.getElementsByClassName("toolTipCon")[15].onmouseout = function(event) {toolTipC(event)};
-}
+document.onmousemove = function (event) { toolTipO(event) };
 /**
  * toolTipO(event) displays toolTipCon div when player is hovering over elements
  */
 function toolTipO() {
     const toolTip = document.getElementById(`toolTip`);
-    document.getElementById(`toolTipCon`).style.display = `flex`;
-    // Health Bar Tip
+    // Players health Bar Tip
     document.getElementById("pHealthBar").onmousemove = function (event) { pHealthTip(event) };
     /**
      *  pHealthTip(event) displays tool tip about health bar in toolTipCon div
      */
     function pHealthTip() {
         toolTip.innerHTML = `This is your health bar. If it gets empty... you die.`
+        document.getElementById(`toolTipCon`).style.display = `flex`;
     }
-    // Health Bar Tip    
-    document.getElementById("zHealthBar").onmousemove = function (event) { zHealthTip(event) };
+
+    // Gary's health Bar Tip    
+    document.getElementById(`zHealthBar`).onmousemove = function (event) { zHealthTip(event) };
     /**
      *  pHealthTip(event) displays tool tip about health bar in toolTipCon div
      */
     function zHealthTip(event) {
         toolTip.innerHTML = `This is Gary's health bar. Your goal is to empty it.`
+        document.getElementById(`toolTipCon`).style.display = `flex`;
+    }
+
+    // Settings Tip    
+    document.getElementById(`settingsBtn`).onmousemove = function (event) { settingsBtnTip(event) };
+    /**
+     *  settingsBtnTip(event) displays tool tip about settings button in toolTipCon div
+     */
+    function settingsBtnTip(event) {
+        toolTip.innerHTML = `Here you can choose settings options. You can for example hide tool tips.`
+        document.getElementById(`toolTipCon`).style.display = `flex`;
+    }
+
+    // Noise level Tip    
+    document.getElementById(`noiseLevel`).onmousemove = function (event) { noiseLvlTip(event) };
+    /**
+     *  noiseLvlTip(event) displays tool tip about noise level bar in toolTipCon div
+     */
+    function noiseLvlTip(event) {
+        toolTip.innerHTML = `This is your noise level. If it fills up - you will lose. Certain actions raise and some lower it.`;
+        document.getElementById(`toolTipCon`).style.display = `flex`;
+    }
+
+    // Inventory button Tip    
+    document.getElementById(`invBtn`).onmousemove = function (event) { invBtnTip(event) };
+    /**
+     *  invBtnTip(event) displays tool tip about noise level bar in toolTipCon div
+     */
+    function invBtnTip(event) {
+        toolTip.innerHTML = `This is your noise level. If it fills up - you will lose. Certain actions raise and some lower it.`;
+        document.getElementById(`toolTipCon`).style.display = `flex`;
+    }
+
+    // Attack button Tip    
+    document.getElementById(`attack`).onmousemove = function (event) { attackTip(event) };
+    /**
+     *  attackTip(event) displays tool tip about attack button in toolTipCon div
+     */
+    function attackTip(event) {
+        toolTip.innerHTML = `Whack! This is Whacking button. Press to Whack Gary and let's make some noise!`;
+        document.getElementById(`toolTipCon`).style.display = `flex`;
+    }
+
+    // Parry button Tip    
+    document.getElementById(`parryDiv`).onmousemove = function (event) { parryTip(event) };
+    /**
+     *  parryTip(event) displays tool tip about parry button in toolTipCon div
+     */
+    function parryTip(event) {
+        toolTip.innerHTML = `Whit this option selected, Gary has harder time to hit you and does less damage. It stays active till Gary's next turn.`;
+        document.getElementById(`toolTipCon`).style.display = `flex`;
+    }
+
+    // Wait button Tip    
+    document.getElementById(`wait`).onmousemove = function (event) { waitTip(event) };
+    /**
+     *  waitTip(event) displays tool tip about wait button in toolTipCon div
+     */
+    function waitTip(event) {
+        toolTip.innerHTML = `Whit this option, you can lower your noise level. You do stay still though.`;
+        document.getElementById(`toolTipCon`).style.display = `flex`;
+    }
+
+    // End turn button Tip    
+    document.getElementById(`endTurn`).onmousemove = function (event) { endTurnTip(event) };
+    /**
+     *  endTurnTip(event) displays tool tip about end turn button in toolTipCon div
+     */
+    function endTurnTip(event) {
+        toolTip.innerHTML = `It ends your turn and allows Gary to take his revenge!`;
+        document.getElementById(`toolTipCon`).style.display = `flex`;
+    }
+
+    // Clock Tip    
+    document.getElementById(`clock`).onmousemove = function (event) { clockTip(event) };
+    /**
+     *  clockTip(event)displays tool tip on clock in toolTipCon div
+     */
+    function clockTip(event) {
+        toolTip.innerHTML = `This is your moves counter. If it reaches 120, the horde awakens and that is game over (for now). Make sure you do not run out of time, slowpoke.`;
+        document.getElementById(`toolTipCon`).style.display = `flex`;
+    }
+
+    // Combat Log Tip    
+    document.getElementById(`combatLog`).onmousemove = function (event) { combatLogTip(event) };
+    /**
+     *  combatLogTip(event) displays tool tip on combat log in toolTipCon div
+     */
+    function combatLogTip(event) {
+        toolTip.innerHTML = `Do you want to know what is going on? Then pay attention to this combat log. It displays all actions. Your's and Gary's. You can scroll through it. Newest are at the top.`;
+        document.getElementById(`toolTipCon`).style.display = `flex`;
     }
 }
+
+document.onmouseout = function (event) { toolTipC(event) };
 /**
  * toolTipC(event) hides toolTipCon div when not cursor is moved out of the element player is inspecting 
  */
 function toolTipC() {
-    const toolTip = document.getElementById(`toolTip`);
+    const toolTipC = document.getElementById(`toolTip`);
+    toolTipC.innerHTML = ``;
+
     const toolTipCon = document.getElementById(`toolTipCon`);
     toolTipCon.style.display = `none`;
-    toolTip.innerHTML = ``;
 }
