@@ -23,7 +23,7 @@ document.getElementById(`settingsBtn`).addEventListener('click', openSettings);
 /**
  * Function for opening and closing inventory screen. By default it will be closed and when player presses the icon it will open.
  */
-function openInv() { 
+function openInv() {
 
     const invSwitch = document.getElementById(`invCheck`);
 
@@ -87,7 +87,7 @@ function hideParryOnSelect() {
  * attack() function decides what happens when player clicks on Attack button
  */
 function attack() {
-   
+
     // Win and loose conditions functions
     looseConditions()
     winCondition()
@@ -151,7 +151,7 @@ function attack() {
 
         // Combat Log message on miss
         const combatLogEntry = document.createElement(`div`);
-        combatLogEntry.innerHTML = `You've missed Gary! HA!`;
+        combatLogEntry.innerHTML = `HA! You've missed Gary!`;
         combatLogEntry.setAttribute(`class`, `combatMissEntry`);
         document.getElementById('combatLog').prepend(combatLogEntry);
         console.log(`This was not enough to hit`);
@@ -179,7 +179,7 @@ function attack() {
  * parry() function decides what happens when player clicks on Parry button
  */
 function parry() {
-    
+
     // Win and loose conditions functions
     looseConditions()
     winCondition()
@@ -242,7 +242,7 @@ function parry() {
  * wait() function decides what happens when player clicks on Wait button
  */
 function wait() {
-    
+
     // Win and loose conditions functions
     looseConditions()
     winCondition()
@@ -293,14 +293,14 @@ function wait() {
     }
 }
 
-// End/Gary Turn - when player presses on End Turn, this function will calculate Garys turn.
+// End/Gary Turn - when player presses on End Turn, this function will calculate Gary's turn.
 // We need event listener for that:
 document.getElementById('endTurn').addEventListener('click', endTurn);
 /**
  * endTurn() function plays out Gary turn, unchecks parry and allow to players to use default actions again
  */
 function endTurn() {
-    
+
     // Win and loose conditions functions
     looseConditions()
     winCondition()
@@ -414,25 +414,22 @@ function endTurn() {
 /**
  * looseConditions() function is called on every action and checks if you lost and if so, why and displays appropriate message
  */
-function looseConditions(){
-if (currentPHealth == 0) {
-    endGameL()
-    document.getElementById('endMsg').innerHTML = `You loose because you are dead`;
-    document.getElementById('endMsg').innerHTML = `You (re)killed Gary!<br>You are a monster!<br>Well... you can loot him now... <br> like a grave robber...`;
-    console.log('You loose because you are dead');
-}
-if (currentTime == 120) {
-    endGameL()
-    document.getElementById('endMsg').innerHTML = `You loose because you ran out of time`;
-    document.getElementById('endMsg').innerHTML = `You (re)killed Gary!<br>You are a monster!<br>Well... you can loot him now... <br> like a grave robber...`;
-    console.log(`You loose because you ran out of time`);
-}    
-if (currentNoiseLvl == 100) {
-    endGameL()
-    document.getElementById('endMsg').innerHTML = `You loose because you are to noisy!`;
-    document.getElementById('endMsg').innerHTML = `You (re)killed Gary!<br>You are a monster!<br>Well... you can loot him now... <br> like a grave robber...`;
-    console.log(`You loose because you are to noisy!`)
-}
+function looseConditions() {
+    if (currentPHealth == 0) {
+        endGameL()
+        document.getElementById('endMsg').innerHTML = `You loose because you are dead`;
+        console.log('You loose because you are dead');
+    }
+    if (currentTime == 120) {
+        endGameL()
+        document.getElementById('endMsg').innerHTML = `You loose because you ran out of time`;
+        console.log(`You loose because you ran out of time`);
+    }
+    if (currentNoiseLvl == 100) {
+        endGameL()
+        document.getElementById('endMsg').innerHTML = `You loose because you are to noisy!`;
+        console.log(`You loose because you are to noisy!`)
+    }
 }
 /**
  * winCondition() function is called on every action and checks if you won and displays appropriate message
@@ -444,7 +441,9 @@ function winCondition() {
         console.log(`You won!`)
     }
 }
-// endGameL() function is called within winConditions() function and stops players from continuing until they select one of two options: search or play again 
+/**
+ *  endGameL() function is called within looseConditions() function and stops players from continuing and give them an option to start over 
+ */
 function endGameL() {
     document.getElementById('endGame').style.display = `flex`;
     document.getElementById('endMsg').style.display = `flex`;
@@ -452,9 +451,93 @@ function endGameL() {
     // Remove it later just for testing!!!!
     document.getElementById('searchBtn').style.display = `flex`;
 }
+/**
+ *  endGameW() function is called within winConditions() function and stops players from continuing until they select one of two options: search or play again 
+ */
 function endGameW() {
     document.getElementById('endGame').style.display = `flex`;
     document.getElementById('endMsg').style.display = `flex`;
     document.getElementById('endBtn').style.display = `flex`;
     document.getElementById('searchBtn').style.display = `flex`;
+}
+
+
+// Restart (`Play again`)
+document.getElementById(`endBtn`).addEventListener(`click`, restart);
+/**
+ * restart() function simply reloads the page so the player can play again
+ */
+function restart() {
+    location.reload();
+    console.log(`Click, click motherfucker`)
+}
+
+
+//Settings functions
+/**
+ * function combatLogHide() this function will hide combat log on button presses
+ */
+function combatLogHide() {
+    document.getElementById('combatLog').style.display = `none`;
+    document.getElementById('combatLogBtnOff').style.display = `none`;
+    document.getElementById('combatLogBtnOn').style.display = `flex`;
+}
+/**
+ * combatLogShow() will show combat log again on button press
+ */
+function combatLogShow() {
+    document.getElementById('combatLog').style.display = `flex`;
+    document.getElementById('combatLogBtnOff').style.display = `flex`;
+    document.getElementById('combatLogBtnOn').style.display = `none`;
+}
+document.getElementById(`combatLogBtnOff`).addEventListener(`click`, combatLogHide);
+document.getElementById(`combatLogBtnOn`).addEventListener(`click`, combatLogShow);
+
+
+// Tool Tip on mouseover
+/**
+ * toolTip(event) displays toolTipCon div when player is hovering over elements and sets position of toolTipCon in relation to the cursor
+ */
+function toolTip(event) {
+    const toolTipW = document.getElementById(`toolTipCon`);
+    const rect = toolTipW.getBoundingClientRect();
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+    const x = event.clientX;
+    const y = event.clientY;
+    toolTipW.style.display = `flex`;
+    if (x >= screenWidth / 2) {
+        toolTipW.style.left = `${x - rect.width - 50}px`;
+    } else {
+        toolTipW.style.left = `${x + 75}px`;
+    }
+    if (y >= screenHeight / 2) {
+        toolTipW.style.top = `${y - rect.height - 250}px`;
+    } else {
+        toolTipW.style.top = `${y - 150}px`;
+    }
+    toolTipW.innerHTML = `X = ${x} Y = ${y}`
+}
+/**
+ * toolTipC(event) hides toolTipCon div when not cursor is moved out of the element player is inspecting 
+ */
+function toolTipC(event) {
+    const toolTipW = document.getElementById(`toolTipCon`);
+    toolTipW.style.display = `none`;
+}
+// Health Bar Tip
+/**
+ *  pHealthTip(event) displays tool tip about health bar in toolTipCon div
+ */
+function pHealthTip(event) {
+    const toolTipW = document.getElementById(`toolTipCon`);
+    toolTipW.innerHTML = `This is your health bar. If it gets empty... you die.`
+}
+// Health Bar Tip
+/**
+ *  pHealthTip(event) displays tool tip about health bar in toolTipCon div
+ */
+function zHealthTip(event) {
+    const toolTipW = document.getElementById(`toolTipCon`);
+    toolTipW.innerHTML = `This is Gary's health bar. Your goal is to empty it.`
 }
