@@ -7,11 +7,11 @@
 
 /* General Styling */
 body {
-    position: fixed;
+    position: absolute;
     height: 100vh;
     width: 100vw;
     border: 0;
-    z-index: -100;
+    z-index: -200;
 }
 
 /* Main Styling */
@@ -22,7 +22,7 @@ body {
     height: 100vh;
     width: 100vw;
     border: 0;
-    z-index: -90;
+    z-index: -100;
 }
 
 /* Settings Button */
