@@ -516,7 +516,6 @@ document.getElementsByClassName("toolTipCon")[12].onmousemove = function(event) 
 document.getElementsByClassName("toolTipCon")[13].onmousemove = function(event) {toolTipO(event)};
 document.getElementsByClassName("toolTipCon")[14].onmousemove = function(event) {toolTipO(event)};
 document.getElementsByClassName("toolTipCon")[15].onmousemove = function(event) {toolTipO(event)};
-document.getElementsByClassName("toolTipCon")[16].onmousemove = function(event) {toolTipO(event)};
 
 document.getElementsByClassName("toolTipCon")[0].onmouseout = function(event) {toolTipC(event)};
 document.getElementsByClassName("toolTipCon")[1].onmouseout = function(event) {toolTipC(event)};
@@ -534,7 +533,6 @@ document.getElementsByClassName("toolTipCon")[12].onmouseout = function(event) {
 document.getElementsByClassName("toolTipCon")[13].onmouseout = function(event) {toolTipC(event)};
 document.getElementsByClassName("toolTipCon")[14].onmouseout = function(event) {toolTipC(event)};
 document.getElementsByClassName("toolTipCon")[15].onmouseout = function(event) {toolTipC(event)};
-document.getElementsByClassName("toolTipCon")[16].onmouseout = function(event) {toolTipC(event)};
 }
 /**
  * toolTipO(event) displays toolTipCon div when player is hovering over elements
