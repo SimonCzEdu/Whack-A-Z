@@ -107,7 +107,7 @@ The site was also tested using [Google Lighthouse](https://developers.google.com
 * SEO - Search engine optimization. Is the site optimized for search engine result rankings.
 
 As an example the results for Whack-a-Z gallery page (featuring most photos and thus using most resources) are below:
-![Lighthouse test results](assets/image/)
+![Lighthouse test results](assets/image/readme-img/lighthouse.jpg)
 
 * Conclusion: ...
 
