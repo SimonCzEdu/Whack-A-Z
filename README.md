@@ -14,8 +14,7 @@ You can find the deployed site at <a href="https://simonczedu.github.io/Whack-A-
     * [Wireframes](<#wireframes>)
     * [Site Structure](<#site-structure>)
     * [Design Choices](<#design-choices>)
-    *  [Typography](<#typography>)
-    *  [Color Scheme](<#color-scheme>)
+    * [Color Scheme](<#color-scheme>)
 * [**Features**](<#features>)
     * [**Index**](<#logo-page>)
     * [**Future Features**](<#future-features>)
@@ -44,7 +43,7 @@ You can find the deployed site at <a href="https://simonczedu.github.io/Whack-A-
 
 ## Wireframes
 
-The wireframes for Whack-a-Z were produced in [Balsamiq](https://balsamiq.com). There are frames for a full-width display and a small mobile device. The final site varies from the wireframes due to developments that occurred during the development process. 
+The wireframes for Whack-a-Z were produced in [Balsamiq](https://balsamiq.com). Frames depict the first draft of the site concept look. Core concepts stayed the same for both the horizontal and vertical look of the site. Some changes occurred during development and were implemented on "as needed" basis.
 
 [Wireframes in PDF (will open in new tab)](assets/image/readme-img/Whack-a-Z_wireframes.pdf)
 
@@ -52,22 +51,26 @@ The wireframes for Whack-a-Z were produced in [Balsamiq](https://balsamiq.com). 
 
 ## Site Structure
 
+This project is a single-page site. Hence there is no need for navigation. There was no need for traditional header>main>footer as the site is modeled after game UI. With the use of JavaScript I was able to show and hide the content to the user (player) as needed. I also introduced a tooltip system based `onmousemove` that informs the player what UI elements are and what they intend to do.
+
 [Back to top](<#contents>)
 
 ## Design Choices
 
  * ### General design philosophy
 
+ Whack-a-Z's first design choice is that it is a simple concept for a larger game. It is not meant to have all the features that I plan it to have. It is meant to work as a stand-alone turn-based combat system with a basic inventory system. It is meant as a showcase that such a game concept is not only feasible but also easily expandable. It is intended as a first building block and a showcase of my abilities to design and program a game system.
 
- * ### Typography
+ The second design choice is to keep the scope of the project small but plan for future designs as it is being developed. Those designs can be found in [Future Features](<#future-features>). Due to the smaller scope of the project, only a basic visual style is introduced. There is no font choice and only basic styling of the elements is introduced. The look of the game would be refined at the end of the development cycle of the whole game.
 
-
-[Back to top](<#contents>)
+ The third design choice is that it is meant to be satirical/humorous in design. At this stage it will mainly manifest through the text and Gary's (the Zombie) design.
 
   * ### Color Scheme
 
-![Color Scheme image](assets/image/)
+  The color scheme was chosen and tested during development. It was not a focus of the project and is subject to change. The idea was to make the elements easily distinguishable and color-coded where needed. Most of that is visible in the combat log. Green color was used to show positive player actions (like successful hit), red for being hit by Gary, black for neutral when the player just waits, a blue for player misses (because you feel "blue" about it), and yellow when Gary missed.
 
+  Gary's health bar is green, because zombie blood is green (according to games I have played anyway), players health bar is red (because of course it is) and noise level is color blue... for no particular reason and is subject to change.
+  
 [Back to top](<#contents>)
 
 # Features
