@@ -62,7 +62,7 @@ You can find the deployed site at <a href="https://simonczedu.github.io/Whack-A-
 
 The wireframes for Whack-a-Z were produced in [Balsamiq](https://balsamiq.com). Frames depict the first draft of the site concept look. Core concepts stayed the same for both the horizontal and vertical look of the site. Some changes occurred during development and were implemented on "as needed" basis.
 
-[Wireframes in PDF (will open in new tab)](assets/image/readme-img/Whack-a-Z_wireframes.pdf)
+![Wireframes in PDF (will open in new tab)](assets/image/readme-img/Whack-a-Z_wireframes.pdf)
 
 [Back to top](<#contents>)
 
@@ -95,12 +95,14 @@ This project is a single-page site. Hence there is no need for navigation. There
 # Features
    
    ## Main Game Screen
-   [Gary's Health Bar](assets/image/readme-img/zHealth.jpg)
+
+![Gary's Health Bar](assets/image/readme-img/zHealth.jpg)
+
    * As mentioned above Whack-a-Z is a single-page site. This page is the Main Game Screen (called index in the files). Inside that screen, some features are displayed throughout the whole game, and some are displayed with JavaScript when conditions for them to appear are met (i.e. Settings screen). Specific features will be listed below.
    
    * Here also welcome alert will be displayed on each site load (even a replay option).
    
-   [Back to top](<#contents>)
+[Back to top](<#contents>)
    
    
    ## Player Health Bar Features
@@ -109,149 +111,148 @@ This project is a single-page site. Hence there is no need for navigation. There
    
    * This element represents the player's health level.
    
-   [Back to top](<#contents>)
+[Back to top](<#contents>)
    
    
    ## Gary Health Bar
    
-   [Gary's Health Bar](assets/image/readme-img/zHealth.jpg)
+![Gary's Health Bar](assets/image/readme-img/zHealth.jpg)
    
    * This element represents Gary's (the zombie) health level.
    
-   [Back to top](<#contents>)
+[Back to top](<#contents>)
    
    
    ## Noise Level Indicator
    
-   [Noise Level Indicator](assets/image/readme-img/noiseLvl.jpg)
+![Noise Level Indicator](assets/image/readme-img/noiseLvl.jpg)
    
    * This element represents the current noise level. If it reaches maximum before the win condition is met it will end the game with a message that the player was too loud. It is increased on every [Attack](<#attack>) by 4 on [Defend](<#defend>) by 1 and lowered on [Wait](<#wait>) by 3.
    
-   [Back to top](<#contents>)
+[Back to top](<#contents>)
    
    
    ## Clock
    
-   [Clock](assets/image/readme-img/clock.jpg)
+![Clock](assets/image/readme-img/clock.jpg)
    
    * This element represents the current moves. If it reaches a maximum (120 currently) before the win condition is met it will end the game with a message that the player was too slow. It is increased on every [Attack](<#attack>), [Defend](<#defend>) and [Wait](<#wait>) by 1.
    
-   [Back to top](<#contents>)
+[Back to top](<#contents>)
    
    
    ## Settings
    
-   [Settings](assets/image/readme-img/settings.jpg)
+![Settings](assets/image/readme-img/settings.jpg)
    
    * This element opens and closes the settings menu when pressed.
    
-   [Back to top](<#contents>)
+[Back to top](<#contents>)
    
    
    #### Settings Options
 
-    * There are two options currently available:
-        * Hide/Show Combat Log - which does exactly that on `click`.
-        * Hide/Show Tooltips - same as above.
+   * There are two options currently available:
+    * Hide/Show Combat Log - which does exactly that on `click`.
+    * Hide/Show Tooltips - same as above.
    
-    [Back to top](<#contents>)
+[Back to top](<#contents>)
 
    
    ## Combat Log
 
-   [Combat Log](assets/image/readme-img/combatLog.jpg)
+![Combat Log](assets/image/readme-img/combatLog.jpg)
 
    * This element contains a message log of actions the player or Gary takes. The player can scroll through them and the newest is always at the top. They are color-coded (more information in [Color Scheme](<#color-scheme>)). It can be toggled on and off in [Settings](<#settings>).
    
-   [Back to top](<#contents>)
+[Back to top](<#contents>)
 
    
    ## Inventory
 
-   [Inventory](assets/image/readme-img/inventory.jpg)
+![Inventory](assets/image/readme-img/inventory.jpg)
 
    * This element contains items that players can click on to use. Some items like a sword are equipable and some - like a bandage - are consumable. Players can see if a sword is equipped by the icon and they can tell how many bandages they have left from the number by its header. Using items DOES NOT use an action and DOES NOT increase player noise level.
    
-   [Back to top](<#contents>)
+[Back to top](<#contents>)
 
    
    ## Actions
 
-   [Actions](assets/image/readme-img/actions.jpg)
+![Actions](assets/image/readme-img/actions.jpg)
 
    * This set of elements are actions that the player can take. They are listed and explained below.
    
-   [Back to top](<#contents>)
+[Back to top](<#contents>)
    
    
    #### Attack
 
-   [Attack](assets/image/readme-img/attack.jpg)
+![Attack](assets/image/readme-img/attack.jpg)
    
    * This action runs a function that checks for random numbers for the so-called attack roll and damage roll. If the attack roll is high enough, the damage is applied to Gary's health bar (lowers it). In either case, using the attack will increase the player's noise level and will use one action (increases move).
 
-   [Back to top](<#contents>)
+[Back to top](<#contents>)
 
    
    #### Defend
 
-   [Defend](assets/image/readme-img/defend.jpg)
+![Defend](assets/image/readme-img/defend.jpg)
 
    * This action sets players' status to defend. It can be selected only once per round (every 2 moves). When active next attack roll and damage roll of Gary's will be harder. This means it will have to be higher to hit and will always have less damage potential (can still roll up to 10 dmg though).
    
-   [Back to top](<#contents>)
+[Back to top](<#contents>)
 
    
    #### Wait
 
-   [Wait](assets/image/readme-img/wait.jpg)
+![Wait](assets/image/readme-img/wait.jpg)
 
    * This action `skips` one move. It lowers the noise level instead of increasing it but does not roll for attack. It is meant as a way for a player to lower their noise level at the cost of wasting moves and still being exposed to Gary's attacks. Best utilized with defense action.
    
-   [Back to top](<#contents>)
+[Back to top](<#contents>)
 
    
    #### End Turn
 
-   [End Turn](assets/image/readme-img/end-turn-button.jpg)
+![End Turn](assets/image/readme-img/end-turn-button.jpg)
 
    * This element is displayed after every two moves from the player (2x attack for example). When players press it Gary's turn is calculated. His hit and damage (if it was successful) are applied to the player's health and results are displayed in the combat log same as the player's actions. After this plays out, the default actions are restored and the player can carry out the next round.
 
-   [Back to top](<#contents>)
+[Back to top](<#contents>)
 
    ## End Game
 
-   [End Game](assets/image/readme-img/end-game-screen.jpg)
+![End Game](assets/image/readme-img/end-game-screen.jpg)
    
    * This message is displayed if one of the 3 loos or 1 win conditions are met. Depending on the reason for this message to appear message will be adjusted - i.e. it will say that players were too loud if their noise level filled out before they could - ekhem - kill Gary.
    * With this message, players will have the option to start over or [search](#search) Gary. The latter will be only available if players manage to win. 
 
-   [Back to top](<#contents>)
+[Back to top](<#contents>)
 
-   
    #### Replay
 
    * This option is part of the End Game screen. It simply reloads the page when clicked. This allows players to replay if they lost. It will be the only option available if the player loses. 
    
-   [Back to top](<#contents>)
+[Back to top](<#contents>)
 
    
    #### Search
 
-   [Search](assets/image/readme-img/search.jpg)
+![Search](assets/image/readme-img/search.jpg)
 
    * This screen is displayed when players defeat Gary and choose to search his body for loot. Here, they will find a semi-random array of items that players won. This feature is just a taste of the loot system planned for future releases. More on it in [Planned Features](<#planned-features>)
    
-   [Back to top](<#contents>)
+[Back to top](<#contents>)
 
    
    ## Tooltips
    
-   [Tooltips](assets/image/readme-img/tooltip-example.jpg)
+![Tooltips](assets/image/readme-img/tooltip-example.jpg)
 
    * This element appears when players taps or mouse over UI elements that require explanation. It can be toggled on and off in [Settings](<#settings>).
 
-   [Back to top](<#contents>)
+[Back to top](<#contents>)
    
 
  
