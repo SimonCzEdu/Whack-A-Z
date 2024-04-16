@@ -3,9 +3,13 @@
 Whack-a-Z is a concept for a roguelike/rougelite game. Its main goal is to demonstrate the basic concepts of a game that can be easily expanded. To set a cornerstone for the combat system, noise level system, timer system and inventory system. Those core elements then can be further expanded which will be discussed in detail in [Planned Features](<#planned-features>).
 
 
-You can find the deployed site at <a href="https://simonczedu.github.io/Whack-A-Z/" target="_blank" rel="noopener">Whack-a-Z</a>
+You can find the deployed site at:
+<a href="https://simonczedu.github.io/Whack-A-Z/" target="_blank" rel="noopener">Whack-a-Z</a>
 
-![Whack-a-Z responsiveness showcase](assets/image/)
+![Whack-a-Z responsiveness showcase](assets/image/readme-img/responsiveness.jpg)
+
+Check it for yourself at:
+<a href="https://ui.dev/amiresponsive?url=https://simonczedu.github.io/Whack-A-Z/" target="_blank" rel="noopener">Am I responsive</a>
 
 # Contents
 
@@ -62,7 +66,7 @@ You can find the deployed site at <a href="https://simonczedu.github.io/Whack-A-
 
 The wireframes for Whack-a-Z were produced in [Balsamiq](https://balsamiq.com). Frames depict the first draft of the site concept look. Core concepts stayed the same for both the horizontal and vertical look of the site. Some changes occurred during development and were implemented on "as needed" basis.
 
-![Wireframes in PDF (will open in new tab)](assets/image/readme-img/Whack-a-Z_wireframes.pdf)
+[Wireframes in PDF (will open in new tab)](assets/image/readme-img/Whack-a-Z_wireframes.pdf)
 
 [Back to top](<#contents>)
 
