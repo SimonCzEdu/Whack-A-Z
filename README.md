@@ -17,6 +17,7 @@ You can find the deployed site at <a href="https://simonczedu.github.io/Whack-A-
     * [Color Scheme](<#color-scheme>)
 * [**Features**](<#features>)
     * [**Index**](<#logo-page>)
+    * [**Existing Features**](<#existing-features>)
     * [**Future Features**](<#future-features>)
 * [**Technologies Used**](<#technologies-used>)
 * [**Testing**](<#testing>)
@@ -59,23 +60,29 @@ This project is a single-page site. Hence there is no need for navigation. There
 
  * ### General design philosophy
 
- Whack-a-Z's first design choice is that it is a simple concept for a larger game. It is not meant to have all the features that I plan it to have. It is meant to work as a stand-alone turn-based combat system with a basic inventory system. It is meant as a showcase that such a game concept is not only feasible but also easily expandable. It is intended as a first building block and a showcase of my abilities to design and program a game system.
+    * Whack-a-Z's first design choice is that it is a simple concept for a larger game. It is not meant to have all the features that I plan it to have. It is meant to work as a stand-alone turn-based combat system with a basic inventory system. It is meant as a showcase that such a game concept is not only feasible but also easily expandable. It is intended as a first building block and a showcase of my abilities to design and program a game system.
 
- The second design choice is to keep the scope of the project small but plan for future designs as it is being developed. Those designs can be found in [Future Features](<#future-features>). Due to the smaller scope of the project, only a basic visual style is introduced. There is no font choice and only basic styling of the elements is introduced. The look of the game would be refined at the end of the development cycle of the whole game.
+    * The second design choice is to keep the scope of the project small but plan for future designs as it is being developed. Those designs can be found in [Future Features](<#future-features>). Due to the smaller scope of the project, only a basic visual style is introduced. There is no font choice and only basic styling of the elements is introduced. The look of the game would be refined at the end of the development cycle of the whole game.
 
- The third design choice is that it is meant to be satirical/humorous in design. At this stage it will mainly manifest through the text and Gary's (the Zombie) design.
+    * The third design choice is that it is meant to be satirical/humorous in design. At this stage it will mainly manifest through the text and Gary's (the Zombie) design.
+
+    * The fourth design choice is that the game is not supposed to tell the player what is going on EXACTLY. It is meant to present enough information through the tooltips and UI so that the player can play the game. But to understand it player needs to pay attention to the UI and combat log.
+
+    * The fifth design choice is that there are 3 lose conditions and only one to win. 
 
   * ### Color Scheme
 
-  The color scheme was chosen and tested during development. It was not a focus of the project and is subject to change. The idea was to make the elements easily distinguishable and color-coded where needed. Most of that is visible in the combat log. Green color was used to show positive player actions (like successful hit), red for being hit by Gary, black for neutral when the player just waits, a blue for player misses (because you feel "blue" about it), and yellow when Gary missed.
+    * The color scheme was chosen and tested during development. It was not a focus of the project and is subject to change. The idea was to make the elements easily distinguishable and color-coded where needed. Most of that is visible in the combat log. Green color was used to show positive player actions (like successful hit), red for being hit by Gary, black for neutral when the player just waits, a blue for player misses (because you feel "blue" about it), and yellow when Gary missed.
 
-  Gary's health bar is green, because zombie blood is green (according to games I have played anyway), players health bar is red (because of course it is) and noise level is color blue... for no particular reason and is subject to change.
-  
+    Gary's health bar is green, because zombie blood is green (according to games I have played anyway), players health bar is red (because of course it is) and noise level is color blue... for no particular reason and is subject to change.
+
 [Back to top](<#contents>)
 
 # Features
 
 ## Logo Page
+
+
 
 [Back to top](<#contents>)
  
