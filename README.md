@@ -291,7 +291,7 @@ The site was deployed to GitHub pages. The steps to deploy a site are as follows
   3. Under **Source**, select the branch to **master**, then click **Save**.
   4. Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-![GitHub pages deployed image](assets/image/)
+![GitHub pages deployed image](assets/image/readme-img/deployed.jpg)
 
   The live link to the Github repository can be found here - https://simonczedu.github.io/Whack-A-Z/
 
@@ -300,7 +300,7 @@ The site was deployed to GitHub pages. The steps to deploy a site are as follows
 A copy of the GitHub Repository can be made by forking the GitHub account. This copy can be viewed and changes can be made to the copy without affecting the original repository. Take the following steps to fork the repository;
 1. Log in to **GitHub** and locate the [repository](https://simonczedu.github.io/Whack-A-Z/).
 2. On the right-hand side of the page in line with the repository name is a button called **'Fork'**, click on the button to create a copy of the original repository in your GitHub Account.
-![GitHub forking process image](assets/image/)
+![GitHub forking process image](assets/image/readme-img/fork.jpg)
 
 ### **To create a local clone of this project**
 
@@ -308,7 +308,7 @@ Below is the method for cloning a project from GitHub:
 
 1. Under the repository’s name, click on the **code** tab.
 2. In the **Clone with HTTPS** section, click on the clipboard icon to copy the given URL.
-![Cloning image](assets/image/)
+![Cloning image](assets/image/readme-img/clone.jpg)
 3. In your IDE of choice, open **Git Bash**.
 4. Change the current working directory to the location where you want the cloned directory to be made.
 5. Type **git clone**, and then paste the URL copied from GitHub.
