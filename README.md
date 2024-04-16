@@ -1,6 +1,6 @@
 # **_Whack-a-Z_**
 
-Whack-a-Z is a concept for a rougelike/rougelite game. It's main goal is to demonstrate the basic concepts of a game that can be easily expanded. To set a cornerstone for the combat system, noise level system, timer system and inventory system. Those core elements then can be further expanded which will be discussed in detail in [Future Features](<#future-features>).
+Whack-a-Z is a concept for a rougelike/rougelite game. Its main goal is to demonstrate the basic concepts of a game that can be easily expanded. To set a cornerstone for the combat system, noise level system, timer system and inventory system. Those core elements then can be further expanded which will be discussed in detail in [Future Features](<#future-features>).
 
 
 You can find the deployed site at <a href="https://simonczedu.github.io/Whack-A-Z/" target="_blank" rel="noopener">Whack-a-Z</a>
@@ -9,23 +9,36 @@ You can find the deployed site at <a href="https://simonczedu.github.io/Whack-A-
 
 # Contents
 
-* [**User Experience UX**](<#user-experience-ux>)
-    * [User Expectations](<#user-expectations>)
-    * [Wireframes](<#wireframes>)
-    * [Site Structure](<#site-structure>)
-    * [Design Choices](<#design-choices>)
-    * [Color Scheme](<#color-scheme>)
-* [**Features**](<#features>)
-    * [**Index**](<#logo-page>)
-    * [**Existing Features**](<#existing-features>)
-    * [**Future Features**](<#future-features>)
-* [**Technologies Used**](<#technologies-used>)
-* [**Testing**](<#testing>)
-* [**Deployment**](<#deployment>)
-* [**Credits**](<#credits>)
-    * [**Content**](<#content>)
-    * [**Media**](<#media>)
-*  [**Acknowledgments**](<#acknowledgments>)
+- [**_Whack-a-Z_**](#whack-a-z)
+- [Contents](#contents)
+- [User Experience (UX)](#user-experience-ux)
+  - [User Expectations](#user-expectations)
+  - [Wireframes](#wireframes)
+  - [Site Structure](#site-structure)
+  - [Design Choices](#design-choices)
+- [Features](#features)
+  - [Main Game Screen](#main-game-screen)
+  - [Player Health Bar Features](#player-health-bar-features)
+  - [Gary Health Bar](#gary-health-bar)
+  - [Noise Level Indicator](#noise-level-indicator)
+  - [Clock](#clock)
+  - [Settings](#settings)
+  - [Combat Log](#combat-log)
+  - [Inventory](#inventory)
+  - [Actions](#actions)
+  - [Search](#search)
+  - [Replay](#replay)
+  - [Tooltips](#tooltips)
+  - [Future Features](#future-features)
+- [Technologies Used](#technologies-used)
+- [Testing](#testing)
+- [Deployment](#deployment)
+    - [**To deploy the project**](#to-deploy-the-project)
+    - [**To fork the repository on GitHub**](#to-fork-the-repository-on-github)
+    - [**To create a local clone of this project**](#to-create-a-local-clone-of-this-project)
+- [Credits](#credits)
+    - [Content \& Media](#content--media)
+- [Acknowledgments](#acknowledgments)
 
 
 # User Experience (UX)
@@ -73,22 +86,86 @@ This project is a single-page site. Hence there is no need for navigation. There
   * ### Color Scheme
 
     * The color scheme was chosen and tested during development. It was not a focus of the project and is subject to change. The idea was to make the elements easily distinguishable and color-coded where needed. Most of that is visible in the combat log. Green color was used to show positive player actions (like successful hit), red for being hit by Gary, black for neutral when the player just waits, a blue for player misses (because you feel "blue" about it), and yellow when Gary missed.
-
-    Gary's health bar is green, because zombie blood is green (according to games I have played anyway), players health bar is red (because of course it is) and noise level is color blue... for no particular reason and is subject to change.
+    Gary's health bar is green, because zombie blood is green (according to games I have played anyway), player health bar is red (because of course it is) and the noise level is color blue... for no particular reason and is subject to change.
 
 [Back to top](<#contents>)
 
 # Features
 
-## Logo Page
+## Main Game Screen
 
-
-
-[Back to top](<#contents>)
- 
-## Existing Features
+As mentioned above Whack-a-Z is a single-page site. This page is the Main Game Screen (called index in the files). Inside that screen some features are displayed throughout the whole game, and some are displayed with JavaScript when conditions for them to appear are met (i.e. Settings screen). Specific features will be listed below.
 
 [Back to top](<#contents>)
+
+## Player Health Bar Features
+
+[Back to top](<#contents>)
+
+## Gary Health Bar
+
+[Back to top](<#contents>)
+
+## Noise Level Indicator
+
+[Back to top](<#contents>)
+
+## Clock
+
+[Back to top](<#contents>)
+
+## Settings
+
+[Back to top](<#contents>)
+
+ * ### Settings Options
+
+[Back to top](<#contents>)
+
+## Combat Log
+
+[Back to top](<#contents>)
+
+## Inventory
+
+[Back to top](<#contents>)
+
+ * ### Items
+
+[Back to top](<#contents>)
+
+## Actions
+
+[Back to top](<#contents>)
+
+ * ### Attack
+
+[Back to top](<#contents>)
+
+ * ### Defend
+
+[Back to top](<#contents>)
+
+ * ### Wait
+
+[Back to top](<#contents>)
+
+ * ### End Game
+
+[Back to top](<#contents>)
+
+## Search
+
+[Back to top](<#contents>)
+
+## Replay
+
+[Back to top](<#contents>)
+
+## Tooltips
+
+[Back to top](<#contents>)
+
 
 ## Future Features 
 
@@ -98,7 +175,7 @@ This project is a single-page site. Hence there is no need for navigation. There
 
 * [HTML5](https://html.spec.whatwg.org/) - basic content and structure for the website.
 * [CSS](https://www.w3.org/Style/CSS/Overview.en.html) - styling.
-* [JavaScript] () - site functionalities and interactive elements. 
+* [JavaScript] (https://www.javascript.com/) - site functionalities and interactive elements. 
 * [Balsamiq](https://balsamiq.com/wireframes/) - concept wireframes.
 * [Visual Studio Code](https://code.visualstudio.com/) - IDE used to develop, edit, commit and push the code to GitHub.
 * [Github](https://github.com/) - used as a repository for the project and to deploy a public version of the Whack-a-Z.
