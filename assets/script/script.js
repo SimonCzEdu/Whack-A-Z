@@ -34,9 +34,10 @@ function openInv() {
         document.getElementById(`inv`).style.display = `none`;
     }
 }
+
+
 // Even listener for openInv()
 document.getElementById(`invBtn`).addEventListener('click', openInv);
-
 
 
 // Actions functions
@@ -50,6 +51,7 @@ let move = 0;
 let remainder = '';
 let noise = 0;
 console.log(`Noise level is at: ${noise} Nr. of moves: ${move}`);
+
 
 /* Current Gary health - must me declared with 'let' as we will later assign new values to it.
 Must also be declared before we call the function.*/
@@ -70,6 +72,8 @@ currentNoiseLvl = parseInt(currentNoiseLvl);
 let currentTime = document.getElementById('nrOne').innerHTML = 0;
 // Make it into a number
 currentTime = parseInt(currentTime);
+
+
 // After player already selected parry and we don't want them to deselect it (it is a check box), so we hide it instead. Otherwise they will loose a turn.
 function hideParryOnSelect() {
     const parry = document.getElementById(`parry`);
@@ -81,6 +85,74 @@ function hideParryOnSelect() {
     }
 }
 
+//Items
+// Use bandage function
+const bandage = document.getElementById(`bandageCon`);
+bandage.addEventListener(`click`, bandageUse);
+let bandageCount = document.getElementById(`bandageCount`).innerHTML;
+let bandageNum = parseInt(bandageCount);
+/**
+ * bandageUse() uses up one bandage and heals player for 25% of their health bar
+ */
+function bandageUse() {
+    // To prevent players from using up their bandages when they are at full health
+    if (currentPHealth !== 100) {
+        // If players have bandages in their inventory
+        if (bandageNum >= 1) {
+            // On use lower amount of uses
+            const bandageNumAfterUse = bandageNum -= 1;
+            document.getElementById('bandageCount').innerHTML = bandageNumAfterUse;
+            // To prevent health overflow above 100%
+            if (currentPHealth <= 75) {
+                currentPHealth += 25;
+            } else {
+                currentPHealth = 100;
+            }
+
+            // Now we can apply value of currentPHealth to the players health indicator
+            document.getElementById(`pHealthIndicator`).style.width = `${currentPHealth}%`;
+            console.log(bandageNum);
+
+            // Combat Log message on bandage use
+            const combatLogEntry = document.createElement(`div`);
+            combatLogEntry.innerHTML = `You used a bandage. Do you think this will be enough?`;
+            combatLogEntry.setAttribute(`class`, `combatNewEntry`);
+            document.getElementById('combatLog').prepend(combatLogEntry);
+            console.log(`Bandage used`);
+        }
+    }
+}
+// Sword Check to see if sword is equipped or not
+const swordStatus = document.getElementById(`swordCheck`);
+document.getElementById('swordCon').addEventListener(`click`, swordOnOff);
+/**
+ * swordOnOff() equips and unequips sword in player inventory when swordCon is clicked
+ */
+function swordOnOff() {
+    if (swordStatus.checked === true) {
+        swordStatus.checked = false;
+
+        // Combat Log message for putting sword away
+        const combatLogEntry = document.createElement(`div`);
+        combatLogEntry.innerHTML = `You sheath your sword... it was to big anyway`;
+        combatLogEntry.setAttribute(`class`, `combatNewEntry`);
+        document.getElementById('combatLog').prepend(combatLogEntry);
+
+        // Change Sword icon to show it status change
+        document.getElementById(`swordLabel`).innerHTML = `<iconify-icon id="swordIcon" icon="pepicons-pencil:sword-circle"></iconify-icon>`;
+    } else {
+        swordStatus.checked = true;
+
+        // Combat Log message for pulling out sword
+        const combatLogEntry = document.createElement(`div`);
+        combatLogEntry.innerHTML = `You pull out your sword... do you feel bigger now?`;
+        combatLogEntry.setAttribute(`class`, `combatNewEntry`);
+        document.getElementById('combatLog').prepend(combatLogEntry);
+
+        // Change Sword icon to show it status change
+        document.getElementById(`swordLabel`).innerHTML = `<iconify-icon id="swordIcon" icon="pepicons-pencil:sword-circle-filled"></iconify-icon>`;
+    }
+}
 
 // Attack Action Function 
 /**
@@ -126,36 +198,72 @@ function attack() {
     console.log(`You rolled ${attackRoll} for attack`);
 
     // Check if player succeeded in landing a hit
-    if (attackRoll >= 10) {
-        // Dice roll for the attack strength (aka damage)    
-        const attackDmg = Math.floor(Math.random() * 11)
+    if (swordStatus.checked === true) {
+        if (attackRoll >= 10) {
+            console.log(`attack bonus active`);
+            // Dice roll for the attack strength (aka damage)    
+            const attackDmg = Math.floor(Math.random() * 10 + 1);
 
-        // Combat Log message on hit
-        const combatLogEntry = document.createElement(`div`);
-        combatLogEntry.innerHTML = `You Whacked Gary! You did ${attackDmg} points of damage!`;
-        combatLogEntry.setAttribute(`class`, `combatNewEntry`);
-        document.getElementById('combatLog').prepend(combatLogEntry);
-        console.log(`Rolled ${attackDmg} for damage`);
+            // Combat Log message on hit
+            const combatLogEntry = document.createElement(`div`);
+            combatLogEntry.innerHTML = `You Whacked Gary! You did ${attackDmg} points of damage!`;
+            combatLogEntry.setAttribute(`class`, `combatNewEntry`);
+            document.getElementById('combatLog').prepend(combatLogEntry);
+            console.log(`Rolled ${attackDmg} for damage`);
 
-        // Damage applied to the Gary Health Indicator
-        currentZHealth = currentZHealth - attackDmg;
-        // Zero out Gary health if it drops below zero;
-        if (currentZHealth - attackDmg < 0) {
-            currentZHealth = 0;
+            // Damage applied to the Gary Health Indicator
+            currentZHealth = currentZHealth - attackDmg;
+            // Zero out Gary health if it drops below zero;
+            if (currentZHealth - attackDmg < 0) {
+                currentZHealth = 0;
+            }
+            // Apply damage to the Gary Health Indicator by reducing its width by the dmg done
+            document.getElementById(`zHealthIndicator`).style.width = `${currentZHealth}%`;
+            console.log(`Gary currently have ${currentZHealth}% health`);
         }
-        // Apply damage to the Gary Health Indicator by reducing its width by the dmg done
-        document.getElementById(`zHealthIndicator`).style.width = `${currentZHealth}%`;
-        console.log(`Gary currently have ${currentZHealth}% health`);
-    }
-    else {
+        else {
+            console.log(`attack bonus active but still not enough`);
+            // Combat Log message on miss
+            const combatLogEntry = document.createElement(`div`);
+            combatLogEntry.innerHTML = `HA! You've missed Gary!`;
+            combatLogEntry.setAttribute(`class`, `combatMissEntry`);
+            document.getElementById('combatLog').prepend(combatLogEntry);
+            console.log(`This was not enough to hit`);
 
-        // Combat Log message on miss
-        const combatLogEntry = document.createElement(`div`);
-        combatLogEntry.innerHTML = `HA! You've missed Gary!`;
-        combatLogEntry.setAttribute(`class`, `combatMissEntry`);
-        document.getElementById('combatLog').prepend(combatLogEntry);
-        console.log(`This was not enough to hit`);
+        }
+    } else {
+        if (attackRoll >= 12) {
+            console.log(`attack bonus INACTIVE`)
+            // Dice roll for the attack strength (aka damage)    
+            const attackDmg = Math.floor(Math.random() * 10)
 
+            // Combat Log message on hit
+            const combatLogEntry = document.createElement(`div`);
+            combatLogEntry.innerHTML = `You Whacked Gary! You did ${attackDmg} points of damage!`;
+            combatLogEntry.setAttribute(`class`, `combatNewEntry`);
+            document.getElementById('combatLog').prepend(combatLogEntry);
+            console.log(`Rolled ${attackDmg} for damage`);
+
+            // Damage applied to the Gary Health Indicator
+            currentZHealth = currentZHealth - attackDmg;
+            // Zero out Gary health if it drops below zero;
+            if (currentZHealth - attackDmg < 0) {
+                currentZHealth = 0;
+            }
+            // Apply damage to the Gary Health Indicator by reducing its width by the dmg done
+            document.getElementById(`zHealthIndicator`).style.width = `${currentZHealth}%`;
+            console.log(`Gary currently have ${currentZHealth}% health`);
+        }
+        else {
+            console.log(`attack bonus INACTIVE`)
+            // Combat Log message on miss
+            const combatLogEntry = document.createElement(`div`);
+            combatLogEntry.innerHTML = `HA! You've missed Gary!`;
+            combatLogEntry.setAttribute(`class`, `combatMissEntry`);
+            document.getElementById('combatLog').prepend(combatLogEntry);
+            console.log(`This was not enough to hit`);
+
+        }
     }
 
     // End Turn on every second move and run Gary Turn
@@ -318,9 +426,9 @@ function endTurn() {
     //  If parry is active we will apply debuff to the Garys chance to hit and it's damage
     if (parry.checked) {
         // Check if Gary succeeded in landing a hit
-        if (zAttackRoll >= 40) {
+        if (zAttackRoll >= 30) {
             // Dice roll for the Garys attack strength (aka damage)    
-            const zAttackDmg = Math.floor(Math.random() * 10)
+            const zAttackDmg = Math.floor(Math.random() * 11)
 
             // Combat Log message on hit
             const combatLogEntry = document.createElement(`div`);
@@ -329,9 +437,9 @@ function endTurn() {
             document.getElementById('combatLog').prepend(combatLogEntry);
             console.log(`Gary rolled ${zAttackDmg} for damage`);
 
-            // Damage applied to the Gary Health Indicator
+            // Damage applied to the Player Health Indicator
             let pHealthAfterHit = currentPHealth - zAttackDmg;
-            // Zero out Gary health if it drops below zero;
+            // Zero out Player's health if it drops below zero;
             if (currentPHealth - zAttackDmg < 0) {
                 pHealthAfterHit = 0;
             }
@@ -352,7 +460,7 @@ function endTurn() {
     } else {
         if (zAttackRoll >= 5) {
             // Dice roll for the Garys attack strength (aka damage)    
-            const zAttackDmg = Math.floor(Math.random() * 10 + 5)
+            const zAttackDmg = Math.floor(Math.random() * 11 + 5)
 
             // Combat Log message on hit
             const combatLogEntry = document.createElement(`div`);
@@ -408,7 +516,6 @@ function endTurn() {
     // We will call the uncheckParry() function once to make sure it does it's thing
     uncheckParry();
 }
-
 
 // Win and loose conditions and events
 /**
