@@ -230,16 +230,14 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 9vh;
-    align-self: baseline;
-    padding-left: 3vh;
 }
-#itemList li {
+.items {
     border-style: solid;
     width: 58vw;
     list-style: none;
     margin: 1vw;
 }
-#inv h3 {
+#invH {
     background: rgb(0, 0, 0);
     color: white;
     padding: 2vh 0;
@@ -250,6 +248,56 @@ body {
     border-style: solid;
     border-color: rgb(142, 137, 137);
 }
+
+/* Items styling */
+#swordCon {
+    display: flex;
+    flex-direction: column;
+}
+#swordMain {
+    display: flex;
+    font-size: 2vh;
+    border-bottom-style: solid;
+}
+#swordH {
+    font-size: 6vw;
+    border-right-style: solid;
+    padding: 2vw;
+    flex-basis: 30%;
+    flex-grow: 1;
+}
+#swordIcon  {
+    font-size: 10vw;   
+}
+#swordLabel  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#swordCheck {
+    display: none;
+}
+#bandageCon {
+    display: flex;
+    flex-direction: column;
+}
+#bandageH {
+    font-size: 6vw;
+    border-right-style: solid;
+    padding: 2vw;
+    flex-grow: 1;
+}
+#bandageMain {
+    display: flex;
+    font-size: 2vh;
+    border-bottom-style: solid;
+}
+#bandageCount {
+    padding: 0 4vw;
+    text-align: center;
+    align-self: center;
+}
+.bandageStack {}
 
 
 /* End Game */
@@ -581,7 +629,41 @@ body {
     #invBtnLabel {
     position: static;
     font-size: 10vh;
-}
+    }
+
+
+    /* Items styling */
+    #swordCon {
+    }
+    #swordMain {
+        font-size: 2vh;
+    }
+    #swordH {
+        font-size: 6vw;
+        padding: 2vw;
+        flex-grow: 1;
+    }
+    #swordIcon  {
+        font-size: 10vw;   
+    }
+    #swordLabel  {
+    }
+    #swordCheck {
+    }
+    #bandageCon {
+    }
+    #bandageH {
+        font-size: 6vw;
+        padding: 2vw;
+        flex-grow: 1;
+    }
+    #bandageMain {
+        font-size: 2vh;
+    }
+    #bandageCount {
+        padding: 0 4vw;
+    }
+    .bandageStack {}
 
 
     /* End Game MQ */
