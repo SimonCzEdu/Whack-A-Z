@@ -22,7 +22,7 @@
             <label id="settingsBtnLabel" for="settingsCheck" class="toolTipCon">
                 <iconify-icon icon="mdi:cog-outline"></iconify-icon>
             </label>
-            <input id="settingsCheck" type="checkbox" >
+            <input id="settingsCheck" type="checkbox">
         </div>
         <!-- Settings Screen -->
         <section id="settings">
@@ -65,17 +65,35 @@
         </div>
         <!-- Inventory screen -->
         <section id="inv">
-            <h3>Your Items</h3>
+            <h3 id="invH">Your Items</h3>
             <!-- List of items in players inventory -->
-            <ul id="itemList">
-                <li>Sword</li>
-                <li>Bandage</li>
-            </ul>
+            <div id="itemList">
+                <div id="swordCon" class="items">
+                    <div id="swordMain">
+                        <h3 id="swordH">Sword</h3>
+                        <label for="swordCheck" id="swordLabel"><iconify-icon id="swordIcon"
+                                icon="pepicons-pencil:sword-circle"></iconify-icon>
+                        </label>
+                        <input type="checkbox" name="swordCheck" id="swordCheck">
+                    </div>
+                    <div id="swordDsc">
+                        <p id="swordDscP">Better Whacking device.</p>
+                    </div>
+                </div>
+                <div id="bandageCon" class="items">
+                    <div id="bandageMain">
+                        <h3 id="bandageH">Bandage</h3>
+                            <div id="bandageCount">3</div>
+                    </div>
+                    <div id="bandageDsc">Will stop you from dying... <br>
+                        WELL you are still dying, just slower.</div>
+                </div>
+            </div>
         </section>
 
         <!-- Actions -->
         <div id="actions">
-            <div id="attack" class="hideActions toolTipCon" >
+            <div id="attack" class="hideActions toolTipCon">
                 <iconify-icon icon="game-icons:dripping-sword"></iconify-icon>
             </div>
             <div id="parryDiv" class="hideActions toolTipCon">
