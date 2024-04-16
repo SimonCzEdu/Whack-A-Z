@@ -284,8 +284,8 @@ This project is a single-page site. Hence there is no need for navigation. There
    * Items will be more varied and will offer more bonuses, but sometimes at a cost. I.e. a heavy sledgehammer: will have a higher damage output, but a slightly lower chance to hit (perks can battle that) and a much greater noise increase. 
 
   ### Summary
-   * I have a lot of ideas for this game. Some are still forming and some are already set in my heart. Of course some questions come as I think of new features. For example: what happens if a player loads a base page when on they are mid raid? Well, for that instance I think I would have to set up some sort of start logging (info dump of a sort) that tracks where players currently are and only on logging results at the end of the raid will those changes will be shown in base. So, players can go back to the base, but it will be as if they never left it unless they `log` end of `raid`.
-   * So in conclusion I hope you will find Whack-a-Z interesting it is current form and support it in the future. Thank you and have yourself a lovely, lovely day.
+   * I have a lot of ideas for this game. Some are still forming and some are already set in my heart. Of course some questions come as I think of new features. For example: what happens if a player loads a base page when they are mid raid? Well for that instance, I think I would have to set up some sort of start logging (info dump of a sort) that tracks where players currently are and only on logging results at the end of the raid will those changes will be shown in base. So, players can go back to the base, but it will be as if they never left it unless they `log` end of `raid`.
+   * So in conclusion I hope you will find Whack-a-Z interesting in its current form and support it in the future. Thank you and have yourself a lovely, lovely day.
 
 [Back to top](<#contents>)
 
