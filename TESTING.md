@@ -25,27 +25,31 @@ The CSS validator results are below:
 ## Testing if User Expectations were met:
 
 * As a user, I want to know the basic premise of a game.
-	Alert message at the page load provides basics and suggests to view tooltips with hover or tap options.
+ * Alert message at the page load provides basics and suggests to view tooltips with hover or tap options.
 
 * As a user, I want to have tooltips to better understand the UI.
-	Tooltips are present for every UI element. They are easily accessed by hovering over the UI element or by taping in on phones.
+ * Tooltips are present for every UI element. They are easily accessed by hovering over the UI element or by taping in on phones.
 
 * As a user, I want to have options to turn off some of the UI features.
-	Settings allow to turn on and off tooltips AND combat log.
+ * Settings allow to turn on and off tooltips AND combat log.
 
 * As a user, I want to have some kind of feedback to better understand the game.
-	Combat log provides feedback on player actions and on Gary's turn to explain better what happened on each action. Ambiguity left is there by design, as I want players to discover best approach to the game.
+ * Combat log provides feedback on player actions and on Gary's turn to explain better what happened on each action. Ambiguity left is there by design, as I want players to discover best approach to the game.
 
 * As a user, I want to be able to win and lose the game.
-	Condition for both winning and loosing are in place and tested that both options are viable. Though winning is hard without right strategy.
+ * Condition for both winning and loosing are in place and tested that both options are viable. Though winning is hard without right strategy.
 
 * As a user, when I win or lose I want to see feedback that the game ended.
-	End Game screen provides that information. It also adjusts to the reason for defeat conditions.
+ * End Game screen provides that information. It also adjusts to the reason for defeat conditions.
 
 * As a user, when the game ends I want to be able to restart it.
-	There are two ways to continue playing. Either restarting the game (`Play again?` button), or searching Gary's body and starting new round where players left off. With timer, noise level and Gary's health reset. Though the player's health remains the same and new items are added to the player's inventory.
+ * There are two ways to continue playing. Either restarting the game (`Play again?` button), or searching Gary's body and starting new round where players left off. With timer, noise level and Gary's health reset. Though the player's health remains the same and new items are added to the player's inventory.
+
+
 
 ## Known Bugs
+
+
 * ### Resolved
 
 * Bug 01 - When setting up end Turn with event listener on #endTurn div that only exists IF player did 2 actions this error msg appeared:
@@ -85,12 +89,14 @@ The CSS validator results are below:
  - Body was parent for all div. It's relative position could not be changed due to the background image depending on it. Instead I enclosed all dives in section #main. That solved the issue for the most part.
  - Fixed by changing how tooltips are displayed as it was expanding screen.
 
+
 * ### Bugs found on validation
 
 ![Validation Errors](assets/image/readme-img/HTML-validation-errors.jpg)
 
  * First error was fixed by adding `placeholder` inside the h3. This heading is edited by script
  * Second error was fixed by changing section to div.
+
 
 * ### Unresolved
 
@@ -106,10 +112,11 @@ The site was also tested using [Google Lighthouse](https://developers.google.com
 * Best Practices - Site conforms to industry best practices.
 * SEO - Search engine optimization. Is the site optimized for search engine result rankings.
 
-As an example the results for Whack-a-Z gallery page (featuring most photos and thus using most resources) are below:
+As an example the results for Whack-a-Z Main Page are below:
 ![Lighthouse test results](assets/image/readme-img/lighthouse.jpg)
 
-* Conclusion: ...
+* Conclusion: 
+ * Biggest hit to the performance is the image of Gary. I used .png for it and it is flagged as a `future format`. Page on manual tests loads to satisfactory speed though, so for now this will be ignored.
 
 ### Peer review
 In addition to the above testing the beta version of the site was put through its paces by peers, both in the software development field and outside. The bug with scrolling on phone screes has been reported. It since been addressed, but I will monitor further scrolling issues on phones. There were also minor spelling and grammar errors that have since been addressed.
