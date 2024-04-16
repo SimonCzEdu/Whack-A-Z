@@ -1,6 +1,6 @@
 # **_Whack-a-Z_**
 
-Whack-a-Z is a concept for a rougelike/rougelite game. Its main goal is to demonstrate the basic concepts of a game that can be easily expanded. To set a cornerstone for the combat system, noise level system, timer system and inventory system. Those core elements then can be further expanded which will be discussed in detail in [Future Features](<#future-features>).
+Whack-a-Z is a concept for a roguelike/rougelite game. Its main goal is to demonstrate the basic concepts of a game that can be easily expanded. To set a cornerstone for the combat system, noise level system, timer system and inventory system. Those core elements then can be further expanded which will be discussed in detail in [Planned Features](<#planned-features>).
 
 
 You can find the deployed site at <a href="https://simonczedu.github.io/Whack-A-Z/" target="_blank" rel="noopener">Whack-a-Z</a>
@@ -25,7 +25,6 @@ You can find the deployed site at <a href="https://simonczedu.github.io/Whack-A-
         * [**Settings Options**](<#settings-options>)    
     * [**Combat Log**](<#combat-log>)
     * [**Inventory**](<#inventory>)
-        * [**Items**](<#items>)  
     * [**Actions**](<#actions>)
         * [**Attack**](<#attack>)  
         * [**Defend**](<#defend>)  
@@ -35,7 +34,7 @@ You can find the deployed site at <a href="https://simonczedu.github.io/Whack-A-
         * [**Search**](<#search>)
         * [**Replay**](<#replay>)
     * [**Tooltips**](<#tooltips>)
-    * [**Future Features**](<#future-features>)
+    * [**Planned Features**](<#planned-features>)
 * [**Technologies Used**](<#technologies-used>)
 * [**Testing**](<#testing>)
 * [**Deployment**](<#deployment>)
@@ -69,7 +68,7 @@ The wireframes for Whack-a-Z were produced in [Balsamiq](https://balsamiq.com). 
 
 ## Site Structure
 
-This project is a single-page site. Hence there is no need for navigation. There was no need for traditional header>main>footer as the site is modeled after game UI. With the use of JavaScript I was able to show and hide the content to the user (player) as needed. I also introduced a tooltip system based `onmousemove` that informs the player what UI elements are and what they intend to do.
+This project is a single-page site. Hence there is no need for navigation. There was no need for a traditional header>main>footer as the site is modeled after the game UI. With the use of JavaScript, I was able to show and hide the content to the user (player) as needed. I also introduced a tooltip system based `onmousemove` that informs the player what UI elements are and what they intend to do.
 
 [Back to top](<#contents>)
 
@@ -79,7 +78,7 @@ This project is a single-page site. Hence there is no need for navigation. There
 
     * Whack-a-Z's first design choice is that it is a simple concept for a larger game. It is not meant to have all the features that I plan it to have. It is meant to work as a stand-alone turn-based combat system with a basic inventory system. It is meant as a showcase that such a game concept is not only feasible but also easily expandable. It is intended as a first building block and a showcase of my abilities to design and program a game system.
 
-    * The second design choice is to keep the scope of the project small but plan for future designs as it is being developed. Those designs can be found in [Future Features](<#future-features>). Due to the smaller scope of the project, only a basic visual style is introduced. There is no font choice and only basic styling of the elements is introduced. The look of the game would be refined at the end of the development cycle of the whole game.
+    * The second design choice is to keep the scope of the project small but plan for future designs as it is being developed. Those designs can be found in [Planned Features](<#planned-features>). Due to the smaller scope of the project, only a basic visual style is introduced. There is no font choice and only basic styling of the elements is introduced. The look of the game would be refined at the end of the development cycle of the whole game.
 
     * The third design choice is that it is meant to be satirical/humorous in design. At this stage it will mainly manifest through the text and Gary's (the Zombie) design.
 
@@ -99,6 +98,10 @@ This project is a single-page site. Hence there is no need for navigation. There
    ## Main Game Screen
    
    * As mentioned above Whack-a-Z is a single-page site. This page is the Main Game Screen (called index in the files). Inside that screen, some features are displayed throughout the whole game, and some are displayed with JavaScript when conditions for them to appear are met (i.e. Settings screen). Specific features will be listed below.
+
+   * Here also welcome alert will be displayed on each site load (even a replay option).
+
+   [Main Screen](assets/image/readme-img/main-screen.jpg)
    
    [Back to top](<#contents>)
 
@@ -107,6 +110,8 @@ This project is a single-page site. Hence there is no need for navigation. There
 
     * This element represents the player's health level.
 
+    [Player Health Bar](assets/image/readme-img/pHealth.jpg)
+
    [Back to top](<#contents>)
 
    
@@ -114,90 +119,146 @@ This project is a single-page site. Hence there is no need for navigation. There
    
     * This element represents Gary's (the zombie) health level.
 
+    [Gary's Health Bar](assets/image/readme-img/zHealth.jpg)
+
    [Back to top](<#contents>)
 
    
    ## Noise Level Indicator
+
+    * This element represents the current noise level. If it reaches maximum before the win condition is met it will end the game with a message that the player was too loud. It is increased on every [Attack](<#attack>) by 4 and on [Defend](<#defend>) by 1 and lowered on [Wait](<#wait>) by 3.
+
+    [Noise Level Indicator](assets/image/readme-img/noiseLvl.jpg)
    
    [Back to top](<#contents>)
 
    
    ## Clock
+
+    * This element represents the current moves. If it reaches a maximum (120 currently) before the win condition is met it will end the game with a message that the player was too slow. It is increased on every [Attack](<#attack>), [Defend](<#defend>) and [Wait](<#wait>) by 1.
+
+    [Clock](assets/image/readme-img/clock.jpg)
    
    [Back to top](<#contents>)
 
    
    ## Settings
+
+    * This element opens and closes the settings menu when pressed.
+
+    [Settings](assets/image/readme-img/settings.jpg)
    
    [Back to top](<#contents>)
 
    
    #### Settings Options
+
+    * There are two options currently available:
+        * Hide/Show Combat Log - which does exactly that on `click`.
+        * Hide/Show Tooltips - same as above.
    
-[Back to top](<#contents>)
+    [Back to top](<#contents>)
 
    
    ## Combat Log
+
+    * This element contains a message log of actions the player or Gary takes. Player can scroll through them and the newest is always at the top. They are color-coded (more information in [Color Scheme](<#color-scheme>)). It can be toggled on and off in [Settings](<#settings>).
    
    [Back to top](<#contents>)
+
+    [Combat Log](assets/image/readme-img/combatLog.jpg)
 
    
    ## Inventory
-   
-   [Back to top](<#contents>)
 
-   
-   ## Items
+    * This element contains items that players can click on to use. Some items like a sword are equipable and some - like a bandage - are consumable. Players can see if a sword is equipped by the icon and they can tell how many bandages they have left from the number by it's header. Using items DOES NOT use an action and DOES NOT increase player noise level.
+
+    [Inventory](assets/image/readme-img/inventory.jpg)
    
    [Back to top](<#contents>)
 
    
    ## Actions
+
+    * This set of elements are actions that the player can take. They are listed and explained below.
+
+    [Actions](assets/image/readme-img/actions.jpg)
    
    [Back to top](<#contents>)
    
    
    #### Attack
    
+    * This action runs a function that checks for random numbers for the so-called attack roll and damage roll. If the attack roll is high enough, the damage is applied to Gary's health bar (lowers it). In either case using the attack will increase players noise level and will use one action (increases move).
+
+    [Attack](assets/image/readme-img/attack.jpg)
+
    [Back to top](<#contents>)
 
    
    #### Defend
+
+    * This action sets players' status to defending. It can be selected only once per round (every 2 moves). When active next attack roll and damage roll of Gary's will be harder. Meaning it will have to be higher to hit and will always have less damage potential (can still roll up to 10 dmg though).
+
+    [Defend](assets/image/readme-img/defend.jpg)
    
    [Back to top](<#contents>)
 
    
    #### Wait
+
+    * This action `skips` one move. It lowers the noise level instead of increasing it, but does not roll for attack. It is meant as a way for a player to lower their noise level at the cost of wasting moves and still being exposed to Gary's attacks. Best utilized with defend action.
+
+    [Wait](assets/image/readme-img/wait.jpg)
    
    [Back to top](<#contents>)
 
    
    #### End Turn
-   
+
+   * This element is displayed after every two moves from the player (2x attack for example). When players press it Gary's turn is calculated. His hit and damage (if it was successful) are applied to the player's health and results are displayed in the combat log same as players actions. After this plays out, the default actions are restored and the player can carry out next round.
+
+    [End Turn](assets/image/readme-img/end-turn-button.jpg)
+
    [Back to top](<#contents>)
 
    ## End Game
+   
+    * This message is displayed if one of the 3 loos or 1 win conditions are met. Depending on the reason for this message to appear message will be adjusted - i.e. it will say that players were too loud if their noise level filled out before they could - ekhem - kill Gary.
+    * With this message players will have the option to start over or [search](<#search>) Gary. The latter will be only available if players manage to win. 
+
+    [End Game](assets/image/readme-img/end-game-screen.jpg)
+
+   [Back to top](<#contents>)
+
+   
+   #### Replay
+
+    * This option is part of the End Game screen. It simply reloads the page when clicked. This allows players to replay if they lost. It will be the only option available if the player lost. 
    
    [Back to top](<#contents>)
 
    
    #### Search
-   
-   [Back to top](<#contents>)
 
-   
-   #### Replay
+    * This screen is displayed when players defeat Gary and choose to search his body for loot. Here, they will find a semi-random array of items that players won. This feature is just a taste for the loot system planned for future releases. More on it in [Planned Features](<#planned-features>)
+
+    [Search](assets/image/readme-img/search.jpg)
    
    [Back to top](<#contents>)
 
    
    ## Tooltips
+
+   * This element appears when players taps or mouse over UI elements that require explanation. It can be toggled on and off in [Settings](<#settings>).
    
+    [Tooltips](assets/image/readme-img/tooltip-example.jpg)
+
    [Back to top](<#contents>)
    
 
  
-## Future Features 
+## Planned Features 
 
 [Back to top](<#contents>)
 
@@ -205,7 +266,7 @@ This project is a single-page site. Hence there is no need for navigation. There
 
 * [HTML5](https://html.spec.whatwg.org/) - basic content and structure for the website.
 * [CSS](https://www.w3.org/Style/CSS/Overview.en.html) - styling.
-* [JavaScript] (https://www.javascript.com/) - site functionalities and interactive elements. 
+* [JavaScript](https://www.javascript.com/) - site functionalities and interactive elements. 
 * [Balsamiq](https://balsamiq.com/wireframes/) - concept wireframes.
 * [Visual Studio Code](https://code.visualstudio.com/) - IDE used to develop, edit, commit and push the code to GitHub.
 * [Github](https://github.com/) - used as a repository for the project and to deploy a public version of the Whack-a-Z.
