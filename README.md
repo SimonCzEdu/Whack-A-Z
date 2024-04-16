@@ -9,36 +9,40 @@ You can find the deployed site at <a href="https://simonczedu.github.io/Whack-A-
 
 # Contents
 
-- [**_Whack-a-Z_**](#whack-a-z)
-- [Contents](#contents)
-- [User Experience (UX)](#user-experience-ux)
-  - [User Expectations](#user-expectations)
-  - [Wireframes](#wireframes)
-  - [Site Structure](#site-structure)
-  - [Design Choices](#design-choices)
-- [Features](#features)
-  - [Main Game Screen](#main-game-screen)
-  - [Player Health Bar Features](#player-health-bar-features)
-  - [Gary Health Bar](#gary-health-bar)
-  - [Noise Level Indicator](#noise-level-indicator)
-  - [Clock](#clock)
-  - [Settings](#settings)
-  - [Combat Log](#combat-log)
-  - [Inventory](#inventory)
-  - [Actions](#actions)
-  - [Search](#search)
-  - [Replay](#replay)
-  - [Tooltips](#tooltips)
-  - [Future Features](#future-features)
-- [Technologies Used](#technologies-used)
-- [Testing](#testing)
-- [Deployment](#deployment)
-    - [**To deploy the project**](#to-deploy-the-project)
-    - [**To fork the repository on GitHub**](#to-fork-the-repository-on-github)
-    - [**To create a local clone of this project**](#to-create-a-local-clone-of-this-project)
-- [Credits](#credits)
-    - [Content \& Media](#content--media)
-- [Acknowledgments](#acknowledgments)
+* [**User Experience UX**](<#user-experience-ux>)
+    * [User Expectations](<#user-expectations>)
+    * [Wireframes](<#wireframes>)
+    * [Site Structure](<#site-structure>)
+    * [Design Choices](<#design-choices>)
+    * [Color Scheme](<#color-scheme>)
+* [**Features**](<#features>)
+    * [**Main Game Screen**](<#main-game-screen>)
+    * [**Player Health Bar**](<#player-health-bar>)
+    * [**Gary Health Bar**](<#gary-health-bar>)
+    * [**Noise Level Indicator**](<#noise-level-indicator>)
+    * [**Clock**](<#clock>)
+    * [**Settings**](<#settings>)
+        * [**Settings Options**](<#settings-options>)    
+    * [**Combat Log**](<#combat-log>)
+    * [**Inventory**](<#inventory>)
+        * [**Items**](<#items>)  
+    * [**Actions**](<#actions>)
+        * [**Attack**](<#attack>)  
+        * [**Defend**](<#defend>)  
+        * [**Wait**](<#wait>)
+        * [**End Turn**](<#end-turn>) 
+    * [**End Game**](<#end-game>) 
+        * [**Search**](<#search>)
+        * [**Replay**](<#replay>)
+    * [**Tooltips**](<#tooltips>)
+    * [**Future Features**](<#future-features>)
+* [**Technologies Used**](<#technologies-used>)
+* [**Testing**](<#testing>)
+* [**Deployment**](<#deployment>)
+* [**Credits**](<#credits>)
+    * [**Content**](<#content>)
+    * [**Media**](<#media>)
+*  [**Acknowledgments**](<#acknowledgments>)
 
 
 # User Experience (UX)
@@ -92,81 +96,107 @@ This project is a single-page site. Hence there is no need for navigation. There
 
 # Features
 
-## Main Game Screen
+   ## Main Game Screen
+   
+   * As mentioned above Whack-a-Z is a single-page site. This page is the Main Game Screen (called index in the files). Inside that screen, some features are displayed throughout the whole game, and some are displayed with JavaScript when conditions for them to appear are met (i.e. Settings screen). Specific features will be listed below.
+   
+   [Back to top](<#contents>)
 
-As mentioned above Whack-a-Z is a single-page site. This page is the Main Game Screen (called index in the files). Inside that screen some features are displayed throughout the whole game, and some are displayed with JavaScript when conditions for them to appear are met (i.e. Settings screen). Specific features will be listed below.
+   
+   * ## Player Health Bar Features
 
-[Back to top](<#contents>)
+    * This element represents the player's health level.
 
-## Player Health Bar Features
+   [Back to top](<#contents>)
 
-[Back to top](<#contents>)
+   
+   * ## Gary Health Bar
+   
+    * This element represents Gary's (the zombie) health level.
 
-## Gary Health Bar
+   [Back to top](<#contents>)
 
-[Back to top](<#contents>)
+   
+   * ## Noise Level Indicator
+   
+   [Back to top](<#contents>)
 
-## Noise Level Indicator
+   
+   * ## Clock
+   
+   [Back to top](<#contents>)
 
-[Back to top](<#contents>)
+   
+   * ## Settings
+   
+   [Back to top](<#contents>)
 
-## Clock
+   
+    * ### Settings Options
+   
+   [Back to top](<#contents>)
 
-[Back to top](<#contents>)
+   
+   * ## Combat Log
+   
+   [Back to top](<#contents>)
 
-## Settings
+   
+   * ## Inventory
+   
+   [Back to top](<#contents>)
 
-[Back to top](<#contents>)
+   
+   * ## Items
+   
+   [Back to top](<#contents>)
 
- * ### Settings Options
+   
+   * ## Actions
+   
+   [Back to top](<#contents>)
 
-[Back to top](<#contents>)
+   
+    * ### Attack
+   
+    [Back to top](<#contents>)
 
-## Combat Log
+   
+    * ### Defend
+   
+    [Back to top](<#contents>)
 
-[Back to top](<#contents>)
+   
+    * ### Wait
+   
+    [Back to top](<#contents>)
 
-## Inventory
+   
+    * ### End Turn
+   
+    [Back to top](<#contents>)
 
-[Back to top](<#contents>)
+   * ## End Game
+   
+    [Back to top](<#contents>)
 
- * ### Items
+   
+    * ### Search
+   
+    [Back to top](<#contents>)
 
-[Back to top](<#contents>)
+   
+    * ### Replay
+   
+    [Back to top](<#contents>)
 
-## Actions
+   
+   * ## Tooltips
+   
+   [Back to top](<#contents>)
+   
 
-[Back to top](<#contents>)
-
- * ### Attack
-
-[Back to top](<#contents>)
-
- * ### Defend
-
-[Back to top](<#contents>)
-
- * ### Wait
-
-[Back to top](<#contents>)
-
- * ### End Game
-
-[Back to top](<#contents>)
-
-## Search
-
-[Back to top](<#contents>)
-
-## Replay
-
-[Back to top](<#contents>)
-
-## Tooltips
-
-[Back to top](<#contents>)
-
-
+ 
 ## Future Features 
 
 [Back to top](<#contents>)
