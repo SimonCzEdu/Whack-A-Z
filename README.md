@@ -132,9 +132,9 @@ This project is a single-page site. Hence there is no need for navigation. There
    [Back to top](<#contents>)
 
    
-    * ### Settings Options
+      ### Settings Options
    
-   [Back to top](<#contents>)
+      [Back to top](<#contents>)
 
    
    ## Combat Log
@@ -157,38 +157,38 @@ This project is a single-page site. Hence there is no need for navigation. There
    [Back to top](<#contents>)
 
    
-    * ### Attack
+       ### Attack
    
-    [Back to top](<#contents>)
+       [Back to top](<#contents>)
 
    
-    * ### Defend
+       ### Defend
    
-    [Back to top](<#contents>)
+       [Back to top](<#contents>)
 
    
-    * ### Wait
+       ### Wait
    
-    [Back to top](<#contents>)
+       [Back to top](<#contents>)
 
    
-    * ### End Turn
+       ### End Turn
    
-    [Back to top](<#contents>)
+       [Back to top](<#contents>)
 
    ## End Game
    
     [Back to top](<#contents>)
 
    
-    * ### Search
+       ### Search
    
-    [Back to top](<#contents>)
+       [Back to top](<#contents>)
 
    
-    * ### Replay
+       ### Replay
    
-    [Back to top](<#contents>)
+       [Back to top](<#contents>)
 
    
    ## Tooltips
