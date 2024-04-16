@@ -1,110 +1,149 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **_Whack-a-Z_**
 
-Welcome USER_NAME,
+Whack-a-Z is a concept for a site of a fictional windows-selling company. It is focused on showcasing layout, features and potential products. It is scalable and has great potential to be further developed based on user/customer feedback.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+You can find the deployed site at <a href="https://simonczedu.github.io/Whack-A-Z/" target="_blank" rel="noopener">Whack-a-Z</a>
 
-## Gitpod Reminders
+![Whack-a-Z responsiveness showcase](assets/image/)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# Contents
 
-`python3 -m http.server`
+* [**User Experience UX**](<#user-experience-ux>)
+    * [Wireframes](<#wireframes>)
+    * [Site Structure](<#site-structure>)
+    * [Design Choices](<#design-choices>)
+    *  [Typography](<#typography>)
+    *  [Color Scheme](<#color-scheme>)
+* [**Features**](<#features>)
+    * [**Index**](<#logo-page>)
+    * [**Future Features**](<#future-features>)
+* [**Technologies Used**](<#technologies-used>)
+* [**Testing**](<#testing>)
+* [**Deployment**](<#deployment>)
+* [**Credits**](<#credits>)
+    * [**Content**](<#content>)
+    * [**Media**](<#media>)
+*  [**Acknowledgments**](<#acknowledgments>)
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+# User Experience (UX)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## User Stories
 
-A blue button should appear to click: _Make Public_,
+[Back to top](<#contents>)
 
-Another blue button should appear to click: _Open Browser_.
+## Wireframes
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The wireframes for Whack-a-Z were produced in [Balsamiq](https://balsamiq.com). There are frames for a full-width display and a small mobile device. The final site varies from the wireframes due to developments that occurred during the development process. 
 
-To log into the Heroku toolbelt CLI:
+[Wireframes in PDF (will open in new tab)](assets/image/)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+[Back to top](<#contents>)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Site Structure
 
-------
+[Back to top](<#contents>)
 
-## Release History
+## Design Choices
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+ * ### General design philosophy
 
-**September 20 2023:** Update Python version to 3.9.17.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+ * ### Typography
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+[Back to top](<#contents>)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+  * ### Color Scheme
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+![Color Scheme image](assets/image/)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+[Back to top](<#contents>)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+# Features
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## Logo Page
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+[Back to top](<#contents>)
+ 
+## Existing Features
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+[Back to top](<#contents>)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Future Features 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+[Back to top](<#contents>)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+# Technologies Used
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+* [HTML5](https://html.spec.whatwg.org/) - basic content and structure for the website.
+* [CSS](https://www.w3.org/Style/CSS/Overview.en.html) - styling.
+* [JavaScript] () - site functionalities and interactive elements. 
+* [Balsamiq](https://balsamiq.com/wireframes/) - concept wireframes.
+* [Visual Studio Code](https://code.visualstudio.com/) - IDE used to develop, edit, commit and push the code to GitHub.
+* [Github](https://github.com/) - used as a repository for the project and to deploy a public version of the Whack-a-Z.
 
-------
+[Back to top](<#contents>)
 
-## FAQ about the uptime script
+# Testing
 
-**Why have you added this script?**
+Detailed [testing (opens in a new window)](TESTING.md) of Whack-a-Z.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+[Back to top](<#contents>)
 
-**How will this affect me?**
+# Deployment
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### **To deploy the project**
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+The site was deployed to GitHub pages. The steps to deploy a site are as follows:
+  1. In the GitHub repository, navigate to the **Settings** tab.
+  2. Once in Settings, navigate to the **Pages** tab on the left-hand side.
+  3. Under **Source**, select the branch to **master**, then click **Save**.
+  4. Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+![GitHub pages deployed image](assets/image/)
 
-**So….?**
+  The live link to the Github repository can be found here - https://simonczedu.github.io/Whack-A-Z/
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### **To fork the repository on GitHub**
 
-**Can I opt out?**
+A copy of the GitHub Repository can be made by forking the GitHub account. This copy can be viewed and changes can be made to the copy without affecting the original repository. Take the following steps to fork the repository;
+1. Log in to **GitHub** and locate the [repository](https://simonczedu.github.io/Whack-A-Z/).
+2. On the right-hand side of the page in line with the repository name is a button called **'Fork'**, click on the button to create a copy of the original repository in your GitHub Account.
+![GitHub forking process image](assets/image/)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### **To create a local clone of this project**
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+Below is the method for cloning a project from GitHub:
 
-**Anything more?**
+1. Under the repository’s name, click on the **code** tab.
+2. In the **Clone with HTTPS** section, click on the clipboard icon to copy the given URL.
+![Cloning image](assets/image/)
+3. In your IDE of choice, open **Git Bash**.
+4. Change the current working directory to the location where you want the cloned directory to be made.
+5. Type **git clone**, and then paste the URL copied from GitHub.
+6. Press **enter** and the local clone will be created.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
 
-Happy coding!
+[Back to top](<#contents>)
+
+# Credits
+### Content & Media
+
+
+[Back to top](<#contents>)
+
+# Acknowledgments
+
+The site was completed as a Portfolio 2 Project piece for the Full Stack Software Developer (e-Commerce) Diploma at the [Code Institute](https://codeinstitute.net/). As such I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/), the Slack community, and all at the Code Institute for their help and support. 
+
+
+Whack-a-Z is a concept of a game. The game I wish I can expand and flesh out in the future. I would like to thank Code Institute for the opportunity to take the first step on this journey.
+
+I also would like to thank my wife Marta Furman for her help with the project and support. She tested the site, provided invaluable insight and inspired me every step. 
+
+Szymon Czapiewski 2024.
+
+[Back to top](<#contents>)
