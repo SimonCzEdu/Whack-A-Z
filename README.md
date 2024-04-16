@@ -103,31 +103,31 @@ This project is a single-page site. Hence there is no need for navigation. There
    [Back to top](<#contents>)
 
    
-   * ## Player Health Bar Features
+   ## Player Health Bar Features
 
     * This element represents the player's health level.
 
    [Back to top](<#contents>)
 
    
-   * ## Gary Health Bar
+   ## Gary Health Bar
    
     * This element represents Gary's (the zombie) health level.
 
    [Back to top](<#contents>)
 
    
-   * ## Noise Level Indicator
+   ## Noise Level Indicator
    
    [Back to top](<#contents>)
 
    
-   * ## Clock
+   ## Clock
    
    [Back to top](<#contents>)
 
    
-   * ## Settings
+   ## Settings
    
    [Back to top](<#contents>)
 
@@ -137,22 +137,22 @@ This project is a single-page site. Hence there is no need for navigation. There
    [Back to top](<#contents>)
 
    
-   * ## Combat Log
+   ## Combat Log
    
    [Back to top](<#contents>)
 
    
-   * ## Inventory
+   ## Inventory
    
    [Back to top](<#contents>)
 
    
-   * ## Items
+   ## Items
    
    [Back to top](<#contents>)
 
    
-   * ## Actions
+   ## Actions
    
    [Back to top](<#contents>)
 
@@ -176,7 +176,7 @@ This project is a single-page site. Hence there is no need for navigation. There
    
     [Back to top](<#contents>)
 
-   * ## End Game
+   ## End Game
    
     [Back to top](<#contents>)
 
@@ -191,7 +191,7 @@ This project is a single-page site. Hence there is no need for navigation. There
     [Back to top](<#contents>)
 
    
-   * ## Tooltips
+   ## Tooltips
    
    [Back to top](<#contents>)
    
