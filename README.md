@@ -75,81 +75,78 @@ This project is a single-page site. Hence there is no need for navigation. There
 ## Design Choices
 
  * ### General design philosophy
-
-    * Whack-a-Z's first design choice is that it is a simple concept for a larger game. It is not meant to have all the features that I plan it to have. It is meant to work as a stand-alone turn-based combat system with a basic inventory system. It is meant as a showcase that such a game concept is not only feasible but also easily expandable. It is intended as a first building block and a showcase of my abilities to design and program a game system.
-
-    * The second design choice is to keep the scope of the project small but plan for future designs as it is being developed. Those designs can be found in [Planned Features](<#planned-features>). Due to the smaller scope of the project, only a basic visual style is introduced. There is no font choice and only basic styling of the elements is introduced. The look of the game would be refined at the end of the development cycle of the whole game.
-
-    * The third design choice is that it is meant to be satirical/humorous in design. At this stage it will mainly manifest through the text and Gary's (the Zombie) design.
-
-    * The fourth design choice is that the game is not supposed to tell the player what is going on EXACTLY. It is meant to present enough information through the tooltips and UI so that the player can play the game. But to understand it player needs to pay attention to the UI and combat log.
-
-    * The fifth design choice is that there are 3 lose conditions and only one to win. 
+   
+   * Whack-a-Z's first design choice is that it is a simple concept for a larger game. It is not meant to have all the features that I plan it to have. It is meant to work as a stand-alone turn-based combat system with a basic inventory system. It is meant as a showcase that such a game concept is not only feasible but also easily expandable. It is intended as a first building block and a showcase of my abilities to design and program a game system.
+   
+   * The second design choice is to keep the scope of the project small but plan for future designs as it is being developed. Those designs can be found in [Planned Features](<#planned-features>). Due to the smaller scope of the project, only a basic visual style is introduced. There is no font choice and only basic styling of the elements is introduced. The look of the game would be refined at the end of the development cycle of the whole game.
+   
+   * The third design choice is that it is meant to be satirical/humorous in design. At this stage, it will mainly manifest through the text and Gary's (the Zombie) design.
+   
+   * The fourth design choice is that the game is not supposed to tell the player what is going on EXACTLY. It is meant to present enough information through the tooltips and UI so that the player can play the game. But to understand it player needs to pay attention to the UI and combat log.
+   
+   * The fifth design choice is that there are 3 lose conditions and only one to win. 
 
   * ### Color Scheme
 
-    * The color scheme was chosen and tested during development. It was not a focus of the project and is subject to change. The idea was to make the elements easily distinguishable and color-coded where needed. Most of that is visible in the combat log. Green color was used to show positive player actions (like successful hit), red for being hit by Gary, black for neutral when the player just waits, a blue for player misses (because you feel "blue" about it), and yellow when Gary missed.
-    Gary's health bar is green, because zombie blood is green (according to games I have played anyway), player health bar is red (because of course it is) and the noise level is color blue... for no particular reason and is subject to change.
+   * The color scheme was chosen and tested during development. It was not a focus of the project and is subject to change. The idea was to make the elements easily distinguishable and color-coded where needed. Most of that is visible in the combat log. Green color was used to show positive player actions (like successful hit), red for being hit by Gary, black for neutral when the player just waits, a blue for player misses (because you feel "blue" about it), and yellow when Gary missed. Gary's health bar is green, because zombie blood is green (according to games I have played anyway), the player health bar is red (because of course it is) and the noise level is color blue... for no particular reason and is subject to change.
 
 [Back to top](<#contents>)
 
 # Features
-
-   ## Main Game Screen
    
+   ## Main Game Screen
+   [Gary's Health Bar](assets/image/readme-img/zHealth.jpg)
    * As mentioned above Whack-a-Z is a single-page site. This page is the Main Game Screen (called index in the files). Inside that screen, some features are displayed throughout the whole game, and some are displayed with JavaScript when conditions for them to appear are met (i.e. Settings screen). Specific features will be listed below.
-
+   
    * Here also welcome alert will be displayed on each site load (even a replay option).
-
-   [Main Screen](assets/image/readme-img/main-screen.jpg)
    
    [Back to top](<#contents>)
-
+   
    
    ## Player Health Bar Features
-
-    * This element represents the player's health level.
-
-    [Player Health Bar](assets/image/readme-img/pHealth.jpg)
-
+   
+   [Player Health Bar](assets/image/readme-img/pHealth.jpg)
+   
+   * This element represents the player's health level.
+   
    [Back to top](<#contents>)
-
+   
    
    ## Gary Health Bar
    
-    * This element represents Gary's (the zombie) health level.
-
-    [Gary's Health Bar](assets/image/readme-img/zHealth.jpg)
-
+   [Gary's Health Bar](assets/image/readme-img/zHealth.jpg)
+   
+   * This element represents Gary's (the zombie) health level.
+   
    [Back to top](<#contents>)
-
+   
    
    ## Noise Level Indicator
-
-    * This element represents the current noise level. If it reaches maximum before the win condition is met it will end the game with a message that the player was too loud. It is increased on every [Attack](<#attack>) by 4 and on [Defend](<#defend>) by 1 and lowered on [Wait](<#wait>) by 3.
-
-    [Noise Level Indicator](assets/image/readme-img/noiseLvl.jpg)
+   
+   [Noise Level Indicator](assets/image/readme-img/noiseLvl.jpg)
+   
+   * This element represents the current noise level. If it reaches maximum before the win condition is met it will end the game with a message that the player was too loud. It is increased on every [Attack](<#attack>) by 4 on [Defend](<#defend>) by 1 and lowered on [Wait](<#wait>) by 3.
    
    [Back to top](<#contents>)
-
+   
    
    ## Clock
-
-    * This element represents the current moves. If it reaches a maximum (120 currently) before the win condition is met it will end the game with a message that the player was too slow. It is increased on every [Attack](<#attack>), [Defend](<#defend>) and [Wait](<#wait>) by 1.
-
-    [Clock](assets/image/readme-img/clock.jpg)
+   
+   [Clock](assets/image/readme-img/clock.jpg)
+   
+   * This element represents the current moves. If it reaches a maximum (120 currently) before the win condition is met it will end the game with a message that the player was too slow. It is increased on every [Attack](<#attack>), [Defend](<#defend>) and [Wait](<#wait>) by 1.
    
    [Back to top](<#contents>)
-
+   
    
    ## Settings
-
-    * This element opens and closes the settings menu when pressed.
-
-    [Settings](assets/image/readme-img/settings.jpg)
+   
+   [Settings](assets/image/readme-img/settings.jpg)
+   
+   * This element opens and closes the settings menu when pressed.
    
    [Back to top](<#contents>)
-
+   
    
    #### Settings Options
 
@@ -162,97 +159,97 @@ This project is a single-page site. Hence there is no need for navigation. There
    
    ## Combat Log
 
-    * This element contains a message log of actions the player or Gary takes. Player can scroll through them and the newest is always at the top. They are color-coded (more information in [Color Scheme](<#color-scheme>)). It can be toggled on and off in [Settings](<#settings>).
+   [Combat Log](assets/image/readme-img/combatLog.jpg)
+
+   * This element contains a message log of actions the player or Gary takes. The player can scroll through them and the newest is always at the top. They are color-coded (more information in [Color Scheme](<#color-scheme>)). It can be toggled on and off in [Settings](<#settings>).
    
    [Back to top](<#contents>)
-
-    [Combat Log](assets/image/readme-img/combatLog.jpg)
 
    
    ## Inventory
 
-    * This element contains items that players can click on to use. Some items like a sword are equipable and some - like a bandage - are consumable. Players can see if a sword is equipped by the icon and they can tell how many bandages they have left from the number by it's header. Using items DOES NOT use an action and DOES NOT increase player noise level.
+   [Inventory](assets/image/readme-img/inventory.jpg)
 
-    [Inventory](assets/image/readme-img/inventory.jpg)
+   * This element contains items that players can click on to use. Some items like a sword are equipable and some - like a bandage - are consumable. Players can see if a sword is equipped by the icon and they can tell how many bandages they have left from the number by its header. Using items DOES NOT use an action and DOES NOT increase player noise level.
    
    [Back to top](<#contents>)
 
    
    ## Actions
 
-    * This set of elements are actions that the player can take. They are listed and explained below.
+   [Actions](assets/image/readme-img/actions.jpg)
 
-    [Actions](assets/image/readme-img/actions.jpg)
+   * This set of elements are actions that the player can take. They are listed and explained below.
    
    [Back to top](<#contents>)
    
    
    #### Attack
-   
-    * This action runs a function that checks for random numbers for the so-called attack roll and damage roll. If the attack roll is high enough, the damage is applied to Gary's health bar (lowers it). In either case using the attack will increase players noise level and will use one action (increases move).
 
-    [Attack](assets/image/readme-img/attack.jpg)
+   [Attack](assets/image/readme-img/attack.jpg)
+   
+   * This action runs a function that checks for random numbers for the so-called attack roll and damage roll. If the attack roll is high enough, the damage is applied to Gary's health bar (lowers it). In either case, using the attack will increase the player's noise level and will use one action (increases move).
 
    [Back to top](<#contents>)
 
    
    #### Defend
 
-    * This action sets players' status to defending. It can be selected only once per round (every 2 moves). When active next attack roll and damage roll of Gary's will be harder. Meaning it will have to be higher to hit and will always have less damage potential (can still roll up to 10 dmg though).
+   [Defend](assets/image/readme-img/defend.jpg)
 
-    [Defend](assets/image/readme-img/defend.jpg)
+   * This action sets players' status to defend. It can be selected only once per round (every 2 moves). When active next attack roll and damage roll of Gary's will be harder. This means it will have to be higher to hit and will always have less damage potential (can still roll up to 10 dmg though).
    
    [Back to top](<#contents>)
 
    
    #### Wait
 
-    * This action `skips` one move. It lowers the noise level instead of increasing it, but does not roll for attack. It is meant as a way for a player to lower their noise level at the cost of wasting moves and still being exposed to Gary's attacks. Best utilized with defend action.
+   [Wait](assets/image/readme-img/wait.jpg)
 
-    [Wait](assets/image/readme-img/wait.jpg)
+   * This action `skips` one move. It lowers the noise level instead of increasing it but does not roll for attack. It is meant as a way for a player to lower their noise level at the cost of wasting moves and still being exposed to Gary's attacks. Best utilized with defense action.
    
    [Back to top](<#contents>)
 
    
    #### End Turn
 
-   * This element is displayed after every two moves from the player (2x attack for example). When players press it Gary's turn is calculated. His hit and damage (if it was successful) are applied to the player's health and results are displayed in the combat log same as players actions. After this plays out, the default actions are restored and the player can carry out next round.
+   [End Turn](assets/image/readme-img/end-turn-button.jpg)
 
-    [End Turn](assets/image/readme-img/end-turn-button.jpg)
+   * This element is displayed after every two moves from the player (2x attack for example). When players press it Gary's turn is calculated. His hit and damage (if it was successful) are applied to the player's health and results are displayed in the combat log same as the player's actions. After this plays out, the default actions are restored and the player can carry out the next round.
 
    [Back to top](<#contents>)
 
    ## End Game
-   
-    * This message is displayed if one of the 3 loos or 1 win conditions are met. Depending on the reason for this message to appear message will be adjusted - i.e. it will say that players were too loud if their noise level filled out before they could - ekhem - kill Gary.
-    * With this message players will have the option to start over or [search](<#search>) Gary. The latter will be only available if players manage to win. 
 
-    [End Game](assets/image/readme-img/end-game-screen.jpg)
+   [End Game](assets/image/readme-img/end-game-screen.jpg)
+   
+   * This message is displayed if one of the 3 loos or 1 win conditions are met. Depending on the reason for this message to appear message will be adjusted - i.e. it will say that players were too loud if their noise level filled out before they could - ekhem - kill Gary.
+   * With this message, players will have the option to start over or [search](#search) Gary. The latter will be only available if players manage to win. 
 
    [Back to top](<#contents>)
 
    
    #### Replay
 
-    * This option is part of the End Game screen. It simply reloads the page when clicked. This allows players to replay if they lost. It will be the only option available if the player lost. 
+   * This option is part of the End Game screen. It simply reloads the page when clicked. This allows players to replay if they lost. It will be the only option available if the player loses. 
    
    [Back to top](<#contents>)
 
    
    #### Search
 
-    * This screen is displayed when players defeat Gary and choose to search his body for loot. Here, they will find a semi-random array of items that players won. This feature is just a taste for the loot system planned for future releases. More on it in [Planned Features](<#planned-features>)
+   [Search](assets/image/readme-img/search.jpg)
 
-    [Search](assets/image/readme-img/search.jpg)
+   * This screen is displayed when players defeat Gary and choose to search his body for loot. Here, they will find a semi-random array of items that players won. This feature is just a taste of the loot system planned for future releases. More on it in [Planned Features](<#planned-features>)
    
    [Back to top](<#contents>)
 
    
    ## Tooltips
+   
+   [Tooltips](assets/image/readme-img/tooltip-example.jpg)
 
    * This element appears when players taps or mouse over UI elements that require explanation. It can be toggled on and off in [Settings](<#settings>).
-   
-    [Tooltips](assets/image/readme-img/tooltip-example.jpg)
 
    [Back to top](<#contents>)
    
