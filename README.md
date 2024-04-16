@@ -1,6 +1,6 @@
 # **_Whack-a-Z_**
 
-Whack-a-Z is a concept for a site of a fictional windows-selling company. It is focused on showcasing layout, features and potential products. It is scalable and has great potential to be further developed based on user/customer feedback.
+Whack-a-Z is a concept for a rougelike/rougelite game. It's main goal is to demonstrate the basic concepts of a game that can be easily expanded. To set a cornerstone for the combat system, noise level system, timer system and inventory system. Those core elements then can be further expanded which will be discussed in detail in [Future Features](<#future-features>).
 
 
 You can find the deployed site at <a href="https://simonczedu.github.io/Whack-A-Z/" target="_blank" rel="noopener">Whack-a-Z</a>
@@ -10,6 +10,7 @@ You can find the deployed site at <a href="https://simonczedu.github.io/Whack-A-
 # Contents
 
 * [**User Experience UX**](<#user-experience-ux>)
+    * [User Expectations](<#user-expectations>)
     * [Wireframes](<#wireframes>)
     * [Site Structure](<#site-structure>)
     * [Design Choices](<#design-choices>)
@@ -29,7 +30,15 @@ You can find the deployed site at <a href="https://simonczedu.github.io/Whack-A-
 
 # User Experience (UX)
 
-## User Stories
+## User Expectations
+
+ * As a user, I want to know the basic premise of a game
+ * As a user, I want to have tooltips to better understand the UI
+ * As a user, I want to have options to turn off some of the UI features
+ * As a user, I want to have some kind of feedback to better understand the game
+ * As a user, I want to be able to win and lose the game
+ * As a user, when I win or lose I want to see feedback that the game ended
+ * As a user, when the game ends I want to be able to restart it
 
 [Back to top](<#contents>)
 
@@ -37,7 +46,7 @@ You can find the deployed site at <a href="https://simonczedu.github.io/Whack-A-
 
 The wireframes for Whack-a-Z were produced in [Balsamiq](https://balsamiq.com). There are frames for a full-width display and a small mobile device. The final site varies from the wireframes due to developments that occurred during the development process. 
 
-[Wireframes in PDF (will open in new tab)](assets/image/)
+[Wireframes in PDF (will open in new tab)](assets/image/readme-img/Whack-a-Z_wireframes.pdf)
 
 [Back to top](<#contents>)
 
