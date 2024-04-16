@@ -262,6 +262,31 @@ This project is a single-page site. Hence there is no need for navigation. There
  
 ## Planned Features 
 
+ * As stated at the beginning: this is a concept. A small part of a larger idea that simply did not fit the scope of this project. Below I will list `some` of the ideas I have for further developing Whack-a-Z into a `proper` game:
+  
+  ### Game concepts expansion:
+   * Fighting Gary is only a first step. Combat will be only one of the mechanics offered. 
+   * Besides combat encounters, players will be able to explore a map with points of interest (POI's). 
+   * Within those POI's players will be able to search room by room for loot and Gary's brothers in unlife.
+   * While clearing POI players will have to still manage time and noise, but they will no longer end the game instead, they will summon a greater number of zombies for the player to fight at the same time.
+   * There will be multiple types of zombies and some will use abilities of their own (possible extension of actions both for players and zombies per turn).
+   * Players after each encounter will have a chance to `rummage` for loot. This will increase the noise level of course.
+   * Another option out of combat will be to return to their base, which brings us to:
+
+  ### Base building, crafting and economy:
+   * On another HTML page players will be able to build up their hideout.
+   * Players will use the resources found on their `raids` or trade for them
+   * At the hideout, players can also prepare for another trip, by crafting new items, or using base amenities to raise their perks and skills
+
+  ### Expansion of the inventory and items:
+   * On a separate HTML page, players can see their `character` with slots for equipment: helmets, gloves, armor etc.
+   * Players can find a greater assortment of items upon victory. Some, will be just for selling, some will be for crafting, and some will be useful in combat.
+   * Items will be more varied and will offer more bonuses, but sometimes at a cost. I.e. a heavy sledgehammer: will have a higher damage output, but a slightly lower chance to hit (perks can battle that) and a much greater noise increase. 
+
+  ### Summary
+   * I have a lot of ideas for this game. Some are still forming and some are already set in my heart. Of course some questions come as I think of new features. For example: what happens if a player loads a base page when on they are mid raid? Well, for that instance I think I would have to set up some sort of start logging (info dump of a sort) that tracks where players currently are and only on logging results at the end of the raid will those changes will be shown in base. So, players can go back to the base, but it will be as if they never left it unless they `log` end of `raid`.
+   * So in conclusion I hope you will find Whack-a-Z interesting it is current form and support it in the future. Thank you and have yourself a lovely, lovely day.
+
 [Back to top](<#contents>)
 
 # Technologies Used
@@ -315,11 +340,37 @@ Below is the method for cloning a project from GitHub:
 6. Press **enter** and the local clone will be created.
 
 
-
 [Back to top](<#contents>)
 
 # Credits
+
+ ## Inspirations:
+
+   1) Inventory checkbox inspiration :
+   - (https://stackabuse.com/how-to-check-if-checkbox-is-checked-in-jquery-and-javascript/) ;
+
+   2) Rounds counter (clicks) inspiration :
+   - (https://stackoverflow.com/questions/22402777/html-javascript-button-click-counter) ;
+
+   3) Using prepend() instead of append() : 
+   - (https://www.w3schools.com/jquery/html_append.asp#:~:text=The%20append()%20method%20inserts,use%20the%20prepend()%20method) ;
+
+   4) Tooltip onmouseover inspiration : 
+   - (https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_event_mouse_clientxy) ;
+   - (https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_event_mouse_clientxy2) ;
+   - (https://www.w3schools.com/jsref/event_onmouseover.asp#gsc.tab=0) ;
+   - (https://www.w3schools.com/tags/ref_eventattributes.asp) ;
+   - (https://www.w3schools.com/js/js_window.asp) ;
+   - (https://www.w3schools.com/jsref/event_clientx.asp) ;
+   - (https://www.w3schools.com/js/js_window_screen.asp) ;
+   - (https://stackoverflow.com/questions/28295072/how-can-i-convert-px-to-vw-in-javascript) ;
+   - (https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onmousemove_dom) ;
+
 ### Content & Media
+
+ * zombi-1 - (https://pixlr.com/image-generator/)
+ * favicon converted with (https://convertico.com/)
+ * icons - (https://icon-sets.iconify.design/)
 
 
 [Back to top](<#contents>)
