@@ -218,7 +218,7 @@ body {
     overflow: scroll;
     align-items: center;
     position: fixed;
-    top: 27vh;
+    bottom: 22vh;
     left: 30vw;
     height: 60vh;
     width: 70vw;
