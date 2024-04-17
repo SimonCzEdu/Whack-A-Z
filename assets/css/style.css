@@ -645,8 +645,9 @@ body {
     /* Noise Level Indicator MQ */
     #noiseLevel {
         left: 1vw;
-        top: 11vh;
-        height: 77vh;
+        bottom: 23vh;
+        top: auto;
+        height: 60vh;
         width: 7vh;
     }
 
@@ -679,13 +680,13 @@ body {
 
     /* Inventory Button MQ */
     #invBtn {
-        top: 89vh;
+        bottom: 1vh;
         right: 2vw;
         height: 10vh;
         width: 10vh;
     }
     #invBtnLabel {
-    position: static;
+    position: relative;
     font-size: 10vh;
     }
 
