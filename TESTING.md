@@ -100,8 +100,9 @@ The CSS validator results are below:
 
 * ### Unresolved
 
-    * On my phone sometimes I can't scroll to the bottom of a page. Works on my wifes phone. Same manufacturer - different model. Might be cache issue, or browser/OS issue. It would be prime candidate for day one patch if players report it as a widespread bug on phones. Looks good in dev tools though.
+  * On my phone sometimes I can't scroll to the bottom of a page. Works on my wifes phone. Same manufacturer - different model. Might be cache issue, or browser/OS issue. It would be prime candidate for day one patch if players report it as a widespread bug on phones. Looks good in dev tools though.
 	* Tooltip behavior - works on both phones and computer screens, but I had version with tooltip following cursor. It did not work for phones though. In future versions by using pointer: coarse check I can return to that concept and make inv and settings also close on tap out (without need for clicking specifically on their respective "buttons").
+  * Last minute I've spotted a bug on phones. Dev tool view was looking alright, but phones could not scroll and did not display all of the elements. In dev tools everything looked ok, but on actual phone there is a bug. I put a last minute fixes so game can be played on phones, but it still needs proper addressing, especially in phone landscape view.
 
 
 ## Additional Testing
