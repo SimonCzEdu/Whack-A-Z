@@ -86,6 +86,7 @@ function hideParryOnSelect() {
 }
 
 //Items
+
 // Use bandage function
 const bandage = document.getElementById(`bandageCon`);
 bandage.addEventListener(`click`, bandageUse);
@@ -122,6 +123,7 @@ function bandageUse() {
         }
     }
 }
+
 // Sword Check to see if sword is equipped or not
 const swordStatus = document.getElementById(`swordCheck`);
 document.getElementById('swordCon').addEventListener(`click`, swordOnOff);
@@ -153,6 +155,8 @@ function swordOnOff() {
         document.getElementById(`swordLabel`).innerHTML = `<iconify-icon id="swordIcon" icon="pepicons-pencil:sword-circle-filled"></iconify-icon>`;
     }
 }
+
+
 
 // Attack Action Function 
 /**
@@ -202,7 +206,7 @@ function attack() {
         if (attackRoll >= 10) {
             console.log(`attack bonus active`);
             // Dice roll for the attack strength (aka damage)    
-            const attackDmg = Math.floor(Math.random() * 10 + 1);
+            const attackDmg = Math.floor(Math.random() * 7 + 5);
 
             // Combat Log message on hit
             const combatLogEntry = document.createElement(`div`);
@@ -401,6 +405,8 @@ function wait() {
     }
 }
 
+
+
 // End/Gary Turn - when player presses on End Turn, this function will calculate Gary's turn.
 // We need event listener for that:
 document.getElementById('endTurn').addEventListener('click', endTurn);
@@ -517,6 +523,8 @@ function endTurn() {
     uncheckParry();
 }
 
+
+
 // Win and loose conditions and events
 /**
  * looseConditions() function is called on every action and checks if you lost and if so, why and displays appropriate message
@@ -556,8 +564,6 @@ function endGameL() {
     document.getElementById(`endMsg`).style.display = `flex`;
     document.getElementById(`endBtn`).style.display = `flex`;
     document.getElementById(`toolTipCon`).style.display = `none`;
-    // Remove it later just for testing!!!!
-    document.getElementById(`searchBtn`).style.display = `flex`;
 }
 /**
  *  endGameW() function is called within winConditions() function and stops players from continuing until they select one of two options: search or play again 
@@ -580,10 +586,11 @@ function restart() {
     location.reload();
 }
 
+
+
 // Search after win
 const searchBtn = document.getElementById(`searchBtn`);
 searchBtn.addEventListener(`click`, search);
-
 /**
  * function search() decides on random chance for number of bandages (or any future items) and displays #searchCon
  */
@@ -603,20 +610,21 @@ function search() {
     document.getElementById('lootLi').prepend(lootBandage);
 
     // Roll for extra loot chance
-    const lootBandageNum = Math.ceil(Math.random() * 9)
-    if (lootBandageNum >= 1) {
+    const lootBandageChance = Math.ceil(Math.random() * 9)
+    if (lootBandageChance>= 3) {
         const lootBandage = document.createElement(`li`);
         lootBandage.innerHTML = `<strong>Bandage</strong> <br> (click to collect)`;
         lootBandage.setAttribute(`class`, `lootBandage`);
         document.getElementById('lootLi').prepend(lootBandage);
     }
-    if (lootBandageNum >= 1) {
+    if (lootBandageChance >= 6) {
         const lootBandage = document.createElement(`li`);
         lootBandage.innerHTML = `<strong>Bandage</strong> <br> (click to collect)`;
         lootBandage.setAttribute(`class`, `lootBandage`);
         document.getElementById('lootLi').prepend(lootBandage);
     }
 }
+
 // Add new items to players inventory
 /**
  * function addToInv() adds items to the player's inventory when item is clicked and removes it from the list
@@ -629,7 +637,33 @@ function addToInv() {
 }
 document.getElementById(`lootLi`).addEventListener(`click`, addToInv);
 
+// New round after search on button click
+const newRound = document.getElementById(`newRound`);
+/**
+ * function startNewRound() resets Gary's health, noise level and timer. Combat log, players health stay the same, and bandages are increased by amount found.
+ */
+function startNewRound() {
+    currentNoiseLvl = 0;
+    currentTime = 0;
+    currentZHealth = 100;
+    document.getElementById(`zHealthIndicator`).style.width = `100%`;
+    document.getElementById(`noiseIndicator`).style.height = `0%`;
+    document.getElementById(`nrOne`).innerHTML = 0;
+    document.getElementById(`lootCon`).style.display = `none`;
+    // Restore default Actions buttons
+    document.getElementById(`attack`).style.display = `flex`;
+    document.getElementById(`wait`).style.display = `flex`;
+    document.getElementById(`parryDiv`).style.display = `flex`;
+    // Hide End Turn button
+    document.getElementById(`endTurn`).style.display = `none`;
+    
+}
+newRound.addEventListener(`click`, startNewRound);
+
+
+
 //Settings functions
+
 // Combat Log on/off
 /**
  * function combatLogHide() this function will hide combat log on button presses
@@ -639,7 +673,6 @@ function combatLogHide() {
     document.getElementById('combatLogBtnOff').style.display = `none`;
     document.getElementById('combatLogBtnOn').style.display = `flex`;
 }
-
 /**
  * combatLogShow() will show combat log again on button press
  */
@@ -651,23 +684,19 @@ function combatLogShow() {
 document.getElementById(`combatLogBtnOff`).addEventListener(`click`, combatLogHide);
 document.getElementById(`combatLogBtnOn`).addEventListener(`click`, combatLogShow);
 
-
-
-// Tool Tips on/off
-// Tool Tip on mouseover
+// Tooltips option off
 const toolOff = document.getElementById(`toolTipOff`);
 const toolOffStyle = window.getComputedStyle(toolOff);
-
 /**
- * function toolTipHide() this function will hide tool tips on button presses
+ * function toolTipHide() this function switch to hide tooltips option on button presses
  */
 function toolTipHide() {
     document.getElementById(`toolTipOff`).style.display = `none`;
     document.getElementById(`toolTipOn`).style.display = `flex`;
 }
-
+// Tooltips option on
 /**
- * toolTipShow() will show tool tips again on button press
+ * toolTipShow() will show tooltips option again on button press
  */
 function toolTipShow() {
     document.getElementById(`toolTipOff`).style.display = `flex`;
@@ -676,6 +705,7 @@ function toolTipShow() {
 document.getElementById(`toolTipOff`).addEventListener(`click`, toolTipHide);
 document.getElementById(`toolTipOn`).addEventListener(`click`, toolTipShow);
 
+// Tooltips shown onmousemove
 /**
  * toolTipO(event) displays toolTipCon div when player is hovering over elements
  */
@@ -900,6 +930,7 @@ function toolTipO() {
 }
 document.onmousemove = function (event) { toolTipO(event) };
 
+// Tooltips hidden onmouseout
 /**
  * toolTipC(event) hides toolTipCon div when not cursor is moved out of the element player is inspecting 
  */
