@@ -41,6 +41,9 @@ body {
     left: 1vw;
     z-index: 100;
 }
+#settingsBtnLabel {
+    display: flex;
+}
 #settingsCheck {
     display: none;
 }
@@ -605,9 +608,9 @@ body {
         background-size: 50vw 100vh;
     }
 
+    /* Setting Button MQ */
     #settingsBtn {
         font-size: 10vh;
-        top: 89vh;
         left: 58vw;
     }
     #settings {
@@ -632,7 +635,7 @@ body {
 
     /* Player Health Bar MQ */
     #pHealthBar {
-        top: 81vh;
+        bottom: 12vh;
         left: 58vw;
         height: 7vh;
         width: 40vw;
