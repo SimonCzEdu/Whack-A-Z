@@ -928,7 +928,7 @@ function toolTipO() {
         }
     }
 }
-document.onmousemove = function (event) { toolTipO(event) };
+// document.onmousemove = function (event) { toolTipO(event) };
 
 // Tooltips hidden onmouseout
 /**
