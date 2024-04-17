@@ -211,7 +211,6 @@ body {
 
 /* Inventory screen */
 #inv {
-    background: #bab8b8eb;
     display: none;
     flex-direction: column;
     overflow: scroll;
@@ -225,6 +224,7 @@ body {
     z-index: 90;
     border-style: solid;
     border-color: #ffffff;
+    background: #bab8b8eb;
 }
 #itemList {
     display: flex;
@@ -320,14 +320,14 @@ body {
     width: auto;
     align-items: center;
     justify-content: center;
-    background: #000000db;
-    color: #1ebd49;
     border-radius: 1vh;
     border-style: solid;
-    border-color: rgb(36 153 101);
     font-size: 7vw;
     text-align: center;
     padding: 10vw 5vh;
+    border-color: rgb(31 67 110);
+    color: rgb(212, 212, 212);
+    background: #000000b2;
 }
 #searchBtn {
     display: none;
@@ -335,13 +335,13 @@ body {
     width: 50vw;
     align-items: center;
     justify-content: center;
-    background: #000000db;
-    color: #1ebd49;
     border-radius: 1vh;
     border-style: solid;
-    border-color: rgb(36 153 101);
     font-size: 5vw;
     text-align: center;
+    border-color: rgb(31 67 110);
+    color: rgb(212, 212, 212);
+    background: #000000b2;
 }
 #endBtn {
     display: none;
@@ -349,13 +349,13 @@ body {
     width: 50vw;
     align-items: center;
     justify-content: center;
-    background: #000000db;
-    color: #1ebd49;
     border-radius: 1vh;
     border-style: solid;
-    border-color: rgb(36 153 101);
     font-size: 5vw;
     text-align: center;
+    border-color: rgb(31 67 110);
+    color: rgb(212, 212, 212);
+    background: #000000b2;
 }
 
 
@@ -523,44 +523,54 @@ body {
 #lootCon {
     display: none;
     position: fixed;
-    background: white;;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     z-index: 300;
-    width: 99vw;
-    height: 99vh;
-    left: 0.25vw;
-    top: 0.25vh;
+    width: 100vw;
+    height: 100vh;
     border-radius: 1vh;
-    border-style: solid;
-    border-color: white;
+    color: rgb(212, 212, 212);
+    background-color: rgb(165 159 152 / 83%);
 }
 #lootH {
     padding: 1vh;
     font-size: 4vh;
+    border-radius: 1vh;
+    border-style: solid;
+    border-color: rgb(31 67 110);
+    color: rgb(212, 212, 212);
+    background: #000000b2;
 }
 #lootLi {
     display: flex;
     flex-direction: column;
     padding: 1vh;
     gap: 1vh;
+    list-style: none;
 }
-#lootLi div {
-    background: gray;
+#lootLi li {
     padding: 0.5vh;
     border-style: solid;
     border-radius: 0.5vh;
     text-align: center;
+    border-radius: 1vh;
+    border-style: solid;
+    color: #000000;
+    border-color: #000000;
+    background: #bab8b8eb;
 }
 #resetBtn {
     display: flex;
     flex-direction: column;
     padding: 1vh;
     font-size: 3vh;
-    background: gray;
+    border-radius: 1vh;
     border-radius: 1vh;
     border-style: solid;
+    border-color: rgb(31 67 110);
+    color: rgb(212, 212, 212);
+    background: #000000b2;
 }
 
 /* Tool Tips */
@@ -712,8 +722,6 @@ body {
     /* End Game MQ */
     #endMsg {
         display: none;
-        height: 30%;
-        width: 90%;
         font-size: 6vh;
     }
     #searchBtn {
@@ -809,9 +817,9 @@ body {
         gap: 1vw;
     }
     #lootLi div {
-        padding: 0.5vh;
-        border-radius: 0.5vh;
-        font-size: 6vh; 
+        padding: 0.5vw;
+        border-radius: 0.5vw;
+        font-size: 5vh;
     }
     #resetBtn {
         padding: 1vh;
