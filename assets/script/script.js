@@ -552,20 +552,22 @@ function winCondition() {
  *  endGameL() function is called within looseConditions() function and stops players from continuing and give them an option to start over 
  */
 function endGameL() {
-    document.getElementById('endGame').style.display = `flex`;
-    document.getElementById('endMsg').style.display = `flex`;
-    document.getElementById('endBtn').style.display = `flex`;
+    document.getElementById(`endGame`).style.display = `flex`;
+    document.getElementById(`endMsg`).style.display = `flex`;
+    document.getElementById(`endBtn`).style.display = `flex`;
+    document.getElementById(`toolTipCon`).style.display = `none`;
     // Remove it later just for testing!!!!
-    document.getElementById('searchBtn').style.display = `flex`;
+    document.getElementById(`searchBtn`).style.display = `flex`;
 }
 /**
  *  endGameW() function is called within winConditions() function and stops players from continuing until they select one of two options: search or play again 
  */
 function endGameW() {
-    document.getElementById('endGame').style.display = `flex`;
-    document.getElementById('endMsg').style.display = `flex`;
-    document.getElementById('endBtn').style.display = `flex`;
-    document.getElementById('searchBtn').style.display = `flex`;
+    document.getElementById(`endGame`).style.display = `flex`;
+    document.getElementById(`endMsg`).style.display = `flex`;
+    document.getElementById(`endBtn`).style.display = `flex`;
+    document.getElementById(`searchBtn`).style.display = `flex`;
+    document.getElementById(`toolTipCon`).style.display = `none`;
 }
 
 
@@ -576,7 +578,21 @@ document.getElementById(`endBtn`).addEventListener(`click`, restart);
  */
 function restart() {
     location.reload();
-    console.log(`Click, click motherfucker`)
+}
+
+// Search after win
+const searchBtn = document.getElementById(`searchBtn`);
+searchBtn.addEventListener(`click`, search);
+
+/**
+ * function search() decides on random chance for number of bandages (or any future items) and displays #searchCon
+ */
+function search() {
+    document.getElementById(`endGame`).style.display = `none`;
+    document.getElementById(`endMsg`).style.display = `none`;
+    document.getElementById(`endBtn`).style.display = `none`;
+    document.getElementById(`searchBtn`).style.display = `none`;
+    document.getElementById(`lootCon`).style.display = `flex`;
 }
 
 
