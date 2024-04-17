@@ -521,9 +521,9 @@ body {
 
 /* Loot & reset */
 #lootCon {
+    display: none;
     position: fixed;
-    background: white;
-    display: flex;
+    background: white;;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
@@ -781,7 +781,18 @@ body {
     }
 
 
-    /* Loot & reset */
+    /* Tool Tips */
+    #toolTipCon {
+        width: 25vw;
+        font-size: 4vh;
+        top: 20vh;
+        left: 17vw;
+        border-radius: 2vh;
+    }
+
+
+
+    /* Loot & reset MQ*/
     #lootCon {
         width: 99vw;
         height: 99vh;
@@ -791,7 +802,7 @@ body {
     }
     #lootH {
         padding: 1vw;
-        font-size: 4vw;
+        font-size: 9vh;
     }
     #lootLi {
         padding: 1vw;
@@ -800,10 +811,11 @@ body {
     #lootLi div {
         padding: 0.5vh;
         border-radius: 0.5vh;
+        font-size: 6vh; 
     }
     #resetBtn {
         padding: 1vh;
-        font-size: 3vw;
+        font-size: 8vh;
         border-radius: 1vh;
-    }
+    }   
 }
