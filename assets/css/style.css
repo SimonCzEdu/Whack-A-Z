@@ -13,7 +13,7 @@
 
 /* General Styling */
 body {
-    position: relative;
+    position: fixed;
     background: #000000 url(../image/zombie-1.png) no-repeat top center;
     background-size: 150vw 75vh;
     height: 100vh;
@@ -243,7 +243,6 @@ body {
     color: white;
     padding: 2vh 0;
     text-align: center;
-    position: fixed;
     width: 70vw;
     border-radius: 1vh;
     border-style: solid;
@@ -603,7 +602,7 @@ body {
 
     /* Main Styling MQ*/
     body {
-        background: black url(../image/zombie-1.png) no-repeat left center;
+        background: black url(../image/zombie-1.png) no-repeat;
         background-size: 50vw 100vh;
     }
 
