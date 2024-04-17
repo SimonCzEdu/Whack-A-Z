@@ -651,7 +651,7 @@ body {
 
     /* Inventory MQ */
     #inv {
-        bottom: 11vh;
+        bottom: 22vh;
         left: 58vw;
         height: 69vh;
         width: 40vw;
@@ -752,7 +752,7 @@ body {
     }
 
 
-    /* Actions */
+    /* Actions MQ */
     #actions {
         left: -18vw;
         font-size: 4vh;
@@ -775,19 +775,19 @@ body {
     }
 
 
-    /* Combat Log */
+    /* Combat Log MQ*/
     #combatLog {
         bottom: 22vh;
         left: 58vw;
-        width: 36vw;
-        height: 56vh;
+        width: 38vw;
+        height: 63vh;
         font-size: 5vh;
-        border-width: 1vw;
+        border-width: 0.5vw;
         padding: 1vw;
     }
 
 
-    /* Tool Tips */
+    /* Tool Tips MQ*/
     #toolTipCon {
         width: 25vw;
         font-size: 4vh;
