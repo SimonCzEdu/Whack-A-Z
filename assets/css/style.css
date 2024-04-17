@@ -588,7 +588,7 @@ body {
     font-size: 6vw;
     z-index: 200;
     left: 10vw;
-    bottom: 15vh;
+    bottom: 50vh;
     padding: 3vw;
     border-style: solid;
     border-radius: 2vw;
@@ -792,7 +792,7 @@ body {
     #toolTipCon {
         width: 25vw;
         font-size: 4vh;
-        bottom: 50vh;
+        bottom: 29vh;
         left: 17vw;
         border-radius: 2vh;
     }
