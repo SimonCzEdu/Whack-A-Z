@@ -13,26 +13,24 @@
 
 /* General Styling */
 body {
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    border: 0;
-    left: 0;
-    top: 0;
-    z-index: -100;
-    overflow: auto;
-}
-
-/* Main Styling */
-#main {
     position: relative;
     background: #000000 url(../image/zombie-1.png) no-repeat top center;
     background-size: 150vw 75vh;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    z-index: -100;
+}
+
+/* Main Styling
+#main {
+    position: relative;
     height: 100%;
     width: 100vw;
     border: 0;
     z-index: -200;
-}
+} */
 
 /* Settings Button */
 #settingsBtn {
@@ -124,7 +122,7 @@ body {
 /* Fillable bars positioning and styling */
 /* Zombie Health Bar */
 #zHealthBar {
-    bottom: 95vh;
+    bottom: 90vh;
     left: 15vw;
     position: fixed;
     height: 3vh;
@@ -604,7 +602,7 @@ body {
 @media (orientation: landscape) {
 
     /* Main Styling MQ*/
-    #main {
+    body {
         background: black url(../image/zombie-1.png) no-repeat left center;
         background-size: 50vw 100vh;
     }
@@ -794,7 +792,7 @@ body {
     #toolTipCon {
         width: 25vw;
         font-size: 4vh;
-        bottom: 20vh;
+        bottom: 50vh;
         left: 17vw;
         border-radius: 2vh;
     }
