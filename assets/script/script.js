@@ -588,13 +588,45 @@ searchBtn.addEventListener(`click`, search);
  * function search() decides on random chance for number of bandages (or any future items) and displays #searchCon
  */
 function search() {
+    // Hide end game and display search screen
     document.getElementById(`endGame`).style.display = `none`;
     document.getElementById(`endMsg`).style.display = `none`;
     document.getElementById(`endBtn`).style.display = `none`;
     document.getElementById(`searchBtn`).style.display = `none`;
     document.getElementById(`lootCon`).style.display = `flex`;
-}
+    document.getElementById(`inv`).style.display = `flex`;
 
+    // Add guaranteed 1 bandage
+    const lootBandage = document.createElement(`li`);
+    lootBandage.innerHTML = `<strong>Bandage</strong> <br> (click to collect)`;
+    lootBandage.setAttribute(`class`, `lootBandage`);
+    document.getElementById('lootLi').prepend(lootBandage);
+
+    // Roll for extra loot chance
+    const lootBandageNum = Math.ceil(Math.random() * 9)
+    if (lootBandageNum >= 1) {
+        const lootBandage = document.createElement(`li`);
+        lootBandage.innerHTML = `<strong>Bandage</strong> <br> (click to collect)`;
+        lootBandage.setAttribute(`class`, `lootBandage`);
+        document.getElementById('lootLi').prepend(lootBandage);
+    }
+    if (lootBandageNum >= 1) {
+        const lootBandage = document.createElement(`li`);
+        lootBandage.innerHTML = `<strong>Bandage</strong> <br> (click to collect)`;
+        lootBandage.setAttribute(`class`, `lootBandage`);
+        document.getElementById('lootLi').prepend(lootBandage);
+    }
+}
+// Add new items to players inventory
+/**
+ * function addToInv() adds items to the player's inventory when item is clicked and removes it from the list
+ */
+function addToInv() {
+    const lootList = document.getElementById(`lootLi`);
+    lootList.removeChild(lootList.firstElementChild);
+    getElementById(`bandageCount`).innerHTML;
+}
+document.getElementById(`lootLi`).addEventListener(`click`, addToInv);
 
 //Settings functions
 // Combat Log on/off
@@ -606,6 +638,7 @@ function combatLogHide() {
     document.getElementById('combatLogBtnOff').style.display = `none`;
     document.getElementById('combatLogBtnOn').style.display = `flex`;
 }
+
 /**
  * combatLogShow() will show combat log again on button press
  */
@@ -616,6 +649,9 @@ function combatLogShow() {
 }
 document.getElementById(`combatLogBtnOff`).addEventListener(`click`, combatLogHide);
 document.getElementById(`combatLogBtnOn`).addEventListener(`click`, combatLogShow);
+
+
+
 // Tool Tips on/off
 // Tool Tip on mouseover
 const toolOff = document.getElementById(`toolTipOff`);
@@ -628,6 +664,7 @@ function toolTipHide() {
     document.getElementById(`toolTipOff`).style.display = `none`;
     document.getElementById(`toolTipOn`).style.display = `flex`;
 }
+
 /**
  * toolTipShow() will show tool tips again on button press
  */
@@ -638,7 +675,6 @@ function toolTipShow() {
 document.getElementById(`toolTipOff`).addEventListener(`click`, toolTipHide);
 document.getElementById(`toolTipOn`).addEventListener(`click`, toolTipShow);
 
-document.onmousemove = function (event) { toolTipO(event) };
 /**
  * toolTipO(event) displays toolTipCon div when player is hovering over elements
  */
@@ -861,8 +897,8 @@ function toolTipO() {
         }
     }
 }
+document.onmousemove = function (event) { toolTipO(event) };
 
-document.onmouseout = function (event) { toolTipC(event) };
 /**
  * toolTipC(event) hides toolTipCon div when not cursor is moved out of the element player is inspecting 
  */
@@ -873,6 +909,9 @@ function toolTipC() {
     const toolTipCon = document.getElementById(`toolTipCon`);
     toolTipCon.style.display = `none`;
 }
+document.onmouseout = function (event) { toolTipC(event) };
+
+
 
 // Welcome message alert
 alert(`Hello! Welcome to Whack-a-Z!
