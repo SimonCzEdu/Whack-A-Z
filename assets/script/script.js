@@ -100,8 +100,8 @@ function bandageUse() {
         // If players have bandages in their inventory
         if (bandageNum >= 1) {
             // On use lower amount of uses
-            const bandageNumAfterUse = bandageNum -= 1;
-            document.getElementById('bandageCount').innerHTML = bandageNumAfterUse;
+            const bandageCountAfter = bandageNum -= 1;
+            document.getElementById('bandageCount').innerHTML = bandageCountAfter;
             // To prevent health overflow above 100%
             if (currentPHealth <= 75) {
                 currentPHealth += 25;
@@ -624,7 +624,8 @@ function search() {
 function addToInv() {
     const lootList = document.getElementById(`lootLi`);
     lootList.removeChild(lootList.firstElementChild);
-    getElementById(`bandageCount`).innerHTML;
+    const bandageAfterPickup = bandageNum +=1;
+    document.getElementById('bandageCount').innerHTML = bandageAfterPickup;
 }
 document.getElementById(`lootLi`).addEventListener(`click`, addToInv);
 
