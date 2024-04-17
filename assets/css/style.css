@@ -519,7 +519,7 @@ body {
     margin: 1vw;
 }
 
-/* Loot & reset */
+/* Loot & new round */
 #lootCon {
     display: none;
     position: fixed;
@@ -559,7 +559,7 @@ body {
     border-color: #000000;
     background: #bab8b8eb;
 }
-#resetBtn {
+#newRound {
     display: flex;
     flex-direction: column;
     padding: 1vh;
@@ -799,7 +799,7 @@ body {
 
 
 
-    /* Loot & reset MQ*/
+    /* Loot & new round MQ*/
     #lootCon {
         width: 99vw;
         height: 99vh;
@@ -819,7 +819,7 @@ body {
         border-radius: 0.5vw;
         font-size: 5vh;
     }
-    #resetBtn {
+    #newRound {
         padding: 1vh;
         font-size: 8vh;
         border-radius: 1vh;
