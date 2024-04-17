@@ -54,7 +54,7 @@ body {
     position: fixed;
     height: auto;
     width: 74vw;
-    top: 7vh;
+    bottom: 7vh;
     left: 11vw;
     border-radius: 1vh;
     z-index: 100;   
@@ -122,7 +122,7 @@ body {
 /* Fillable bars positioning and styling */
 /* Zombie Health Bar */
 #zHealthBar {
-    top: 1vh;
+    bottom: 95vh;
     left: 15vw;
     position: fixed;
     height: 3vh;
@@ -167,7 +167,7 @@ body {
     display: flex;
     position: fixed;
     left: 0.8vw;
-    top: 15vh;
+    bottom: 25vh;
     height: 60vh;
     width: 3vh;
     background: #ffffff42;
@@ -230,7 +230,7 @@ body {
 #itemList {
     display: flex;
     flex-direction: column;
-    margin-top: 9vh;
+    margin-bottom: 9vh;
 }
 .items {
     border-style: solid;
@@ -307,7 +307,7 @@ body {
     position: fixed;
     width: 100%;
     height: 100%;
-    top: 0;
+    bottom: 0;
     left: 0;
     border-radius: 1vh;
     z-index: 200;
@@ -588,7 +588,7 @@ body {
     font-size: 6vw;
     z-index: 200;
     left: 10vw;
-    top: 15vh;
+    bottom: 15vh;
     padding: 3vw;
     border-style: solid;
     border-radius: 2vw;
@@ -614,7 +614,7 @@ body {
     }
     #settings {
         width: 40vw;
-        top: 13vh;
+        bottom: 13vh;
         left: 58vw;
         font-size: 4vh;
     }
@@ -625,7 +625,7 @@ body {
 
     /* Zombie Health Bar MQ */
     #zHealthBar {
-        top: 3vh;
+        bottom: 89vh;
         left: 15vw;
         height: 7vh;
         width: 25vw;
@@ -645,8 +645,6 @@ body {
     #noiseLevel {
         left: 1vw;
         bottom: 23vh;
-        /* Main value is from set from the top so to overwrite it top has to be set to auto */
-        top: auto;
         height: 60vh;
         width: 7vh;
     }
@@ -654,7 +652,7 @@ body {
 
     /* Inventory MQ */
     #inv {
-        top: 11vh;
+        bottom: 11vh;
         left: 58vw;
         height: 69vh;
         width: 40vw;
@@ -669,7 +667,7 @@ body {
         margin: 1vh;
     }
     #itemList {
-        margin-top: 12vh;
+        margin-bottom: 12vh;
         padding-left: 3vh;
     }
     #itemList li {
@@ -746,9 +744,7 @@ body {
         position: fixed;
         left: 58vw;
         width: 40vw;
-        top: 2vh;
-        /* Needs to be declared to overwrite original value top for some reason is not enough */
-        bottom: auto;
+        bottom: 88vh;
     }
     #clock {
         font-size: 6vh;
@@ -796,7 +792,7 @@ body {
     #toolTipCon {
         width: 25vw;
         font-size: 4vh;
-        top: 20vh;
+        bottom: 20vh;
         left: 17vw;
         border-radius: 2vh;
     }
@@ -808,7 +804,7 @@ body {
         width: 99vw;
         height: 99vh;
         left: 0.25vw;
-        top: 0.25vh;
+        bottom: 0.25vh;
         border-radius: 1vh;
     }
     #lootH {
