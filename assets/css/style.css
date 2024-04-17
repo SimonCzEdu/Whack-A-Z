@@ -200,10 +200,9 @@ body {
     display: none;
 }
 #invBtnLabel {
+    display: flex;
     position: fixed;
     right: 1vh;
-    width: 7vh;
-    height: 7vh;
     border-radius: 1vh;
     z-index: 100;
     color: rgb(255, 255, 255);
@@ -646,6 +645,7 @@ body {
     #noiseLevel {
         left: 1vw;
         bottom: 23vh;
+        /* Main value is from set from the top so to overwrite it top has to be set to auto */
         top: auto;
         height: 60vh;
         width: 7vh;
@@ -761,7 +761,7 @@ body {
     #actions {
         left: -18vw;
         font-size: 4vh;
-        top: 90.4vh;
+        bottom: 6vh;
         justify-content: center;
     }
     #endTurn {
