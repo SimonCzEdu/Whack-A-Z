@@ -928,7 +928,7 @@ function toolTipO() {
         }
     }
 }
-// document.onmousemove = function (event) { toolTipO(event) };
+document.onmousemove = function (event) { toolTipO(event) };
 
 // Tooltips hidden onmouseout
 /**
@@ -941,7 +941,7 @@ function toolTipC() {
     const toolTipCon = document.getElementById(`toolTipCon`);
     toolTipCon.style.display = `none`;
 }
-// document.onmouseout = function (event) { toolTipC(event) };
+document.onmouseout = function (event) { toolTipC(event) };
 
 
 
