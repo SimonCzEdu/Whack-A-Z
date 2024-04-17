@@ -122,10 +122,10 @@ body {
 /* Fillable bars positioning and styling */
 /* Zombie Health Bar */
 #zHealthBar {
-    bottom: 90vh;
+    top: 7vh;
     left: 15vw;
     position: fixed;
-    height: 3vh;
+    height: 2vh;
     width: 70vw;
     background: #ffffff42;
     border-radius: 1vh;
@@ -625,9 +625,9 @@ body {
 
     /* Zombie Health Bar MQ */
     #zHealthBar {
-        bottom: 89vh;
+        top: 13vh;
         left: 15vw;
-        height: 7vh;
+        height: 3vh;
         width: 25vw;
     }
 
@@ -744,7 +744,7 @@ body {
         position: fixed;
         left: 58vw;
         width: 40vw;
-        bottom: 88vh;
+        bottom: 1vh;
     }
     #clock {
         font-size: 6vh;
