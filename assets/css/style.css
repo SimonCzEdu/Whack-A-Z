@@ -121,7 +121,7 @@ body {
 #zHealthBar {
     top: 1vh;
     left: 15vw;
-    position: relative;
+    position: fixed;
     height: 3vh;
     width: 70vw;
     background: #ffffff42;
@@ -154,7 +154,7 @@ body {
 #pHealthIndicator {
     position: relative;
     height: 100%;
-    width: 50%;
+    width: 100%;
     background: red;
     border-radius: 1vh;
 }
@@ -519,6 +519,49 @@ body {
     margin: 1vw;
 }
 
+/* Loot & reset */
+#lootCon {
+    position: fixed;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 300;
+    width: 99vw;
+    height: 99vh;
+    left: 0.25vw;
+    top: 0.25vh;
+    border-radius: 1vh;
+    border-style: solid;
+    border-color: white;
+}
+#lootH {
+    padding: 1vh;
+    font-size: 4vh;
+}
+#lootLi {
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+    gap: 1vh;
+}
+#lootLi div {
+    background: gray;
+    padding: 0.5vh;
+    border-style: solid;
+    border-radius: 0.5vh;
+    text-align: center;
+}
+#resetBtn {
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+    font-size: 3vh;
+    background: gray;
+    border-radius: 1vh;
+    border-style: solid;
+}
 
 /* Tool Tips */
 #toolTipCon {
@@ -738,12 +781,29 @@ body {
     }
 
 
-    /* Tool Tips */
-    #toolTipCon {
-        width: 25vw;
-        font-size: 4vh;
-        top: 20vh;
-        left: 17vw;
-        border-radius: 2vh;
+    /* Loot & reset */
+    #lootCon {
+        width: 99vw;
+        height: 99vh;
+        left: 0.25vw;
+        top: 0.25vh;
+        border-radius: 1vh;
+    }
+    #lootH {
+        padding: 1vw;
+        font-size: 4vw;
+    }
+    #lootLi {
+        padding: 1vw;
+        gap: 1vw;
+    }
+    #lootLi div {
+        padding: 0.5vh;
+        border-radius: 0.5vh;
+    }
+    #resetBtn {
+        padding: 1vh;
+        font-size: 3vw;
+        border-radius: 1vh;
     }
 }
