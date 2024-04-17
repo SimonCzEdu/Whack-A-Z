@@ -782,7 +782,7 @@ body {
 
     /* Combat Log */
     #combatLog {
-        top: 13vh;
+        bottom: 22vh;
         left: 58vw;
         width: 36vw;
         height: 56vh;
