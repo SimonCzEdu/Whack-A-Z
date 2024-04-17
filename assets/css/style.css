@@ -578,7 +578,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: fixed;
     background: #1c1c1ce3;
     color: white;
     width: 80vw;
@@ -586,7 +586,7 @@ body {
     font-size: 6vw;
     z-index: 200;
     left: 10vw;
-    top: 23vh;
+    top: 15vh;
     padding: 3vw;
     border-style: solid;
     border-radius: 2vw;
